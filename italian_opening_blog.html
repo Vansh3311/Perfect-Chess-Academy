@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Master the Italian Opening - Complete guide to this classical chess opening with theory, variations, and strategies for Perfect Chess Academy students."
+    />
+    <meta
+      name="keywords"
+      content="Italian Opening, Giuoco Piano, Chess Opening, Chess Theory, Perfect Chess Academy"
+    />
+    <meta name="author" content="Perfect Chess Academy" />
+
+    <title>
+      Italian Opening: Complete Theory Guide | Perfect Chess Academy
+    </title>
+
+    <!-- Chess.js and Chessboard.js libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/about-cta.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/lead-magnet.css" />
+    <link rel="stylesheet" href="assets/css/why-choose.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/about-enhanced.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/coaches.css" />
+    <link rel="stylesheet" href="assets/css/coaching.css" />
+    <link rel="stylesheet" href="assets/css/course-cards.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/italian_opening_interactive.css" />
+    <link rel="stylesheet" href="assets/css/new-sections.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/utils.css" />
+
+    <style>
+      .hero-section {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("assets/Images/italian_opening_blog.webp");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 2rem;
+        text-align: center;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .article-content {
+        background: var(--bg-secondary);
+        padding: 3rem;
+        margin: 3rem auto;
+        border-radius: 12px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        max-width: 900px;
+      }
+
+      .article-intro {
+        font-size: 1.15rem;
+        color: var(--text-secondary);
+        padding: 1.5rem;
+        background: var(--bg-tertiary);
+        border-left: 4px solid var(--accent-primary);
+        margin-bottom: 2.5rem;
+        border-radius: 4px;
+      }
+
+      .board-container {
+        margin: 2.5rem 0;
+        padding: 2rem;
+        background: var(--bg-tertiary);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .board-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .chessboard-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .board-notation {
+        text-align: center;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--bg-secondary);
+        border-radius: 6px;
+        font-family: "Courier New", monospace;
+        font-size: 1rem;
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+      .key-points {
+        background: var(--gradient-primary);
+        color: var(--text-primary);
+        padding: 2rem;
+        border-radius: 8px;
+        margin: 2.5rem 0;
+      }
+
+      .key-points h3 {
+        color: var(--accent-primary);
+        margin-top: 0;
+        font-size: 1.6rem;
+      }
+
+      .key-points ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .key-points li {
+        padding: 0.7rem 0;
+        padding-left: 1.8rem;
+        position: relative;
+        font-size: 1.05rem;
+      }
+
+      .key-points li:before {
+        content: "♔";
+        position: absolute;
+        left: 0;
+        font-size: 1.3rem;
+        color: var(--accent-primary);
+      }
+      .strategy-box {
+        background: var(--bg-tertiary);
+        border: 2px solid var(--accent-primary);
+        padding: 2rem;
+        margin: 2rem 0;
+        border-radius: 8px;
+      }
+
+      .strategy-box h4 {
+        color: var(--accent-primary);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .strategy-box ul {
+        list-style-position: inside;
+        color: var(--text-secondary);
+      }
+
+      .strategy-box li {
+        margin-bottom: 0.7rem;
+        line-height: 1.6;
+      }
+      .variations-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .variations-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--bg-secondary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .variations-table th {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+      }
+
+      .variations-table td {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-secondary);
+      }
+
+      .variations-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .variations-table tr:hover {
+        background: var(--bg-tertiary);
+      }
+      .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .tip-card {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .tip-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .tip-card h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .tip-card p {
+        font-size: 0.95rem;
+        margin-bottom: 0;
+        opacity: 0.95;
+      }
+      .cta-section {
+        background: transparent;
+        color: transparent;
+        padding: 3rem;
+        text-align: center;
+        border-radius: 12px;
+      }
+
+      .cta-section h3 {
+        color: #ffd700;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        color: aliceblue;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: #ffd700;
+        color: #0f0f1a;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background: transparent;
+        border-radius: 50px;
+        border: 2px solid #ffd700;
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <button
+          class="hamburger-btn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-links-mobile"
+        >
+          <div class="hamburger-icon"></div>
+        </button>
+        <div class="logo">
+          <img
+            src="logo-removebg-preview.png"
+            alt="Perfect Chess Academy Logo"
+          />
+        </div>
+        <div id="nav-links-desktop" class="nav-links desktop-only">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="courses.html">Courses</a>
+          <a href="tournaments.html">Tournaments</a>
+          <a href="coaching.html">Coaching</a>
+          <a href="blog.html">Blog</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="header-spacer"></div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Drawer & Backdrop -->
+    <div class="mobile-menu-backdrop" hidden></div>
+    <div id="nav-links-mobile" class="nav-links mobile-only">
+      <button class="mobile-menu-close" aria-label="Close mobile menu">
+        ✕
+      </button>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="blog.html">Blog</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <div class="social-links mobile-social-links">
+        <a
+          href="https://www.facebook.com/kapil.panwar.71/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://share.google/02jHgLaSt3rA88jFG"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Google Maps"
+          ><i class="fas fa-map-marker-alt"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/perfectchessacademy92/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://wa.me/919252358993"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer & Backdrop -->
+    <div class="mobile-menu-backdrop" hidden></div>
+    <div id="nav-links-mobile" class="nav-links mobile-only">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="blog.html">Blog</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="hero-section">
+      <h1>The Italian Opening</h1>
+      <p>A Complete Guide to a Classic Chess Opening</p>
+    </section>
+
+    <!-- Main Article -->
+    <main class="container">
+      <article class="article-content">
+        <!-- Introduction -->
+        <div class="article-intro">
+          <strong>The Italian Opening</strong> (also known as the Italian Game)
+          is one of the oldest and most classical chess openings, beginning with
+          1.e4 e5 2.Nf3 Nc6 3.Bc4. This opening has been played by world
+          champions and club players alike for centuries, offering both tactical
+          fireworks and deep positional understanding. Whether you're a beginner
+          learning your first opening or an advanced player refining your
+          repertoire, the Italian Opening provides a solid foundation for your
+          chess journey.
+        </div>
+
+        <!-- Interactive Variations Hub -->
+        <section id="interactive-variations" class="interactive-board-section">
+          <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem">
+            Interactive Variations Hub
+          </h2>
+          <p
+            style="
+              text-align: center;
+              color: var(--text-secondary);
+              margin-bottom: 2rem;
+            "
+          >
+            Select a variation from the dropdown to load an interactive board
+            with detailed move-by-move analysis.
+          </p>
+
+          <div class="variation-selector">
+            <select id="variation-dropdown">
+              <option value="basic-setup">Italian Opening: Basic Setup</option>
+              <option value="giuoco-piano">Giuoco Piano: Main Line</option>
+              <option value="giuoco-pianissimo">
+                Giuoco Pianissimo: Positional Play
+              </option>
+              <option value="evans-gambit">Evans Gambit: Sharp Play</option>
+              <option value="fried-liver">Fried Liver Attack</option>
+              <option value="traxler-counterattack">
+                Traxler Counterattack
+              </option>
+            </select>
+          </div>
+
+          <!-- Board containers -->
+          <div id="basic-setup-board-wrapper" class="board-wrapper">
+            <div class="board-container-interactive">
+              <div id="basic-setup-board" class="chessboard"></div>
+              <div class="board-annotations">
+                <div id="basic-setup-board-annotation-text"></div>
+              </div>
+            </div>
+            <div class="board-controls">
+              <button id="basic-setup-board-reset-btn">
+                <i class="fas fa-fast-backward"></i> Reset
+              </button>
+              <button id="basic-setup-board-prev-btn">
+                <i class="fas fa-chevron-left"></i> Prev
+              </button>
+              <button id="basic-setup-board-next-btn">
+                Next <i class="fas fa-chevron-right"></i>
+              </button>
+              <button id="basic-setup-board-autoplay-btn">
+                <i class="fas fa-play"></i> Auto-Play
+              </button>
+            </div>
+            <div class="board-info">
+              <span id="basic-setup-board-move-counter"></span> |
+              <span id="basic-setup-board-fen-display"></span>
+            </div>
+          </div>
+
+          <div id="giuoco-piano-board-wrapper" class="board-wrapper">
+            <div class="board-container-interactive">
+              <div id="giuoco-piano-board" class="chessboard"></div>
+              <div class="board-annotations">
+                <div id="giuoco-piano-board-annotation-text"></div>
+              </div>
+            </div>
+            <div class="board-controls">
+              <button id="giuoco-piano-board-reset-btn">
+                <i class="fas fa-fast-backward"></i> Reset
+              </button>
+              <button id="giuoco-piano-board-prev-btn">
+                <i class="fas fa-chevron-left"></i> Prev
+              </button>
+              <button id="giuoco-piano-board-next-btn">
+                Next <i class="fas fa-chevron-right"></i>
+              </button>
+              <button id="giuoco-piano-board-autoplay-btn">
+                <i class="fas fa-play"></i> Auto-Play
+              </button>
+            </div>
+            <div class="board-info">
+              <span id="giuoco-piano-board-move-counter"></span> |
+              <span id="giuoco-piano-board-fen-display"></span>
+            </div>
+          </div>
+
+          <div id="giuoco-pianissimo-board-wrapper" class="board-wrapper">
+            <div class="board-container-interactive">
+              <div id="giuoco-pianissimo-board" class="chessboard"></div>
+              <div class="board-annotations">
+                <div id="giuoco-pianissimo-board-annotation-text"></div>
+              </div>
+            </div>
+            <div class="board-controls">
+              <button id="giuoco-pianissimo-board-reset-btn">
+                <i class="fas fa-fast-backward"></i> Reset
+              </button>
+              <button id="giuoco-pianissimo-board-prev-btn">
+                <i class="fas fa-chevron-left"></i> Prev
+              </button>
+              <button id="giuoco-pianissimo-board-next-btn">
+                Next <i class="fas fa-chevron-right"></i>
+              </button>
+              <button id="giuoco-pianissimo-board-autoplay-btn">
+                <i class="fas fa-play"></i> Auto-Play
+              </button>
+            </div>
+            <div class="board-info">
+              <span id="giuoco-pianissimo-board-move-counter"></span> |
+              <span id="giuoco-pianissimo-board-fen-display"></span>
+            </div>
+          </div>
+
+          <div id="evans-gambit-board-wrapper" class="board-wrapper">
+            <div class="board-container-interactive">
+              <div id="evans-gambit-board" class="chessboard"></div>
+              <div class="board-annotations">
+                <div id="evans-gambit-board-annotation-text"></div>
+              </div>
+            </div>
+            <div class="board-controls">
+              <button id="evans-gambit-board-reset-btn">
+                <i class="fas fa-fast-backward"></i> Reset
+              </button>
+              <button id="evans-gambit-board-prev-btn">
+                <i class="fas fa-chevron-left"></i> Prev
+              </button>
+              <button id="evans-gambit-board-next-btn">
+                Next <i class="fas fa-chevron-right"></i>
+              </button>
+              <button id="evans-gambit-board-autoplay-btn">
+                <i class="fas fa-play"></i> Auto-Play
+              </button>
+            </div>
+            <div class="board-info">
+              <span id="evans-gambit-board-move-counter"></span> |
+              <span id="evans-gambit-board-fen-display"></span>
+            </div>
+          </div>
+
+          <div id="fried-liver-board-wrapper" class="board-wrapper">
+            <div class="board-container-interactive">
+              <div id="fried-liver-board" class="chessboard"></div>
+              <div class="board-annotations">
+                <div id="fried-liver-board-annotation-text"></div>
+              </div>
+            </div>
+            <div class="board-controls">
+              <button id="fried-liver-board-reset-btn">
+                <i class="fas fa-fast-backward"></i> Reset
+              </button>
+              <button id="fried-liver-board-prev-btn">
+                <i class="fas fa-chevron-left"></i> Prev
+              </button>
+              <button id="fried-liver-board-next-btn">
+                Next <i class="fas fa-chevron-right"></i>
+              </button>
+              <button id="fried-liver-board-autoplay-btn">
+                <i class="fas fa-play"></i> Auto-Play
+              </button>
+            </div>
+            <div class="board-info">
+              <span id="fried-liver-board-move-counter"></span> |
+              <span id="fried-liver-board-fen-display"></span>
+            </div>
+          </div>
+
+          <div id="traxler-counterattack-board-wrapper" class="board-wrapper">
+            <div class="board-container-interactive">
+              <div id="traxler-counterattack-board" class="chessboard"></div>
+              <div class="board-annotations">
+                <div id="traxler-counterattack-board-annotation-text"></div>
+              </div>
+            </div>
+            <div class="board-controls">
+              <button id="traxler-counterattack-board-reset-btn">
+                <i class="fas fa-fast-backward"></i> Reset
+              </button>
+              <button id="traxler-counterattack-board-prev-btn">
+                <i class="fas fa-chevron-left"></i> Prev
+              </button>
+              <button id="traxler-counterattack-board-next-btn">
+                Next <i class="fas fa-chevron-right"></i>
+              </button>
+              <button id="traxler-counterattack-board-autoplay-btn">
+                <i class="fas fa-play"></i> Auto-Play
+              </button>
+            </div>
+            <div class="board-info">
+              <span id="traxler-counterattack-board-move-counter"></span> |
+              <span id="traxler-counterattack-board-fen-display"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tactical Themes Gallery -->
+        <section id="tactical-themes" class="content-section">
+          <h2 class="section-title">Common Tactical Themes</h2>
+          <div class="tactics-gallery">
+            <div class="tactic-card">
+              <div id="tactic-board-1" class="mini-chessboard"></div>
+              <h4>Bxf7+ Sacrifice</h4>
+              <p>
+                The classic Italian sacrifice. White gives up the bishop to
+                expose the black king, often leading to a decisive attack.
+              </p>
+            </div>
+            <div class="tactic-card">
+              <div id="tactic-board-2" class="mini-chessboard"></div>
+              <h4>Knight Forks</h4>
+              <p>
+                Knights on f7 (after a sacrifice) or e5/d5 can create
+                devastating forks against the king, queen, and rooks.
+              </p>
+            </div>
+            <div class="tactic-card">
+              <div id="tactic-board-3" class="mini-chessboard"></div>
+              <h4>Discovered Attacks</h4>
+              <p>
+                Moving the c4-bishop or f3-knight can unleash a discovered
+                attack from the queen or a rook, creating double threats.
+              </p>
+            </div>
+            <div class="tactic-card">
+              <div id="tactic-board-4" class="mini-chessboard"></div>
+              <h4>Queen Infiltration</h4>
+              <p>
+                In lines like the Fried Liver, the white queen can quickly
+                infiltrate on f3 or h5, putting immense pressure on Black's
+                exposed king.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Practice Recommendations -->
+        <section id="practice-recs" class="content-section bg-light">
+          <h2 class="section-title">Practice Recommendations</h2>
+          <div class="tips-grid">
+            <div class="tip-card">
+              <h4>For Beginners (Under 1200)</h4>
+              <p>
+                Focus on the 'Italian Opening: Basic Setup'. Understand the
+                purpose of each of the first 3-4 moves. Play the Giuoco Piano
+                and get a feel for classical development. Don't worry about deep
+                theory.
+              </p>
+            </div>
+            <div class="tip-card">
+              <h4>For Intermediate Players (1200-1800)</h4>
+              <p>
+                Study the main lines of the Giuoco Piano and the Evans Gambit.
+                Learn the key strategic ideas for both White and Black. Begin to
+                understand the typical tactical patterns shown in the gallery
+                above.
+              </p>
+            </div>
+            <div class="tip-card">
+              <h4>For Advanced Players (1800+)</h4>
+              <p>
+                Dive deep into the theory of the Giuoco Pianissimo and the sharp
+                tactical lines of the Fried Liver and Max Lange attacks. Analyze
+                grandmaster games to see how the world's best handle these
+                positions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Frequently Asked Questions -->
+        <section id="faq" class="content-section">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="faq-accordion">
+            <div class="faq-item">
+              <button class="faq-question">When should I play c3 vs d3?</button>
+              <div class="faq-answer">
+                <p>
+                  Play <strong>c3</strong> when you intend to play d4 shortly
+                  after, aiming to seize the center (typical in the Giuoco
+                  Piano). Play <strong>d3</strong> when you are aiming for a
+                  slower, more positional game, creating a solid pawn structure
+                  before undertaking further action (typical in the Giuoco
+                  Pianissimo).
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                How do I handle the Two Knights Defense?
+              </button>
+              <div class="faq-answer">
+                <p>
+                  You have several options. <strong>4.Ng5</strong> is the most
+                  aggressive, leading to the Fried Liver or Traxler.
+                  <strong>4.d4</strong> is a strong central push.
+                  <strong>4.d3</strong> is a quiet, solid choice that leads to a
+                  more strategic game, similar to the Giuoco Pianissimo.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Is the Evans Gambit sound?</button>
+              <div class="faq-answer">
+                <p>
+                  Yes, the Evans Gambit is considered perfectly sound, though it
+                  leads to wild and complicated positions. At the top level,
+                  Black has found reliable ways to equalize, but it remains a
+                  dangerous surprise weapon and is excellent for learning about
+                  initiative and dynamic compensation.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                How can I avoid the Fried Liver Attack?
+              </button>
+              <div class="faq-answer">
+                <p>
+                  After 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5, do not play
+                  5...Nxd5?!. The main line and best move is
+                  <strong>5...Na5!</strong>, which forces White's bishop to move
+                  and avoids the knight sacrifice on f7.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+          <h3>Master the Italian Opening with Perfect Chess Academy</h3>
+          <p>
+            Join our comprehensive opening theory courses and take your chess to
+            the next level with personalized coaching and analysis.
+          </p>
+          <a href="contact.html" class="cta-button">Start Learning Today</a>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section footer-map">
+          <h3>Our Location</h3>
+          <!-- Google Map will be embedded here -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.2841823405383!2d73.31320467460951!3d28.015788811821672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393fdd1078b21f2d%3A0x67d3140bf3bcdd44!2sPerfect%20chess%20academy!5e0!3m2!1sen!2sin!4v1756562822478!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="footer-section">
+          <h3>Perfect Chess Academy</h3>
+          <p>
+            Empowering chess players of all levels to achieve their full
+            potential through expert coaching and comprehensive training
+            programs.
+          </p>
+          <div class="footer-contact-info">
+            <p>📍 Bikaner, Rajasthan, India</p>
+            <p>📧 talktokp23@gmail.com</p>
+            <p>📱 +91 92523 58993</p>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="coaching.html">Private Coaching</a></li>
+            <li><a href="tournaments.html">Tournaments</a></li>
+            <li><a href="blog.html">Chess Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Programs</h3>
+          <ul>
+            <li><a href="courses.html">Beginner Classes</a></li>
+            <li><a href="courses.html">Advanced Training</a></li>
+            <li><a href="courses.html">Tournament Prep</a></li>
+            <li><a href="coaching.html">Online Coaching</a></li>
+            <li><a href="tournaments.html">Summer Camps</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li>
+              <a href="https://wa.me/919252358993" target="_blank">WhatsApp</a>
+            </li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="contact.html">Student Portal</a></li>
+            <li><a href="contact.html">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-social-links">
+          <a
+            href="https://www.facebook.com/kapil.panwar.71/"
+            target="_blank"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://share.google/02jHgLaSt3rA88jFG"
+            target="_blank"
+            aria-label="Google Maps"
+            ><i class="fas fa-map-marker-alt"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/perfectchessacademy92/"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://wa.me/919252358993"
+            target="_blank"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+        <p>
+          &copy; 2025 Perfect Chess Academy. All rights reserved. | Designed
+          with ♟️ for chess enthusiasts
+        </p>
+      </div>
+    </footer>
+
+    <div class="floating-action-buttons">
+      <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        ↑
+      </button>
+      <button class="settings-toggle" aria-label="Open user preferences">
+        ⚙️
+      </button>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel">
+      <div class="settings-header">
+        <h3>🎨 User Preferences</h3>
+        <button class="settings-close" aria-label="Close user preferences">
+          ✕
+        </button>
+      </div>
+
+      <div class="setting-item">
+        <label>🌗 Theme</label>
+        <div id="theme-toggle" class="theme-toggle">
+          <span>🌙 Dark Mode</span>
+          <div class="toggle-switch"></div>
+          <span>☀️ Light Mode</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🎭 Visual Effects</label>
+        <div id="animations-toggle" class="theme-toggle">
+          <span>✨ On</span>
+          <div class="toggle-switch active"></div>
+          <span>⚡ Off</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>📱 Auto-scroll</label>
+        <div id="smooth-scroll-toggle" class="theme-toggle">
+          <span>📄 Smooth</span>
+          <div class="toggle-switch active"></div>
+          <span>⚡ Instant</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🖱️ Mouse Trail</label>
+        <div id="mouse-trail-toggle" class="theme-toggle">
+          <span>✨ On</span>
+          <div class="toggle-switch"></div>
+          <span>⚡ Off</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🔊 Sound Effects</label>
+        <div id="sound-toggle" class="theme-toggle">
+          <span>🔊 On</span>
+          <div class="toggle-switch"></div>
+          <span>🔇 Off</span>
+        </div>
+      </div>
+
+      <div class="setting-.item">
+        <label>📏 Font Size</label>
+        <div class="font-size-controls">
+          <button id="font-smaller" class="font-btn">A-</button>
+          <span id="font-display">100%</span>
+          <button id="font-larger" class="font-btn">A+</button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>👤 User Status</label>
+        <div class="user-status">
+          <div class="status-indicator online"></div>
+          <span>Online</span>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button id="reset-settings" class="btn btn-secondary">
+          🔄 Reset All
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive Chess Board JavaScript -->
+    <script src="assets/js/italian_opening_interactive.js"></script>
+    <script src="script.js"></script>
+    <script src="universal-settings.js"></script>
+  </body>
+</html>

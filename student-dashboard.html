@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Perfect Chess Academy</title>
+    <meta name="description" content="Track your chess progress, upcoming classes, and achievements at Perfect Chess Academy">
+    
+    <!-- Existing Stylesheets -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/utils.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Dashboard Specific CSS -->
+    <link rel="stylesheet" href="assets/css/student-dashboard.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Header (from your existing structure) -->
+    <header>
+        <nav>
+            <button class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links-mobile">
+                <div class="hamburger-icon"></div>
+            </button>
+            
+            <div class="logo">
+                <img src="logo-removebg-preview.png" alt="Perfect Chess Academy Logo">
+            </div>
+            
+            <div id="nav-links-desktop" class="nav-links desktop-only">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="courses.html">Courses</a>
+                <a href="tournaments.html">Tournaments</a>
+                <a href="coaching.html">Coaching</a>
+                <a href="blog.html">Blog</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="student-dashboard.html" class="active">
+                    <i class="fas fa-user-circle"></i> Dashboard
+                </a>
+            </div>
+            
+            <div class="header-spacer"></div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-menu-backdrop"></div>
+    <div id="nav-links-mobile" class="nav-links mobile-only">
+        <button class="mobile-menu-close" aria-label="Close mobile menu">×</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="tournaments.html">Tournaments</a>
+        <a href="coaching.html">Coaching</a>
+        <a href="blog.html">Blog</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="student-dashboard.html" class="active">
+            <i class="fas fa-user-circle"></i> My Dashboard
+        </a>
+        
+        <div class="social-links mobile-social-links">
+            <a href="https://www.facebook.com/kapil.panwar.71" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/perfectchessacademy92" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/919252358993" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-page">
+        <!-- Welcome Header -->
+        <section class="dashboard-header">
+            <div class="container">
+                <div class="welcome-banner">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Arjun+Sharma&background=f59e0b&color=111827&size=80&bold=true" alt="Arjun Sharma">
+                            <span class="status-indicator" title="Online"></span>
+                        </div>
+                        <div class="user-details">
+                            <h1 class="user-greeting">Welcome back, <span class="highlight">Arjun!</span></h1>
+                            <p class="user-meta">
+                                <i class="fas fa-chess-knight"></i> Intermediate Player
+                                <span class="separator">•</span>
+                                <i class="fas fa-calendar-alt"></i> Member since Jan 2024
+                            </p>
+                        </div>
+                    </div>
+                    <div class="quick-actions-header">
+                        <button class="btn btn-secondary btn-icon" onclick="location.href='courses.html'">
+                            <i class="fas fa-book"></i>
+                            <span>Browse Courses</span>
+                        </button>
+                        <button class="btn btn-primary btn-icon" onclick="location.href='contact.html'">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Book Class</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Stats Overview -->
+        <section class="stats-overview">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card" data-animation="fade-up">
+                        <div class="stat-icon rating">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-label">Current Rating</p>
+                            <h3 class="stat-value" data-target="1485">0</h3>
+                            <div class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+85 this month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-animation="fade-up" data-delay="100">
+                        <div class="stat-icon puzzles">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-label">Puzzles Solved</p>
+                            <h3 class="stat-value" data-target="342">0</h3>
+                            <div class="stat-change neutral">
+                                <i class="fas fa-check-circle"></i>
+                                <span>87% accuracy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-animation="fade-up" data-delay="200">
+                        <div class="stat-icon games">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-label">Games Played</p>
+                            <h3 class="stat-value" data-target="128">0</h3>
+                            <div class="stat-change positive">
+                                <i class="fas fa-chess"></i>
+                                <span>62% win rate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-animation="fade-up" data-delay="300">
+                        <div class="stat-icon study">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-label">Study Hours</p>
+                            <h3 class="stat-value" data-target="47">0</h3>
+                            <div class="stat-change positive">
+                                <i class="fas fa-fire"></i>
+                                <span>12-day streak</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Grid -->
+        <section class="dashboard-content">
+            <div class="container">
+                <div class="dashboard-grid">
+                    <!-- Left Column -->
+                    <div class="dashboard-column dashboard-main">
+                        
+                        <!-- Rating Progress Chart -->
+                        <div class="dashboard-widget widget-rating-chart">
+                            <div class="widget-header">
+                                <h2 class="widget-title">
+                                    <i class="fas fa-chart-line"></i>
+                                    Rating Progress
+                                </h2>
+                                <div class="widget-actions">
+                                    <select id="rating-timeframe" class="timeframe-select">
+                                        <option value="7">Last 7 days</option>
+                                        <option value="30" selected>Last 30 days</option>
+                                        <option value="90">Last 90 days</option>
+                                        <option value="365">All time</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <canvas id="ratingChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Recent Games -->
+                        <div class="dashboard-widget widget-recent-games">
+                            <div class="widget-header">
+                                <h2 class="widget-title">
+                                    <i class="fas fa-history"></i>
+                                    Recent Games
+                                </h2>
+                                <a href="#" class="view-all-link">View All <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                            <div class="widget-body">
+                                <div class="games-list">
+                                    <!-- Game Item 1 -->
+                                    <div class="game-item win">
+                                        <div class="game-result-badge">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Win</span>
+                                        </div>
+                                        <div class="game-info">
+                                            <div class="game-opponent">
+                                                <span class="opponent-name">vs. Ravi Kumar</span>
+                                                <span class="opponent-rating">(1450)</span>
+                                            </div>
+                                            <div class="game-details">
+                                                <span class="game-opening">Sicilian Defense</span>
+                                                <span class="separator">•</span>
+                                                <span class="game-moves">42 moves</span>
+                                                <span class="separator">•</span>
+                                                <span class="game-date">2 days ago</span>
+                                            </div>
+                                        </div>
+                                        <button class="btn-icon-small" title="Analyze Game">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Game Item 2 -->
+                                    <div class="game-item loss">
+                                        <div class="game-result-badge">
+                                            <i class="fas fa-times-circle"></i>
+                                            <span>Loss</span>
+                                        </div>
+                                        <div class="game-info">
+                                            <div class="game-opponent">
+                                                <span class="opponent-name">vs. Priya Mehta</span>
+                                                <span class="opponent-rating">(1520)</span>
+                                            </div>
+                                            <div class="game-details">
+                                                <span class="game-opening">Italian Opening</span>
+                                                <span class="separator">•</span>
+                                                <span class="game-moves">38 moves</span>
+                                                <span class="separator">•</span>
+                                                <span class="game-date">4 days ago</span>
+                                            </div>
+                                        </div>
+                                        <button class="btn-icon-small" title="Analyze Game">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Game Item 3 -->
+                                    <div class="game-item draw">
+                                        <div class="game-result-badge">
+                                            <i class="fas fa-handshake"></i>
+                                            <span>Draw</span>
+                                        </div>
+                                        <div class="game-info">
+                                            <div class="game-opponent">
+                                                <span class="opponent-name">vs. Ankit Verma</span>
+                                                <span class="opponent-rating">(1480)</span>
+                                            </div>
+                                            <div class="game-details">
+                                                <span class="game-opening">Queen's Gambit</span>
+                                                <span class="separator">•</span>
+                                                <span class="game-moves">56 moves</span>
+                                                <span class="separator">•</span>
+                                                <span class="game-date">5 days ago</span>
+                                            </div>
+                                        </div>
+                                        <button class="btn-icon-small" title="Analyze Game">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Game Item 4 -->
+                                    <div class="game-item win">
+                                        <div class="game-result-badge">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Win</span>
+                                        </div>
+                                        <div class="game-info">
+                                            <div class="game-opponent">
+                                                <span class="opponent-name">vs. Sanjay Patel</span>
+                                                <span class="opponent-rating">(1395)</span>
+                                            </div>
+                                            <div class="game-details">
+                                                <span class="game-opening">French Defense</span>
+                                                <span class="separator">•</span>
+                                                <span class="game-moves">34 moves</span>
+                                                <span class="separator">•</span>
+                                                <span class="game-date">1 week ago</span>
+                                            </div>
+                                        </div>
+                                        <button class="btn-icon-small" title="Analyze Game">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Analysis -->
+                        <div class="dashboard-widget widget-performance">
+                            <div class="widget-header">
+                                <h2 class="widget-title">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Performance Analysis
+                                </h2>
+                            </div>
+                            <div class="widget-body">
+                                <div class="performance-grid">
+                                    <div class="performance-item">
+                                        <div class="performance-label">
+                                            <i class="fas fa-chess-pawn"></i>
+                                            <span>Opening</span>
+                                        </div>
+                                        <div class="performance-bar">
+                                            <div class="performance-fill" style="width: 78%" data-width="78"></div>
+                                        </div>
+                                        <span class="performance-score">78%</span>
+                                    </div>
+
+                                    <div class="performance-item">
+                                        <div class="performance-label">
+                                            <i class="fas fa-chess-knight"></i>
+                                            <span>Middlegame</span>
+                                        </div>
+                                        <div class="performance-bar">
+                                            <div class="performance-fill" style="width: 85%" data-width="85"></div>
+                                        </div>
+                                        <span class="performance-score">85%</span>
+                                    </div>
+
+                                    <div class="performance-item">
+                                        <div class="performance-label">
+                                            <i class="fas fa-chess-king"></i>
+                                            <span>Endgame</span>
+                                        </div>
+                                        <div class="performance-bar">
+                                            <div class="performance-fill" style="width: 62%" data-width="62"></div>
+                                        </div>
+                                        <span class="performance-score">62%</span>
+                                    </div>
+
+                                    <div class="performance-item">
+                                        <div class="performance-label">
+                                            <i class="fas fa-chess-rook"></i>
+                                            <span>Tactics</span>
+                                        </div>
+                                        <div class="performance-bar">
+                                            <div class="performance-fill" style="width: 92%" data-width="92"></div>
+                                        </div>
+                                        <span class="performance-score">92%</span>
+                                    </div>
+                                </div>
+
+                                <div class="improvement-tip">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <p><strong>Improvement Tip:</strong> Your endgame skills need attention. Consider taking the "Endgame Mastery" course to improve this area.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column (Sidebar) -->
+                    <div class="dashboard-column dashboard-sidebar">
+                        
+                        <!-- Upcoming Classes -->
+                        <div class="dashboard-widget widget-upcoming">
+                            <div class="widget-header">
+                                <h2 class="widget-title">
+                                    <i class="fas fa-calendar-check"></i>
+                                    Upcoming Classes
+                                </h2>
+                            </div>
+                            <div class="widget-body">
+                                <div class="class-list">
+                                    <!-- Class Item 1 -->
+                                    <div class="class-item upcoming-soon">
+                                        <div class="class-time">
+                                            <div class="time-badge">
+                                                <span class="time-day">Today</span>
+                                                <span class="time-hour">6:00 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="class-details">
+                                            <h4 class="class-title">Tactical Patterns Workshop</h4>
+                                            <p class="class-instructor">
+                                                <i class="fas fa-user"></i> Coach Kapil Panwar
+                                            </p>
+                                            <p class="class-type">
+                                                <i class="fas fa-users"></i> Group Session
+                                            </p>
+                                        </div>
+                                        <button class="btn btn-sm btn-primary-outline">Join</button>
+                                    </div>
+
+                                    <!-- Class Item 2 -->
+                                    <div class="class-item">
+                                        <div class="class-time">
+                                            <div class="time-badge">
+                                                <span class="time-day">Tomorrow</span>
+                                                <span class="time-hour">4:30 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="class-details">
+                                            <h4 class="class-title">Opening Repertoire Review</h4>
+                                            <p class="class-instructor">
+                                                <i class="fas fa-user"></i> Coach Rahul Singh
+                                            </p>
+                                            <p class="class-type">
+                                                <i class="fas fa-user"></i> Private Session
+                                            </p>
+                                        </div>
+                                        <button class="btn btn-sm btn-secondary-outline">Reschedule</button>
+                                    </div>
+
+                                    <!-- Class Item 3 -->
+                                    <div class="class-item">
+                                        <div class="class-time">
+                                            <div class="time-badge">
+                                                <span class="time-day">Mon, Jan 6</span>
+                                                <span class="time-hour">5:00 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="class-details">
+                                            <h4 class="class-title">Tournament Prep Session</h4>
+                                            <p class="class-instructor">
+                                                <i class="fas fa-user"></i> Coach Kapil Panwar
+                                            </p>
+                                            <p class="class-type">
+                                                <i class="fas fa-users"></i> Group Session
+                                            </p>
+                                        </div>
+                                        <button class="btn btn-sm btn-secondary-outline">Details</button>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-block btn-primary-outline mt-3">
+                                    <i class="fas fa-plus"></i> Schedule New Class
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Course Progress -->
+                        <div class="dashboard-widget widget-courses">
+                            <div class="widget-header">
+                                <h2 class="widget-title">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    My Courses
+                                </h2>
+                            </div>
+                            <div class="widget-body">
+                                <div class="course-progress-list">
+                                    <!-- Course 1 -->
+                                    <div class="course-progress-item">
+                                        <div class="course-icon-wrapper intermediate">
+                                            <i class="fas fa-chess-knight"></i>
+                                        </div>
+                                        <div class="course-progress-info">
+                                            <h4 class="course-name">Tactical Mastery</h4>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: 65%" data-width="65"></div>
+                                                </div>
+                                                <span class="progress-percent">65%</span>
+                                            </div>
+                                            <p class="course-meta">8 of 12 lessons completed</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Course 2 -->
+                                    <div class="course-progress-item">
+                                        <div class="course-icon-wrapper beginner">
+                                            <i class="fas fa-chess-pawn"></i>
+                                        </div>
+                                        <div class="course-progress-info">
+                                            <h4 class="course-name">Chess Fundamentals</h4>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill completed" style="width: 100%" data-width="100"></div>
+                                                </div>
+                                                <span class="progress-percent completed">100%</span>
+                                            </div>
+                                            <p class="course-meta">
+                                                <i class="fas fa-check-circle"></i> Completed
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Course 3 -->
+                                    <div class="course-progress-item">
+                                        <div class="course-icon-wrapper advanced">
+                                            <i class="fas fa-chess-king"></i>
+                                        </div>
+                                        <div class="course-progress-info">
+                                            <h4 class="course-name">Endgame Techniques</h4>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: 25%" data-width="25"></div>
+                                                </div>
+                                                <span class="progress-percent">25%</span>
+                                            </div>
+                                            <p class="course-meta">3 of 12 lessons completed</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-block btn-primary-outline mt-3">
+                                    <i class="fas fa-book"></i> Browse More Courses
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions Card -->
+                        <div class="dashboard-widget widget-quick-actions">
+                            <div class="widget-header">
+                                <h2 class="widget-title">
+                                    <i class="fas fa-bolt"></i>
+                                    Quick Actions
+                                </h2>
+                            </div>
+                            <div class="widget-body">
+                                <div class="quick-actions-grid">
+                                    <a href="#" class="quick-action-item">
+                                        <div class="action-icon">
+                                            <i class="fas fa-puzzle-piece"></i>
+                                        </div>
+                                        <span>Solve Puzzles</span>
+                                    </a>
+
+                                    <a href="#" class="quick-action-item">
+                                        <div class="action-icon">
+                                            <i class="fas fa-gamepad"></i>
+                                        </div>
+                                        <span>Play Game</span>
+                                    </a>
+
+                                    <a href="#" class="quick-action-item">
+                                        <div class="action-icon">
+                                            <i class="fas fa-trophy"></i>
+                                        </div>
+                                        <span>Tournaments</span>
+                                    </a>
+
+                                    <a href="#" class="quick-action-item">
+                                        <div class="action-icon">
+                                            <i class="fas fa-book-open"></i>
+                                        </div>
+                                        <span>Lessons</span>
+                                    </a>
+
+                                    <a href="#" class="quick-action-item">
+                                        <div class="action-icon">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <span>Analyze Game</span>
+                                    </a>
+
+                                    <a href="#" class="quick-action-item">
+                                        <div class="action-icon">
+                                            <i class="fas fa-user-cog"></i>
+                                        </div>
+                                        <span>Settings</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Achievement Badges -->
+                        <div class="dashboard-widget widget-achievements">
+                            <div class="widget-header">
+                                <h2 class="widget-title">
+                                    <i class="fas fa-medal"></i>
+                                    Recent Achievements
+                                </h2>
+                            </div>
+                            <div class="widget-body">
+                                <div class="achievements-grid">
+                                    <div class="achievement-badge earned" title="Solved 100 puzzles">
+                                        <div class="badge-icon">
+                                            <i class="fas fa-puzzle-piece"></i>
+                                        </div>
+                                        <p class="badge-name">Puzzle Master</p>
+                                    </div>
+
+                                    <div class="achievement-badge earned" title="10-day study streak">
+                                        <div class="badge-icon">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                        <p class="badge-name">On Fire!</p>
+                                    </div>
+
+                                    <div class="achievement-badge earned" title="Completed first course">
+                                        <div class="badge-icon">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <p class="badge-name">Scholar</p>
+                                    </div>
+
+                                    <div class="achievement-badge locked" title="Win 50 games">
+                                        <div class="badge-icon">
+                                            <i class="fas fa-trophy"></i>
+                                        </div>
+                                        <p class="badge-name">Champion</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Your existing footer structure) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-icon">♔</span>
+                        <span class="logo-text">Perfect Chess Academy</span>
+                    </div>
+                    <p class="footer-description">Empowering minds through the art and strategy of chess. Join us to master the game and unlock your potential.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/perfectchessacademy" class="footer-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/perfectchessacademy" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/919252358993" class="footer-social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="coaching.html">Private Coaching</a></li>
+                        <li><a href="tournaments.html">Tournaments</a></li>
+                        <li><a href="blog.html">Chess Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bikaner, Rajasthan, India</li>
+                        <li><i class="fas fa-envelope"></i> info@perfectchessacademy.com</li>
+                        <li><i class="fas fa-phone"></i> +91 92523 58993</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Perfect Chess Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-action-buttons">
+        <button class="back-to-top" aria-label="Back to top">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M18 15L12 9L6 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="settings-toggle" aria-label="Open settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="3" stroke-width="2"/>
+                <path d="M12 1v6m0 6v6M1 12h6m6 0h6" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="universal-settings.js"></script>
+    <script src="assets/js/student-dashboard.js"></script>
+</body>
+</html>

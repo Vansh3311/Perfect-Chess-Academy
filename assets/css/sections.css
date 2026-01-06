@@ -1,0 +1,143 @@
+/* Sections */
+.section {
+  padding: 60px 2rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 80px 2rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .section {
+    padding: 100px 2rem;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0 auto;
+}
+
+.courses-overview .card-title {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.course-price {
+  color: var(--accent-primary);
+  font-weight: 700;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.section-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Gallery Preview Styles */
+.gallery-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  align-items: stretch;
+}
+
+.gallery-preview-card {
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem;
+}
+
+.gallery-preview-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-preview-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.gallery-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-preview-card:hover .gallery-preview-image img {
+  transform: scale(1.05);
+}
+
+.gallery-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 215, 0, 0.9);
+  color: var(--bg-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.gallery-preview-content {
+  padding: 1.5rem;
+}
+
+.gallery-preview-content h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.gallery-preview-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.gallery-preview-footer {
+  text-align: center;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  background: var(--bg-secondary);
+  border-radius: 2rem;
+  border: 1px solid var(--border-secondary);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}

@@ -1,0 +1,575 @@
+/* ============================================
+   MODERN CSS FORM DESIGN - 2025 BEST PRACTICES
+   Based on IxDF, LogRocket, Kevin Powell Research
+   ============================================ */
+
+/* ============================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================ */
+:root {
+  /* Colors - Based on your existing design */
+  --color-primary: #f59e0b;
+  --color-primary-dark: #d97706;
+  --color-primary-light: #fbbf24;
+
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-tertiary: #334155;
+
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+
+  --color-border: #475569;
+  --color-border-light: rgba(71, 85, 105, 0.5);
+
+  --color-success: #10b981;
+  --color-error: #ef4444;
+
+  /* Typography Scale - 1.125 (Major Second) */
+  --text-xs: 0.875rem; /* 14px */
+  --text-sm: 0.9375rem; /* 15px */
+  --text-base: 1rem; /* 16px - CRITICAL for mobile (prevents zoom) */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 2rem; /* 32px */
+  --text-4xl: 2.5rem; /* 40px */
+  --text-5xl: 3.5rem; /* 56px */
+
+  /* Spacing Scale - Based on 8px grid system */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.5rem; /* 24px */
+  --space-6: 2rem; /* 32px */
+  --space-8: 3rem; /* 48px */
+  --space-10: 4rem; /* 64px */
+  --space-12: 6rem; /* 96px */
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.5);
+
+  /* Transitions - Performance optimized */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   MODERN CSS RESET - 2025
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.125rem; /* 18px - IxDF Best Practice [web:28] */
+  line-height: 1.6; /* Better readability [web:31] */
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  min-height: 100vh;
+}
+
+/* ============================================
+   LEAD MAGNET SECTION - Workable Pattern
+   Form to the right, spacious, 3-4 fields max [web:25]
+   ============================================ */
+.lead-magnet {
+  padding: var(--space-12) var(--space-4);
+  background: var(--color-bg-secondary);
+}
+
+.lead-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+/* Desktop: Content left, Form right [web:25] */
+@media (min-width: 1024px) {
+  .lead-container {
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+/* ============================================
+   CONTENT SIDE - Value Proposition
+   ============================================ */
+.content-side {
+  max-width: 48rem;
+}
+
+/* Eyebrow Label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-4);
+}
+
+.eyebrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Section Headline */
+.section-headline {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-5);
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-description {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+/* Benefits List - Proximity & Repetition [web:31] */
+.benefits-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.benefits-list li {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.benefits-list svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-success);
+  margin-top: 2px;
+}
+
+.benefits-list strong {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.benefits-list span {
+  display: block;
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Trust Row */
+.trust-row {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  padding: var(--space-5);
+  background: rgba(245, 158, 11, 0.08);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.trust-item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+}
+
+/* ============================================
+   FORM SIDE - Modern Form Design [web:28][web:29]
+   ============================================ */
+.form-side {
+  position: sticky;
+  top: var(--space-6);
+}
+
+.form-card {
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+}
+
+.form-card:hover {
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(245, 158, 11, 0.15);
+}
+
+/* Form Header - Hierarchy [web:31] */
+.form-header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.form-title {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.form-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+.form-subtitle strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ============================================
+   FORM ELEMENTS - Kevin Powell Best Practices [web:29]
+   ============================================ */
+
+/* Form inherits font properties [web:29] */
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5); /* Rhythm - consistent spacing [web:31] */
+}
+
+/* Form Group - Grouping related fields [web:32] */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Labels - Clear and descriptive [web:28] */
+.form-group label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.optional {
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Input Fields - Inherit font [web:29] */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: var(--space-4); /* Kevin Powell: generous padding [web:29] */
+  font-family: inherit;
+  font-size: 1rem; /* CRITICAL: 16px minimum prevents iOS zoom [web:28] */
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+.form-group input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* Focus State - Accessibility CRITICAL [web:31] */
+.form-group input:focus,
+.form-group select:focus {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2),
+    0 4px 12px rgba(245, 158, 11, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Focus-visible for keyboard users [web:31] */
+.form-group input:focus-visible,
+.form-group select:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Select Dropdown - Native styling with accent-color [web:29] */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  padding-right: var(--space-8);
+  cursor: pointer;
+}
+
+/* Error State - Don't use color alone [web:31] */
+.form-group.error input,
+.form-group.error select {
+  border-color: var(--color-error);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.error-message {
+  display: none;
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+.form-group.error .error-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Add error icon - not just color [web:31] */
+.form-group.error .error-message::before {
+  content: "⚠";
+  font-size: var(--text-base);
+}
+
+/* Helper Text */
+.helper-text {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ============================================
+   SUBMIT BUTTON - Action-Oriented CTA [web:28]
+   ============================================ */
+.btn-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  font-family: inherit;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-bg-primary);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+  margin-top: var(--space-2);
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.4);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-submit:focus-visible {
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 3px;
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-fast);
+}
+
+.btn-submit:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+/* Privacy Notice - Build Trust [web:28] */
+.privacy-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.privacy-note svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--color-success);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Mobile First [web:28]
+   ============================================ */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-10) var(--space-4);
+  }
+
+  .hero-headline {
+    font-size: 2.25rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lead-magnet {
+    padding: var(--space-10) var(--space-4);
+  }
+
+  .form-card {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .form-side {
+    position: static; /* Remove sticky on mobile */
+  }
+
+  .trust-row {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem; /* Slightly smaller on very small screens */
+  }
+
+  .hero-headline {
+    font-size: 2rem;
+  }
+
+  .form-card {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .benefits-list {
+    gap: var(--space-4);
+  }
+
+  .benefits-list li {
+    gap: var(--space-3);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - Reduced Motion [web:28]
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   Core Web Vitals focus [web:34]
+   ============================================ */
+
+/* GPU acceleration for transforms */
+.btn,
+.form-card,
+.form-group input,
+.form-group select {
+  will-change: transform;
+}
+
+/* Contain paint for better performance */
+.form-card {
+  contain: paint;
+}
+
+/* Content-visibility for below fold content */
+.lead-magnet {
+  content-visibility: auto;
+}

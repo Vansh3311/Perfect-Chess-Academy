@@ -1,0 +1,1530 @@
+/**
+ * COACHING PAGE REDESIGN - Perfect Chess Academy
+ * Modern, conversion-optimized design
+ * Based on 2025 UX best practices
+ */
+
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+  --coaching-primary: #d4af37;
+  --coaching-primary-dark: #b8941f;
+  --coaching-primary-light: rgba(212, 175, 55, 0.1);
+
+  --coaching-bg: #0a0e14;
+  --coaching-card-bg: #141921;
+  --coaching-card-hover: #1a2030;
+  --coaching-border: rgba(255, 255, 255, 0.08);
+  --coaching-text: #e5e7eb;
+  --coaching-text-secondary: #9ca3af;
+
+  --success: #10b981;
+  --success-light: rgba(16, 185, 129, 0.1);
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+.coaching-page-redesign {
+  background: var(--coaching-bg);
+  font-family: "Inter", sans-serif;
+  color: var(--coaching-text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.coaching-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0a0e14 0%, #1a1f2e 100%);
+  padding: 8rem 0 6rem;
+  overflow: hidden;
+}
+
+.coaching-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(212, 175, 55, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(59, 130, 246, 0.06) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(
+    135deg,
+    var(--coaching-primary-light),
+    rgba(59, 130, 246, 0.1)
+  );
+  border: 1px solid var(--coaching-primary);
+  border-radius: 50px;
+  color: var(--coaching-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+  animation: fadeInUp 0.6s ease-out 0.1s backwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--coaching-primary), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--coaching-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 3rem 0;
+  animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+/* ============================================
+   HERO FILTER WIDGET
+   ============================================ */
+.hero-filter-widget {
+  margin: 3rem 0 4rem;
+  animation: fadeInUp 0.6s ease-out 0.3s backwards;
+}
+
+.filter-card {
+  background: var(--coaching-card-bg);
+  border: 1px solid var(--coaching-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(10px);
+}
+
+.filter-group {
+  margin-bottom: 2rem;
+}
+
+.filter-group:last-of-type {
+  margin-bottom: 2.5rem;
+}
+
+.filter-label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--coaching-text);
+  margin-bottom: 1rem;
+}
+
+.filter-label i {
+  color: var(--coaching-primary);
+}
+
+.filter-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.filter-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid var(--coaching-border);
+  border-radius: 12px;
+  color: var(--coaching-text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--coaching-primary);
+}
+
+.filter-btn.active {
+  background: var(--coaching-primary-light);
+  border-color: var(--coaching-primary);
+  color: var(--coaching-text);
+}
+
+.filter-btn i {
+  font-size: 2rem;
+  transition: transform var(--transition-base);
+}
+
+.filter-btn.active i {
+  color: var(--coaching-primary);
+  transform: scale(1.1);
+}
+
+.filter-select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid var(--coaching-border);
+  border-radius: 12px;
+  color: var(--coaching-text);
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-select:hover {
+  border-color: var(--coaching-primary);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--coaching-primary);
+  background: var(--coaching-primary-light);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+.btn-find-coach {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--coaching-primary),
+    var(--coaching-primary-dark)
+  );
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+}
+
+.btn-find-coach:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6);
+}
+
+.btn-find-coach:active {
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   TRUST INDICATORS
+   ============================================ */
+.trust-indicators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--coaching-border);
+  animation: fadeInUp 0.6s ease-out 0.4s backwards;
+}
+
+.trust-item {
+  text-align: center;
+}
+
+.trust-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--coaching-primary);
+  margin-bottom: 0.5rem;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--coaching-text-secondary);
+}
+
+/* ============================================
+   SECTION STYLES
+   ============================================ */
+.how-it-works-section,
+.coaches-section,
+.pricing-section,
+.testimonials-section,
+.faq-section,
+.cta-section {
+  padding: 6rem 0;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--coaching-primary-light);
+  border: 1px solid var(--coaching-primary);
+  border-radius: 50px;
+  color: var(--coaching-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--coaching-text);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  color: var(--coaching-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how-it-works-section {
+  background: linear-gradient(180deg, var(--coaching-bg) 0%, #0f1419 100%);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.step-card {
+  background: var(--coaching-card-bg);
+  border: 1px solid var(--coaching-border);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--coaching-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--coaching-primary),
+    var(--coaching-primary-dark)
+  );
+  color: white;
+  font-weight: 800;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.step-icon {
+  width: 80px;
+  height: 80px;
+  margin: 1rem auto 1.5rem;
+  border-radius: 20px;
+  background: var(--coaching-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon i {
+  font-size: 2.5rem;
+  color: var(--coaching-primary);
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--coaching-text);
+  margin: 0 0 0.75rem 0;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: var(--coaching-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.step-connector {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--coaching-border),
+    var(--coaching-primary),
+    var(--coaching-border)
+  );
+  position: relative;
+}
+
+.step-connector::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid var(--coaching-primary);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+/* ============================================
+   COACHES SECTION
+   ============================================ */
+.coaches-section {
+  background: var(--coaching-bg);
+}
+
+.section-header-with-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.section-header-left {
+  flex: 1;
+}
+
+.section-header-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--coaching-card-bg);
+  border: 1px solid var(--coaching-border);
+  border-radius: 10px;
+  padding: 0.375rem;
+}
+
+.toggle-btn {
+  padding: 0.625rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--coaching-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.toggle-btn.active {
+  background: var(--coaching-primary);
+  color: white;
+}
+
+.sort-select {
+  padding: 0.75rem 1.25rem;
+  background: var(--coaching-card-bg);
+  border: 1px solid var(--coaching-border);
+  border-radius: 10px;
+  color: var(--coaching-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.sort-select:hover {
+  border-color: var(--coaching-primary);
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--coaching-primary);
+}
+
+/* ============================================
+   COACH CARDS
+   ============================================ */
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.coach-card {
+  background: var(--coaching-card-bg);
+  border: 1px solid var(--coaching-border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.coach-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--coaching-primary);
+  box-shadow: var(--shadow-xl);
+}
+
+.coach-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.coach-badge-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.coach-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.coach-badge.verified {
+  background: var(--success-light);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.coach-badge.popular {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+
+.coach-badge.premium {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.2),
+    rgba(255, 215, 0, 0.2)
+  );
+  color: var(--coaching-primary);
+  border: 1px solid var(--coaching-primary);
+}
+
+.btn-wishlist {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--coaching-border);
+  color: var(--coaching-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-wishlist:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.btn-wishlist.active {
+  background: var(--error);
+  color: white;
+}
+
+.btn-wishlist.active i {
+  font-weight: 900;
+}
+
+/* Coach Profile */
+.coach-profile {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.coach-avatar {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.coach-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--coaching-primary);
+  object-fit: cover;
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--success);
+  border: 3px solid var(--coaching-card-bg);
+  box-shadow: 0 0 8px var(--success);
+}
+
+.online-indicator.offline {
+  background: var(--coaching-text-secondary);
+  box-shadow: none;
+}
+
+.coach-info {
+  flex: 1;
+}
+
+.coach-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--coaching-text);
+  margin: 0 0 0.375rem 0;
+}
+
+.coach-title {
+  font-size: 0.95rem;
+  color: var(--coaching-text-secondary);
+  margin: 0 0 0.75rem 0;
+}
+
+.coach-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.stars i {
+  color: var(--coaching-primary);
+  font-size: 0.875rem;
+}
+
+.rating-text {
+  font-size: 0.875rem;
+  color: var(--coaching-text-secondary);
+}
+
+/* Specialties */
+.coach-specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.specialty-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--coaching-border);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--coaching-text-secondary);
+}
+
+.specialty-tag.premium {
+  background: var(--coaching-primary-light);
+  border-color: var(--coaching-primary);
+  color: var(--coaching-primary);
+}
+
+/* Coach Stats */
+.coach-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  color: var(--coaching-text-secondary);
+}
+
+.stat-item i {
+  color: var(--coaching-primary);
+}
+
+/* Description */
+.coach-description {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--coaching-primary);
+  border-radius: 8px;
+}
+
+.coach-description p {
+  font-size: 0.95rem;
+  color: var(--coaching-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Pricing */
+.coach-pricing {
+  padding: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.05),
+    rgba(59, 130, 246, 0.05)
+  );
+  border: 1px solid var(--coaching-border);
+  border-radius: 12px;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.price-label {
+  font-size: 0.85rem;
+  color: var(--coaching-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+}
+
+.price-amount {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--coaching-primary);
+}
+
+.price-period {
+  font-size: 1rem;
+  color: var(--coaching-text-secondary);
+}
+
+.price-note {
+  font-size: 0.85rem;
+  color: var(--coaching-text-secondary);
+}
+
+/* Actions */
+.coach-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-large {
+  padding: 1.125rem 2rem;
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--coaching-primary),
+    var(--coaching-primary-dark)
+  );
+  color: white;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--coaching-text);
+  border: 1px solid var(--coaching-border);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--coaching-primary);
+}
+
+.btn-secondary-outline {
+  background: transparent;
+  color: var(--coaching-text);
+  border: 2px solid var(--coaching-border);
+}
+
+.btn-secondary-outline:hover {
+  border-color: var(--coaching-primary);
+  background: var(--coaching-primary-light);
+  color: var(--coaching-primary);
+}
+
+/* Availability */
+.quick-availability {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--success);
+  border-radius: 10px;
+}
+
+.availability-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--coaching-text-secondary);
+}
+
+.availability-label i {
+  color: var(--success);
+}
+
+.availability-time {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+/* Load More */
+.load-more-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ============================================
+   PRICING SECTION
+   ============================================ */
+.pricing-section {
+  background: linear-gradient(
+    180deg,
+    var(--coaching-bg) 0%,
+    #0f1419 50%,
+    var(--coaching-bg) 100%
+  );
+}
+
+.pricing-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.pricing-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--coaching-card-bg);
+  border: 2px solid var(--coaching-border);
+  border-radius: 50px;
+  color: var(--coaching-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.pricing-toggle-btn:hover {
+  border-color: var(--coaching-primary);
+}
+
+.pricing-toggle-btn.active {
+  background: var(--coaching-primary);
+  border-color: var(--coaching-primary);
+  color: white;
+}
+
+.save-badge {
+  padding: 0.25rem 0.625rem;
+  background: var(--success);
+  border-radius: 12px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-card {
+  background: var(--coaching-card-bg);
+  border: 2px solid var(--coaching-border);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--coaching-primary);
+  box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.popular {
+  border-color: var(--coaching-primary);
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.05),
+    rgba(59, 130, 246, 0.05)
+  );
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--coaching-primary),
+    var(--coaching-primary-dark)
+  );
+  border-radius: 50px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricing-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--coaching-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.pricing-subtitle {
+  font-size: 0.95rem;
+  color: var(--coaching-text-secondary);
+  margin: 0;
+}
+
+.pricing-price {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--coaching-border);
+  margin-bottom: 2rem;
+}
+
+.price-currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--coaching-text-secondary);
+  vertical-align: super;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 0;
+  font-size: 0.95rem;
+  color: var(--coaching-text);
+}
+
+.pricing-features li i {
+  color: var(--success);
+  font-size: 1.1rem;
+}
+
+.pricing-features li.feature-disabled {
+  color: var(--coaching-text-secondary);
+  opacity: 0.5;
+}
+
+.pricing-features li.feature-disabled i {
+  color: var(--coaching-text-secondary);
+}
+
+.pricing-note {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--coaching-primary-light);
+  border: 1px solid var(--coaching-primary);
+  border-radius: 12px;
+  color: var(--coaching-text);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+.pricing-note i {
+  color: var(--coaching-primary);
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials-section {
+  background: var(--coaching-bg);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--coaching-card-bg);
+  border: 1px solid var(--coaching-border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all var(--transition-base);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--coaching-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--coaching-primary);
+}
+
+.testimonial-info {
+  flex: 1;
+}
+
+.testimonial-info h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--coaching-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.testimonial-info p {
+  font-size: 0.875rem;
+  color: var(--coaching-text-secondary);
+  margin: 0;
+}
+
+.testimonial-rating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.testimonial-rating i {
+  color: var(--coaching-primary);
+  font-size: 0.875rem;
+}
+
+.testimonial-content p {
+  font-size: 0.95rem;
+  color: var(--coaching-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.testimonial-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--coaching-border);
+}
+
+.testimonial-date,
+.testimonial-verified {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.85rem;
+  color: var(--coaching-text-secondary);
+}
+
+.testimonial-verified {
+  color: var(--success);
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq-section {
+  background: linear-gradient(180deg, var(--coaching-bg) 0%, #0f1419 100%);
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--coaching-card-bg);
+  border: 1px solid var(--coaching-border);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+  border-color: var(--coaching-primary);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  border: none;
+  color: var(--coaching-text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.faq-question:hover {
+  color: var(--coaching-primary);
+}
+
+.faq-question i {
+  color: var(--coaching-primary);
+  transition: transform var(--transition-base);
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.faq-answer p {
+  padding: 0 2rem 1.5rem;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--coaching-text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+  background: linear-gradient(135deg, #0a0e14 0%, #1a1f2e 100%);
+  padding: 6rem 0;
+}
+
+.cta-card {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1),
+    rgba(59, 130, 246, 0.1)
+  );
+  border: 2px solid var(--coaching-primary);
+  border-radius: 30px;
+  padding: 4rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(212, 175, 55, 0.1),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--coaching-text);
+  margin: 0 0 1rem 0;
+}
+
+.cta-subtitle {
+  font-size: 1.25rem;
+  color: var(--coaching-text-secondary);
+  margin: 0 0 3rem 0;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cta-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  font-size: 0.95rem;
+  color: var(--coaching-text-secondary);
+  margin: 0;
+}
+
+.cta-guarantee i {
+  color: var(--success);
+  font-size: 1.25rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1200px) {
+  .coaches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-connector {
+    height: 60px;
+    width: 2px;
+    margin: 0 auto;
+    background: linear-gradient(
+      to bottom,
+      var(--coaching-border),
+      var(--coaching-primary),
+      var(--coaching-border)
+    );
+  }
+
+  .step-connector::after {
+    right: 50%;
+    top: 100%;
+    transform: translateX(50%) rotate(90deg);
+  }
+
+  .trust-indicators {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .coaching-hero {
+    padding: 5rem 0 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .filter-card {
+    padding: 1.5rem;
+  }
+
+  .filter-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .coaches-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header-with-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .section-header-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.875rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .trust-indicators {
+    grid-template-columns: 1fr;
+  }
+
+  .coach-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-card {
+    padding: 1.25rem;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.btn-primary:hover {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+*:focus-visible {
+  outline: 2px solid var(--coaching-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

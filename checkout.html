@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Checkout - Perfect Chess Academy</title>
+    <meta
+      name="description"
+      content="Complete your purchase securely with multiple payment options. Free shipping on orders above ₹999."
+    />
+
+    <!-- Existing Stylesheets -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+
+    <!-- NEW: Checkout CSS -->
+    <link rel="stylesheet" href="assets/css/checkout.css" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Razorpay SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+  <body class="checkout-body">
+    <!-- Simplified Header for Checkout -->
+    <header class="checkout-header">
+      <div class="container-fluid">
+        <nav class="checkout-nav">
+          <a href="shop.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Shop</span>
+          </a>
+
+          <div class="logo-checkout">
+            <img
+              src="logo-removebg-preview.png"
+              alt="Perfect Chess Academy"
+              height="50"
+            />
+          </div>
+
+          <div class="secure-badge">
+            <i class="fas fa-lock"></i>
+            <span>Secure Checkout</span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="checkout-container">
+      <!-- Progress Indicator -->
+      <div class="progress-container">
+        <div class="progress-wrapper">
+          <div class="progress-step completed" data-step="1">
+            <div class="step-circle">
+              <span class="step-number">1</span>
+              <i class="fas fa-check step-icon"></i>
+            </div>
+            <div class="step-info">
+              <span class="step-label">Contact</span>
+              <span class="step-desc">Your details</span>
+            </div>
+          </div>
+
+          <div class="progress-connector">
+            <div class="connector-line"></div>
+          </div>
+
+          <div class="progress-step active" data-step="2">
+            <div class="step-circle">
+              <span class="step-number">2</span>
+              <i class="fas fa-check step-icon"></i>
+            </div>
+            <div class="step-info">
+              <span class="step-label">Shipping</span>
+              <span class="step-desc">Delivery address</span>
+            </div>
+          </div>
+
+          <div class="progress-connector">
+            <div class="connector-line"></div>
+          </div>
+
+          <div class="progress-step" data-step="3">
+            <div class="step-circle">
+              <span class="step-number">3</span>
+              <i class="fas fa-check step-icon"></i>
+            </div>
+            <div class="step-info">
+              <span class="step-label">Payment</span>
+              <span class="step-desc">Complete order</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Checkout Grid -->
+      <div class="checkout-grid">
+        <!-- LEFT: Forms Section -->
+        <div class="checkout-main-content">
+          <!-- STEP 1: CONTACT INFORMATION -->
+          <section class="checkout-card" id="step1" data-step="1">
+            <div class="card-header">
+              <div class="header-icon">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="header-content">
+                <h2 class="card-title">Contact Information</h2>
+                <p class="card-subtitle">
+                  We'll use this to send order updates
+                </p>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <!-- Mode Toggle -->
+              <div class="auth-toggle">
+                <button class="auth-btn active" data-mode="guest">
+                  <i class="fas fa-user"></i>
+                  <span>Continue as Guest</span>
+                </button>
+                <button class="auth-btn" data-mode="login">
+                  <i class="fas fa-sign-in-alt"></i>
+                  <span>Login for Faster Checkout</span>
+                </button>
+              </div>
+
+              <!-- Contact Form -->
+              <form id="contactForm" class="checkout-form">
+                <div class="form-group">
+                  <label for="email" class="form-label">
+                    Email Address
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="input-icon fas fa-envelope"></i>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-input"
+                      placeholder="your.email@example.com"
+                      required
+                      autocomplete="email"
+                    />
+                  </div>
+                  <span class="field-error" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">
+                    Phone Number
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="phone-input-wrapper">
+                    <select class="country-select" id="countryCode">
+                      <option value="+91" selected>🇮🇳 +91</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+971">🇦🇪 +971</option>
+                    </select>
+                    <div class="input-wrapper flex-1">
+                      <i class="input-icon fas fa-phone"></i>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="form-input"
+                        placeholder="9876543210"
+                        pattern="[0-9]{10}"
+                        required
+                        autocomplete="tel"
+                      />
+                    </div>
+                  </div>
+                  <span class="field-error" id="phone-error"></span>
+                  <span class="field-hint">
+                    <i class="fab fa-whatsapp"></i>
+                    We'll send order updates via WhatsApp
+                  </span>
+                </div>
+
+                <div class="checkbox-wrapper">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="whatsappUpdates"
+                      checked
+                      class="checkbox-input"
+                    />
+                    <span class="checkbox-custom">
+                      <i class="fas fa-check"></i>
+                    </span>
+                    <span class="checkbox-text"
+                      >Send me order updates on WhatsApp</span
+                    >
+                  </label>
+                </div>
+              </form>
+            </div>
+
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn-primary btn-large"
+                onclick="goToStep(2)"
+              >
+                <span>Continue to Shipping</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 2: SHIPPING INFORMATION -->
+          <section
+            class="checkout-card"
+            id="step2"
+            data-step="2"
+            style="display: none"
+          >
+            <div class="card-header">
+              <div class="header-icon">
+                <i class="fas fa-truck"></i>
+              </div>
+              <div class="header-content">
+                <h2 class="card-title">Shipping Address</h2>
+                <p class="card-subtitle">Where should we deliver your order?</p>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <form id="shippingForm" class="checkout-form">
+                <div class="form-group">
+                  <label for="fullName" class="form-label">
+                    Full Name
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="input-icon fas fa-user"></i>
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      class="form-input"
+                      placeholder="Enter your full name"
+                      required
+                      autocomplete="name"
+                    />
+                  </div>
+                  <span class="field-error" id="fullName-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="address" class="form-label">
+                    Street Address
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="input-icon fas fa-map-marker-alt"></i>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      class="form-input"
+                      placeholder="House No., Building, Street"
+                      required
+                      autocomplete="address-line1"
+                    />
+                  </div>
+                  <span class="field-error" id="address-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="address2" class="form-label">
+                    Apartment, Suite, etc. (Optional)
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="input-icon fas fa-building"></i>
+                    <input
+                      type="text"
+                      id="address2"
+                      name="address2"
+                      class="form-input"
+                      placeholder="Apartment, Floor, Landmark"
+                      autocomplete="address-line2"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="city" class="form-label">
+                      City
+                      <span class="required-star">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <i class="input-icon fas fa-city"></i>
+                      <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        class="form-input"
+                        placeholder="City"
+                        required
+                        autocomplete="address-level2"
+                      />
+                    </div>
+                    <span class="field-error" id="city-error"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="pincode" class="form-label">
+                      Pincode
+                      <span class="required-star">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <i class="input-icon fas fa-map-pin"></i>
+                      <input
+                        type="text"
+                        id="pincode"
+                        name="pincode"
+                        class="form-input"
+                        placeholder="334001"
+                        pattern="[0-9]{6}"
+                        maxlength="6"
+                        required
+                        autocomplete="postal-code"
+                      />
+                    </div>
+                    <span class="field-error" id="pincode-error"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="state" class="form-label">
+                    State
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="input-icon fas fa-map"></i>
+                    <select
+                      id="state"
+                      name="state"
+                      class="form-input"
+                      required
+                      autocomplete="address-level1"
+                    >
+                      <option value="">Select State</option>
+                      <option value="RJ" selected>Rajasthan</option>
+                      <option value="DL">Delhi</option>
+                      <option value="MH">Maharashtra</option>
+                      <option value="KA">Karnataka</option>
+                      <option value="TN">Tamil Nadu</option>
+                      <option value="UP">Uttar Pradesh</option>
+                      <option value="GJ">Gujarat</option>
+                      <option value="WB">West Bengal</option>
+                      <option value="AP">Andhra Pradesh</option>
+                      <option value="TG">Telangana</option>
+                      <option value="BR">Bihar</option>
+                      <option value="MP">Madhya Pradesh</option>
+                      <option value="HR">Haryana</option>
+                      <option value="PB">Punjab</option>
+                      <option value="KL">Kerala</option>
+                      <!-- Add more states as needed -->
+                    </select>
+                  </div>
+                  <span class="field-error" id="state-error"></span>
+                </div>
+
+                <div class="address-type-selector">
+                  <label class="form-label">Address Type</label>
+                  <div class="radio-group">
+                    <label class="radio-card">
+                      <input
+                        type="radio"
+                        name="addressType"
+                        value="home"
+                        checked
+                      />
+                      <span class="radio-content">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="addressType" value="office" />
+                      <span class="radio-content">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Office</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="checkbox-wrapper">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="saveAddress"
+                      class="checkbox-input"
+                    />
+                    <span class="checkbox-custom">
+                      <i class="fas fa-check"></i>
+                    </span>
+                    <span class="checkbox-text"
+                      >Save this address for future orders</span
+                    >
+                  </label>
+                </div>
+              </form>
+            </div>
+
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn-secondary btn-large"
+                onclick="goToStep(1)"
+              >
+                <i class="fas fa-arrow-left"></i>
+                <span>Back</span>
+              </button>
+              <button
+                type="button"
+                class="btn-primary btn-large"
+                onclick="goToStep(3)"
+              >
+                <span>Continue to Payment</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 3: PAYMENT METHOD -->
+          <section
+            class="checkout-card"
+            id="step3"
+            data-step="3"
+            style="display: none"
+          >
+            <div class="card-header">
+              <div class="header-icon">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <div class="header-content">
+                <h2 class="card-title">Payment Method</h2>
+                <p class="card-subtitle">
+                  All transactions are secure and encrypted
+                </p>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <!-- Payment Methods -->
+              <div class="payment-options">
+                <!-- Online Payment -->
+                <label class="payment-card active" data-method="online">
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="online"
+                    checked
+                  />
+                  <div class="payment-card-content">
+                    <div class="payment-header">
+                      <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                      </div>
+                      <div class="payment-info">
+                        <h4>Pay Online</h4>
+                        <p>UPI • Cards • Netbanking • Wallets</p>
+                      </div>
+                      <div class="payment-check">
+                        <i class="fas fa-check-circle"></i>
+                      </div>
+                    </div>
+                    <div class="payment-badges">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg"
+                        alt="UPI"
+                        height="16"
+                      />
+                      <i class="fab fa-cc-visa"></i>
+                      <i class="fab fa-cc-mastercard"></i>
+                      <i class="fab fa-cc-amex"></i>
+                      <i class="fab fa-google-pay"></i>
+                      <span class="more-badge">+More</span>
+                    </div>
+                  </div>
+                  <div class="payment-details">
+                    <div class="security-info">
+                      <i class="fas fa-shield-alt"></i>
+                      <div>
+                        <strong>100% Secure Payment</strong>
+                        <p>
+                          Powered by Razorpay. Your data is encrypted and never
+                          stored.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+
+                <!-- Cash on Delivery -->
+                <label class="payment-card" data-method="cod">
+                  <input type="radio" name="paymentMethod" value="cod" />
+                  <div class="payment-card-content">
+                    <div class="payment-header">
+                      <div class="payment-icon cod">
+                        <i class="fas fa-money-bill-wave"></i>
+                      </div>
+                      <div class="payment-info">
+                        <h4>Cash on Delivery</h4>
+                        <p>Pay when you receive your order</p>
+                      </div>
+                      <div class="payment-check">
+                        <i class="fas fa-check-circle"></i>
+                      </div>
+                    </div>
+                    <div class="payment-badges">
+                      <span class="cod-charge">+₹50 COD Charges</span>
+                    </div>
+                  </div>
+                  <div class="payment-details">
+                    <div class="security-info warning">
+                      <i class="fas fa-info-circle"></i>
+                      <div>
+                        <strong>Additional Charges Apply</strong>
+                        <p>₹50 handling fee for cash on delivery orders.</p>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Coupon Section -->
+              <div class="coupon-section">
+                <button
+                  class="coupon-toggle"
+                  id="couponToggle"
+                  onclick="toggleCouponForm()"
+                >
+                  <div class="coupon-toggle-content">
+                    <i class="fas fa-tag"></i>
+                    <span>Apply Coupon Code</span>
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+
+                <div
+                  class="coupon-content"
+                  id="couponContent"
+                  style="display: none"
+                >
+                  <div class="coupon-input-group">
+                    <input
+                      type="text"
+                      id="couponCode"
+                      class="coupon-input"
+                      placeholder="Enter coupon code"
+                      maxlength="20"
+                    />
+                    <button
+                      type="button"
+                      class="btn-apply"
+                      onclick="applyCoupon()"
+                    >
+                      Apply
+                    </button>
+                  </div>
+                  <div class="coupon-message" id="couponMessage"></div>
+
+                  <!-- Available Offers -->
+                  <div class="available-offers">
+                    <h4 class="offers-title">Available Offers</h4>
+
+                    <div
+                      class="offer-card"
+                      onclick="applyCouponCode('FIRST100')"
+                    >
+                      <div class="offer-left">
+                        <div class="offer-code">FIRST100</div>
+                        <div class="offer-details">
+                          <p class="offer-title">₹100 off on first order</p>
+                          <p class="offer-condition">Min. order ₹999</p>
+                        </div>
+                      </div>
+                      <button class="offer-apply-btn">Apply</button>
+                    </div>
+
+                    <div
+                      class="offer-card"
+                      onclick="applyCouponCode('CHESS20')"
+                    >
+                      <div class="offer-left">
+                        <div class="offer-code">CHESS20</div>
+                        <div class="offer-details">
+                          <p class="offer-title">20% off up to ₹500</p>
+                          <p class="offer-condition">On all chess products</p>
+                        </div>
+                      </div>
+                      <button class="offer-apply-btn">Apply</button>
+                    </div>
+
+                    <div
+                      class="offer-card"
+                      onclick="applyCouponCode('FREESHIP')"
+                    >
+                      <div class="offer-left">
+                        <div class="offer-code">FREESHIP</div>
+                        <div class="offer-details">
+                          <p class="offer-title">Free Shipping</p>
+                          <p class="offer-condition">On all orders</p>
+                        </div>
+                      </div>
+                      <button class="offer-apply-btn">Apply</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn-secondary btn-large"
+                onclick="goToStep(2)"
+              >
+                <i class="fas fa-arrow-left"></i>
+                <span>Back</span>
+              </button>
+              <button
+                type="button"
+                class="btn-primary btn-large btn-place-order"
+                id="placeOrderBtn"
+                onclick="processPayment()"
+              >
+                <i class="fas fa-lock"></i>
+                <span>Place Order</span>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT: Order Summary Sidebar -->
+        <aside class="order-summary-sidebar">
+          <div class="summary-sticky">
+            <div class="summary-header">
+              <h3>
+                <i class="fas fa-shopping-bag"></i>
+                Order Summary
+              </h3>
+              <button
+                class="summary-toggle mobile-only"
+                onclick="toggleOrderSummary()"
+              >
+                <span id="summaryItemCount">3 items</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+
+            <div class="summary-body" id="orderSummaryBody">
+              <!-- Cart Items -->
+              <div class="summary-items" id="summaryItems">
+                <!-- Items populated by JavaScript -->
+                <div class="summary-item">
+                  <div class="item-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=150"
+                      alt="Product"
+                    />
+                  </div>
+                  <div class="item-details">
+                    <h4 class="item-title">
+                      Premium Wooden Chess Set with Board
+                    </h4>
+                    <p class="item-meta">Qty: 1</p>
+                    <p class="item-price">₹2,499</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pricing Breakdown -->
+              <div class="summary-divider"></div>
+
+              <div class="summary-pricing">
+                <div class="pricing-row">
+                  <span>Subtotal</span>
+                  <span id="summarySubtotal">₹2,499</span>
+                </div>
+                <div class="pricing-row">
+                  <span>Shipping</span>
+                  <span class="text-success" id="summaryShipping">FREE</span>
+                </div>
+                <div
+                  class="pricing-row discount-row"
+                  id="discountRow"
+                  style="display: none"
+                >
+                  <span>
+                    Discount
+                    <span class="discount-tag" id="appliedCouponCode"></span>
+                  </span>
+                  <span class="text-success" id="summaryDiscount">-₹0</span>
+                </div>
+                <div
+                  class="pricing-row cod-row"
+                  id="codRow"
+                  style="display: none"
+                >
+                  <span>COD Charges</span>
+                  <span id="summaryCOD">₹50</span>
+                </div>
+                <div class="pricing-row">
+                  <span>GST (18%)</span>
+                  <span id="summaryTax">₹450</span>
+                </div>
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <!-- Total -->
+              <div class="summary-total">
+                <span class="total-label">Total Amount</span>
+                <span class="total-amount" id="summaryTotal">₹2,949</span>
+              </div>
+
+              <p class="total-note">
+                <i class="fas fa-info-circle"></i>
+                Inclusive of all taxes
+              </p>
+
+              <!-- Trust Badges -->
+              <div class="trust-badges">
+                <div class="trust-item">
+                  <i class="fas fa-shield-alt"></i>
+                  <span>Secure Payment</span>
+                </div>
+                <div class="trust-item">
+                  <i class="fas fa-undo"></i>
+                  <span>Easy Returns</span>
+                </div>
+                <div class="trust-item">
+                  <i class="fas fa-headset"></i>
+                  <span>24/7 Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+      <div class="modal-overlay" onclick="closeSuccessModal()"></div>
+      <div class="modal-container">
+        <div class="success-animation">
+          <div class="success-checkmark">
+            <svg
+              class="checkmark"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 52 52"
+            >
+              <circle
+                class="checkmark-circle"
+                cx="26"
+                cy="26"
+                r="25"
+                fill="none"
+              />
+              <path
+                class="checkmark-check"
+                fill="none"
+                d="M14.1 27.2l7.1 7.2 16.7-16.8"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="success-content">
+          <h2>Order Placed Successfully!</h2>
+          <p class="order-id">
+            Order #<span id="orderNumberDisplay">PCA1234567890</span>
+          </p>
+          <p class="success-message">
+            Thank you for your purchase! We've sent a confirmation email to
+            <strong id="confirmEmail">your.email@example.com</strong>
+          </p>
+
+          <div class="success-info">
+            <div class="info-item">
+              <i class="fas fa-box"></i>
+              <span>Delivery in 3-5 business days</span>
+            </div>
+            <div class="info-item">
+              <i class="fab fa-whatsapp"></i>
+              <span>Track via WhatsApp</span>
+            </div>
+          </div>
+
+          <div class="success-actions">
+            <button class="btn-primary btn-large" onclick="viewOrderDetails()">
+              <i class="fas fa-receipt"></i>
+              <span>View Order Details</span>
+            </button>
+            <button
+              class="btn-secondary btn-large"
+              onclick="continueShopping()"
+            >
+              <span>Continue Shopping</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-content">
+        <div class="loader"></div>
+        <p>Processing your order...</p>
+      </div>
+    </div>
+
+    <!-- Minimal Footer -->
+    <footer class="checkout-footer">
+      <div class="container-fluid">
+        <div class="footer-content">
+          <p>&copy; 2026 Perfect Chess Academy. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="contact.html">Support</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="assets/js/shop.js"></script>
+    <script src="assets/js/checkout.js"></script>
+  </body>
+</html>

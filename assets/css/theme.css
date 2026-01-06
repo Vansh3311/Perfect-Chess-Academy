@@ -1,0 +1,290 @@
+/* CSS Custom Properties for Theme System */
+:root {
+  --header-h: 70px; /* Header height variable */
+  
+  /* Default Dark Theme */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --bg-glass: rgba(31, 41, 55, 0.8);
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --accent-primary: #f59e0b;
+  --accent-secondary: #fbbf24;
+  --accent-hover: #d97706;
+  --border-primary: rgba(245, 158, 11, 0.2);
+  --border-secondary: rgba(249, 250, 251, 0.1);
+  --shadow-primary: 0 10px 40px rgba(0, 0, 0, 0.3);
+  --shadow-accent: 0 10px 30px rgba(245, 158, 11, 0.3);
+  --gradient-primary: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  --gradient-hero: linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%);
+  --logo-filter-light: none;
+
+  /* Showcase Colors */
+  --showcase-default-1: #f59e0b;
+  --showcase-default-2: #1f2937;
+  --showcase-default-3: #f9fafb;
+  --showcase-ocean-1: #0ea5e9;
+  --showcase-ocean-2: #0c4a6e;
+  --showcase-ocean-3: #f0f9ff;
+  --showcase-forest-1: #22c55e;
+  --showcase-forest-2: #14532d;
+  --showcase-forest-3: #f0fdf4;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  
+  /* Chess Board Colors */
+  --color-chess-light: #F0D9B5;
+  --color-chess-dark: #B58863;
+
+  /* Typography */
+  --font-family-display: 'Playfair Display', Georgia, serif;
+
+  /* Border Radius */
+  --radius-full: 9999px;
+  --radius-base: 0.5rem; /* 8px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.5rem; /* 24px */
+}
+
+/* Light theme */
+body.light-mode {
+  --bg-primary: #ffffff;
+  --logo-filter-light: invert(0%) grayscale(100%) brightness(0%);
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #a78bfa;
+  --accent-hover: #7c3aed;
+  --border-primary: rgba(139, 92, 246, 0.2);
+  --border-secondary: rgba(0, 0, 0, 0.1);
+  --shadow-primary: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --shadow-accent: 0 10px 30px rgba(139, 92, 246, 0.2);
+  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  --gradient-hero: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+
+  /* Preserve a separate variable for 'dark' accent so some buttons can remain orange
+     even when the site switches to light-mode. Use this for intentional, pinned CTAs. */
+  --accent-primary-dark: #f59e0b;
+
+  /* Showcase Colors */
+  --showcase-default-1: #8b5cf6;
+  --showcase-default-2: #f3f4f6;
+  --showcase-default-3: #111827;
+  --showcase-ocean-1: #0ea5e9;
+  --showcase-ocean-2: #f0f9ff;
+  --showcase-ocean-3: #0c4a6e;
+  --showcase-forest-1: #22c55e;
+  --showcase-forest-2: #f0fdf4;
+  --showcase-forest-3: #14532d;
+}
+
+body[data-theme="ocean"] {
+  --accent-primary: #0ea5e9;
+  --accent-secondary: #38bdf8;
+  --accent-hover: #0284c7;
+  /* Make gradient & shadow follow the ocean theme */
+  --gradient-accent: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  --shadow-accent: 0 12px 34px rgba(14,165,233,0.18);
+}
+
+body[data-theme="forest"] {
+  --accent-primary: #22c55e;
+  --accent-secondary: #4ade80;
+  --accent-hover: #16a34a;
+  --gradient-accent: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  --shadow-accent: 0 12px 34px rgba(34,197,94,0.12);
+}
+
+/* Default fallbacks for the dark-accent variable used to pin orange buttons */
+:root {
+  --accent-primary-dark: #f59e0b;
+}
+
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-tertiary);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-primary);
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 25px;
+  background: var(--border-secondary);
+  border-radius: 25px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.toggle-switch.active {
+  background: var(--accent-primary);
+}
+
+.toggle-switch::before {
+  content: "";
+  width: 21px;
+  height: 21px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch.active::before {
+  transform: translateX(25px);
+}
+
+/* Enhanced Settings Panel Elements */
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-tertiary);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-secondary);
+}
+
+.font-btn {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 0.25rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.font-btn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+#font-display {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 60px;
+  text-align: center;
+}
+
+.experimental-tag {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--border-secondary);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-left: 0.5rem;
+}
+
+.theme-palette-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.theme-palette {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.theme-palette.active {
+    border-color: var(--accent-primary);
+}
+
+.theme-palette div {
+    width: 50px;
+    height: 20px;
+    border-radius: 0.25rem;
+}
+
+.settings-actions {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-secondary);
+}
+
+.settings-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.custom-cursor-trail {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.05s linear;
+}
+
+.no-visual-effects .hero-figure img {
+    animation: none;
+}
+
+/* If the user disables visual effects, reduce animations and transitions globally */
+.no-visual-effects * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Mouse trail canvas visibility tied to setting */
+body.mouse-trail-active #mouse-trail-canvas {
+  display: block !important;
+}
+body:not(.mouse-trail-active) #mouse-trail-canvas {
+  display: none !important;
+}
+
+/* Global fallback to ensure primary buttons respect theme variables
+   This enforces contrast across pages that may override .btn-primary. */
+.btn-primary {
+  background: var(--gradient-accent) !important;
+  color: var(--bg-primary) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  color: var(--bg-primary) !important;
+}

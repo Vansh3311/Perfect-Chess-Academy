@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Chronicles | Perfect Chess Academy Blog</title>
+    <meta name="description" content="Expert chess strategies, tutorials, and insights from Perfect Chess Academy. Learn from grandmasters and improve your game.">
+    
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/utils.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    
+    <!-- NEW: Modern Blog CSS -->
+    <link rel="stylesheet" href="b.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-bar" id="readingProgress"></div>
+
+    <!-- Your existing header -->
+    <header>
+        <!-- Keep your existing header -->
+    </header>
+
+    <!-- ============================================
+         HERO SECTION - MAGAZINE STYLE
+         ============================================ -->
+    <section class="blog-hero-modern">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span aria-current="page">Blog</span>
+            </nav>
+
+            <!-- Hero Content -->
+            <div class="hero-content-modern">
+                <span class="hero-eyebrow">Chess Chronicles</span>
+                <h1 class="hero-title-modern">
+                    Master Chess Through
+                    <span class="title-highlight">Expert Insights</span>
+                </h1>
+                <p class="hero-description">
+                    Strategies, tactics, and stories from grandmasters and titled players.
+                    <strong>Updated weekly.</strong>
+                </p>
+            </div>
+
+            <!-- Live Stats Bar -->
+            <div class="hero-stats-bar">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="stat-data">
+                        <strong>2,500+</strong>
+                        <span>Articles</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-data">
+                        <strong>50K+</strong>
+                        <span>Readers</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="stat-data">
+                        <strong>Top 1%</strong>
+                        <span>Chess Blogs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURED ARTICLE - HERO CARD
+         ============================================ -->
+    <section class="featured-hero-section">
+        <div class="container">
+            <article class="featured-hero-card">
+                <!-- Image Side -->
+                <div class="featured-image-side">
+                    <img src="assets/Images/background.webp" alt="Featured article" loading="eager">
+                    <div class="image-overlay">
+                        <span class="featured-badge">
+                            <i class="fas fa-star"></i>
+                            Featured
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="featured-content-side">
+                    <!-- Category Tag -->
+                    <span class="category-tag strategy">
+                        <i class="fas fa-chess-king"></i>
+                        Strategy
+                    </span>
+
+                    <!-- Title -->
+                    <h2 class="featured-article-title">
+                        <a href="italian-opening-blog.html">
+                            Master the Italian Opening: 5 Tactics That Win Games
+                        </a>
+                    </h2>
+
+                    <!-- Excerpt -->
+                    <p class="featured-excerpt">
+                        Discover the powerful opening moves that helped our students gain 200 rating points in just 3 months. Learn the psychology behind strong openings and tactical traps grandmasters use.
+                    </p>
+
+                    <!-- Meta Information -->
+                    <div class="article-meta-modern">
+                        <div class="author-info-compact">
+                            <img src="assets/Images/background.webp" alt="FM Kapil Panwar" class="author-avatar-small">
+                            <div class="author-details-mini">
+                                <span class="author-name">FM Kapil Panwar</span>
+                                <span class="post-date">Dec 24, 2025</span>
+                            </div>
+                        </div>
+                        <div class="meta-badges">
+                            <span class="read-time">
+                                <i class="fas fa-clock"></i>
+                                8 min
+                            </span>
+                            <span class="views-count">
+                                <i class="fas fa-eye"></i>
+                                15.2K
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="italian-opening-blog.html" class="btn-read-featured">
+                        <span>Read Full Article</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FILTER & SEARCH BAR - STICKY
+         ============================================ -->
+    <section class="filter-section-modern" id="filterSection">
+        <div class="container">
+            <div class="filter-wrapper-modern">
+                <!-- Search Bar -->
+                <div class="search-container-modern">
+                    <i class="fas fa-search search-icon-modern"></i>
+                    <input 
+                        type="search" 
+                        id="searchInput" 
+                        class="search-input-modern" 
+                        placeholder="Search articles..."
+                        aria-label="Search articles"
+                    >
+                </div>
+
+                <!-- Category Pills -->
+                <div class="category-pills-modern">
+                    <button class="category-pill active" data-category="all">
+                        All Articles
+                        <span class="pill-count">250</span>
+                    </button>
+                    <button class="category-pill" data-category="strategy">
+                        <i class="fas fa-chess-king"></i>
+                        Strategy
+                        <span class="pill-count">85</span>
+                    </button>
+                    <button class="category-pill" data-category="tactics">
+                        <i class="fas fa-chess-knight"></i>
+                        Tactics
+                        <span class="pill-count">92</span>
+                    </button>
+                    <button class="category-pill" data-category="openings">
+                        <i class="fas fa-chess-board"></i>
+                        Openings
+                        <span class="pill-count">48</span>
+                    </button>
+                    <button class="category-pill" data-category="endgames">
+                        <i class="fas fa-flag-checkered"></i>
+                        Endgames
+                        <span class="pill-count">32</span>
+                    </button>
+                    <button class="category-pill" data-category="students">
+                        <i class="fas fa-graduation-cap"></i>
+                        Student Stories
+                        <span class="pill-count">28</span>
+                    </button>
+                </div>
+
+                <!-- Sort Dropdown -->
+                <div class="sort-dropdown-modern">
+                    <select id="sortSelect" class="sort-select-modern" aria-label="Sort articles">
+                        <option value="recent">Most Recent</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="trending">Trending</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Active Filters Display -->
+            <div class="active-filters" id="activeFilters">
+                <!-- Dynamic filter tags will appear here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TRENDING SECTION - HORIZONTAL SCROLL
+         ============================================ -->
+    <section class="trending-section-modern">
+        <div class="container">
+            <div class="section-header-inline">
+                <h2 class="section-title-modern">
+                    <i class="fas fa-fire"></i>
+                    Trending Now
+                </h2>
+                <div class="scroll-controls">
+                    <button class="scroll-btn scroll-left" aria-label="Scroll left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="scroll-btn scroll-right" aria-label="Scroll right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Horizontal Scroll Container -->
+            <div class="trending-scroll-container" id="trendingScroll">
+                <!-- Trending Card 1 -->
+                <article class="trending-card">
+                    <div class="trending-image">
+                        <img src="assets/Images/background.webp" alt="Tactical Patterns" loading="lazy">
+                        <span class="trending-rank">#1</span>
+                    </div>
+                    <div class="trending-content">
+                        <span class="category-tag tactics">Tactics</span>
+                        <h3 class="trending-title">
+                            <a href="#">10 Advanced Tactical Patterns</a>
+                        </h3>
+                        <div class="trending-meta">
+                            <span><i class="fas fa-eye"></i> 12.5K</span>
+                            <span><i class="fas fa-clock"></i> 12 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trending Card 2 -->
+                <article class="trending-card">
+                    <div class="trending-image">
+                        <img src="assets/Images/background.webp" alt="Endgame Mastery" loading="lazy">
+                        <span class="trending-rank">#2</span>
+                    </div>
+                    <div class="trending-content">
+                        <span class="category-tag endgames">Endgames</span>
+                        <h3 class="trending-title">
+                            <a href="#">7 Endgame Principles for 150+ Rating Gain</a>
+                        </h3>
+                        <div class="trending-meta">
+                            <span><i class="fas fa-eye"></i> 11.3K</span>
+                            <span><i class="fas fa-clock"></i> 15 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trending Card 3 -->
+                <article class="trending-card">
+                    <div class="trending-image">
+                        <img src="assets/Images/background.webp" alt="Student Success" loading="lazy">
+                        <span class="trending-rank">#3</span>
+                    </div>
+                    <div class="trending-content">
+                        <span class="category-tag students">Students</span>
+                        <h3 class="trending-title">
+                            <a href="#">Zero to State Champion: Arjun's Journey</a>
+                        </h3>
+                        <div class="trending-meta">
+                            <span><i class="fas fa-eye"></i> 9.8K</span>
+                            <span><i class="fas fa-clock"></i> 8 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Add 3 more trending cards -->
+                <article class="trending-card">
+                    <div class="trending-image">
+                        <img src="assets/Images/background.webp" alt="Tournament Prep" loading="lazy">
+                        <span class="trending-rank">#4</span>
+                    </div>
+                    <div class="trending-content">
+                        <span class="category-tag tournament">Tournament</span>
+                        <h3 class="trending-title">
+                            <a href="#">Ultimate Tournament Prep Checklist</a>
+                        </h3>
+                        <div class="trending-meta">
+                            <span><i class="fas fa-eye"></i> 8.2K</span>
+                            <span><i class="fas fa-clock"></i> 11 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="trending-card">
+                    <div class="trending-image">
+                        <img src="assets/Images/background.webp" alt="Sicilian Defense" loading="lazy">
+                        <span class="trending-rank">#5</span>
+                    </div>
+                    <div class="trending-content">
+                        <span class="category-tag openings">Openings</span>
+                        <h3 class="trending-title">
+                            <a href="#">Sicilian Defense: Complete Masterclass</a>
+                        </h3>
+                        <div class="trending-meta">
+                            <span><i class="fas fa-eye"></i> 7.9K</span>
+                            <span><i class="fas fa-clock"></i> 14 min</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MAIN ARTICLES GRID - BENTO BOX LAYOUT
+         ============================================ -->
+    <main class="articles-main-section">
+        <div class="container">
+            <div class="section-header-flex">
+                <div>
+                    <h2 class="section-title-modern">Latest Articles</h2>
+                    <p class="section-subtitle-modern">Fresh insights published weekly by titled coaches</p>
+                </div>
+                <div class="results-count">
+                    Showing <strong id="resultCount">250</strong> articles
+                </div>
+            </div>
+
+            <!-- BENTO BOX GRID -->
+            <div class="bento-grid-modern" id="articlesGrid">
+                
+                <!-- Large Feature Card -->
+                <article class="bento-card large-card" data-category="students">
+                    <a href="blog-student-highlights.html" class="card-link-modern">
+                        <div class="bento-image">
+                            <img src="assets/Images/background.webp" alt="Student Success Story" loading="lazy">
+                            <div class="image-gradient"></div>
+                            <span class="category-tag students">
+                                <i class="fas fa-graduation-cap"></i>
+                                Students
+                            </span>
+                        </div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">
+                                From Zero to State Champion: How Arjun Achieved the Impossible
+                            </h3>
+                            <p class="bento-excerpt">
+                                Meet 12-year-old Arjun who went from knowing nothing about chess to winning the state championship in just 18 months.
+                            </p>
+                            <div class="bento-footer">
+                                <div class="author-mini">
+                                    <img src="assets/Images/background.webp" alt="IM Priya Sharma">
+                                    <span>IM Priya Sharma</span>
+                                </div>
+                                <div class="meta-mini">
+                                    <span><i class="fas fa-clock"></i> 6 min</span>
+                                    <span><i class="fas fa-eye"></i> 8.9K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Standard Card 1 -->
+                <article class="bento-card" data-category="tactics">
+                    <a href="#" class="card-link-modern">
+                        <div class="bento-image">
+                            <img src="assets/Images/background.webp" alt="Tactical Patterns" loading="lazy">
+                            <div class="image-gradient"></div>
+                            <span class="category-tag tactics">
+                                <i class="fas fa-chess-knight"></i>
+                                Tactics
+                            </span>
+                        </div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">
+                                10 Advanced Tactical Patterns
+                            </h3>
+                            <p class="bento-excerpt">
+                                Stop missing tactical opportunities with these deflection and clearance patterns.
+                            </p>
+                            <div class="bento-footer">
+                                <div class="author-mini">
+                                    <img src="assets/Images/background.webp" alt="FM Vikram Singh">
+                                    <span>FM Vikram Singh</span>
+                                </div>
+                                <div class="meta-mini">
+                                    <span><i class="fas fa-clock"></i> 12 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Standard Card 2 -->
+                <article class="bento-card" data-category="openings">
+                    <a href="#" class="card-link-modern">
+                        <div class="bento-image">
+                            <img src="assets/Images/background.webp" alt="Sicilian Defense" loading="lazy">
+                            <div class="image-gradient"></div>
+                            <span class="category-tag openings">
+                                <i class="fas fa-chess-board"></i>
+                                Openings
+                            </span>
+                        </div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">
+                                Sicilian Defense Masterclass
+                            </h3>
+                            <p class="bento-excerpt">
+                                Learn the most aggressive response to 1.e4 from 20 years of competitive play.
+                            </p>
+                            <div class="bento-footer">
+                                <div class="author-mini">
+                                    <img src="assets/Images/background.webp" alt="FM Kapil Panwar">
+                                    <span>FM Kapil Panwar</span>
+                                </div>
+                                <div class="meta-mini">
+                                    <span><i class="fas fa-clock"></i> 14 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Wide Card -->
+                <article class="bento-card wide-card" data-category="strategy">
+                    <a href="#" class="card-link-modern">
+                        <div class="wide-card-layout">
+                            <div class="bento-image wide-image">
+                                <img src="assets/Images/background.webp" alt="Parent Guide" loading="lazy">
+                                <div class="image-gradient"></div>
+                            </div>
+                            <div class="bento-content wide-content">
+                                <span class="category-tag strategy">
+                                    <i class="fas fa-chess-king"></i>
+                                    Strategy
+                                </span>
+                                <h3 class="bento-title">
+                                    Complete Parent's Guide: Supporting Your Child's Chess Journey
+                                </h3>
+                                <p class="bento-excerpt">
+                                    Avoid 5 common mistakes that kill your child's love for chess. Learn how to create the perfect learning environment.
+                                </p>
+                                <div class="bento-footer">
+                                    <div class="author-mini">
+                                        <img src="assets/Images/background.webp" alt="GM Rajesh Kumar">
+                                        <span>GM Rajesh Kumar</span>
+                                    </div>
+                                    <div class="meta-mini">
+                                        <span><i class="fas fa-clock"></i> 10 min</span>
+                                        <span><i class="fas fa-eye"></i> 6.8K</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Standard Card 3 -->
+                <article class="bento-card" data-category="endgames">
+                    <a href="#" class="card-link-modern">
+                        <div class="bento-image">
+                            <img src="assets/Images/background.webp" alt="Endgame Principles" loading="lazy">
+                            <div class="image-gradient"></div>
+                            <span class="category-tag endgames">
+                                <i class="fas fa-flag-checkered"></i>
+                                Endgames
+                            </span>
+                        </div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">
+                                7 Essential Endgame Principles
+                            </h3>
+                            <p class="bento-excerpt">
+                                Master fundamental concepts that separate 1200 from 1600 players.
+                            </p>
+                            <div class="bento-footer">
+                                <div class="author-mini">
+                                    <img src="assets/Images/background.webp" alt="FM Vikram Singh">
+                                    <span>FM Vikram Singh</span>
+                                </div>
+                                <div class="meta-mini">
+                                    <span><i class="fas fa-clock"></i> 15 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Standard Card 4 -->
+                <article class="bento-card" data-category="tournament">
+                    <a href="#" class="card-link-modern">
+                        <div class="bento-image">
+                            <img src="assets/Images/background.webp" alt="Tournament Prep" loading="lazy">
+                            <div class="image-gradient"></div>
+                            <span class="category-tag tournament">
+                                <i class="fas fa-trophy"></i>
+                                Tournament
+                            </span>
+                        </div>
+                        <div class="bento-content">
+                            <h3 class="bento-title">
+                                Ultimate Tournament Prep Checklist
+                            </h3>
+                            <p class="bento-excerpt">
+                                Everything you need for tournament prep in one comprehensive guide.
+                            </p>
+                            <div class="bento-footer">
+                                <div class="author-mini">
+                                    <img src="assets/Images/background.webp" alt="GM Rajesh Kumar">
+                                    <span>GM Rajesh Kumar</span>
+                                </div>
+                                <div class="meta-mini">
+                                    <span><i class="fas fa-clock"></i> 11 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Add 6 more standard cards for a total of 12 articles -->
+                <!-- (Copy the standard card structure 6 more times with different content) -->
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn-load-more" id="loadMoreBtn">
+                    <span>Load More Articles</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <p class="load-more-text">Showing 12 of 250 articles</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================
+         NEWSLETTER CTA - GLASSMORPHISM
+         ============================================ -->
+    <section class="newsletter-modern-section">
+        <div class="container">
+            <div class="newsletter-glass-card">
+                <div class="newsletter-content-modern">
+                    <div class="newsletter-icon">
+                        <i class="fas fa-envelope-open"></i>
+                    </div>
+                    <h2 class="newsletter-title">Get Weekly Chess Tactics</h2>
+                    <p class="newsletter-description">
+                        Join 5,247 chess enthusiasts receiving expert strategies, exclusive tactics, and proven training methods.
+                        <strong>Plus, get our 50-page Opening Guide FREE!</strong>
+                    </p>
+                    
+                    <!-- Newsletter Form -->
+                    <form class="newsletter-form-modern" id="newsletterForm">
+                        <div class="form-input-group">
+                            <input 
+                                type="email" 
+                                class="newsletter-input" 
+                                placeholder="Your email address"
+                                required
+                                aria-label="Email address"
+                            >
+                            <button type="submit" class="newsletter-submit">
+                                <span>Subscribe</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <p class="newsletter-privacy">
+                            <i class="fas fa-lock"></i>
+                            No spam ever. Unsubscribe anytime.
+                        </p>
+                    </form>
+
+                    <!-- Social Proof -->
+                    <div class="newsletter-proof">
+                        <div class="proof-avatars">
+                            <img src="assets/Images/background.webp" alt="Subscriber">
+                            <img src="assets/Images/background.webp" alt="Subscriber">
+                            <img src="assets/Images/background.webp" alt="Subscriber">
+                            <span class="proof-count">+5K</span>
+                        </div>
+                        <p><strong>5,247</strong> chess players already subscribed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CATEGORIES OVERVIEW - GRID
+         ============================================ -->
+    <section class="categories-overview-section">
+        <div class="container">
+            <h2 class="section-title-modern">Explore by Category</h2>
+            <div class="categories-grid-modern">
+                <a href="#" class="category-card-modern strategy">
+                    <div class="category-icon">
+                        <i class="fas fa-chess-king"></i>
+                    </div>
+                    <h3>Strategy</h3>
+                    <p>85 articles</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="#" class="category-card-modern tactics">
+                    <div class="category-icon">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <h3>Tactics</h3>
+                    <p>92 articles</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="#" class="category-card-modern openings">
+                    <div class="category-icon">
+                        <i class="fas fa-chess-board"></i>
+                    </div>
+                    <h3>Openings</h3>
+                    <p>48 articles</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="#" class="category-card-modern endgames">
+                    <div class="category-icon">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <h3>Endgames</h3>
+                    <p>32 articles</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="#" class="category-card-modern students">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Student Stories</h3>
+                    <p>28 articles</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="#" class="category-card-modern tournament">
+                    <div class="category-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Tournaments</h3>
+                    <p>35 articles</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your existing footer -->
+    <footer>
+        <!-- Keep your existing footer -->
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top-modern" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="b.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

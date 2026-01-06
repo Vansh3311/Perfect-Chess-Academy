@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Perfect Chess Academy</title>
+    <meta
+      name="description"
+      content="Access your Perfect Chess Academy account. Track progress, attend classes, and continue your chess journey."
+    />
+
+    <!-- Existing Stylesheets -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/utils.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!-- Auth Page CSS -->
+    <link rel="stylesheet" href="assets/css/auth.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header (Your Existing Structure) -->
+    <header>
+      <nav>
+        <button
+          class="hamburger-btn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-links-mobile"
+        >
+          <div class="hamburger-icon"></div>
+        </button>
+
+        <div class="logo">
+          <img
+            src="logo-removebg-preview.png"
+            alt="Perfect Chess Academy Logo"
+          />
+        </div>
+
+        <div id="nav-links-desktop" class="nav-links desktop-only">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="courses.html">Courses</a>
+          <a href="tournaments.html">Tournaments</a>
+          <a href="coaching.html">Coaching</a>
+          <a href="blog.html">Blog</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <a href="student-dashboard.html" class="dashboard-link">
+            <i class="fas fa-user-circle"></i> My Dashboard
+          </a>
+        </div>
+
+        <div class="header-spacer"></div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-backdrop hidden"></div>
+    <div id="nav-links-mobile" class="nav-links mobile-only">
+      <button class="mobile-menu-close" aria-label="Close mobile menu"></button>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="blog.html">Blog</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+
+      <div class="social-links mobile-social-links">
+        <a
+          href="https://www.facebook.com/kapil.panwar.71"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/perfectchessacademy92"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://wa.me/919252358993"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="auth-page">
+      <!-- Hero Section -->
+      <section class="section auth-hero">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <span class="separator">›</span>
+            <span>Account</span>
+          </div>
+
+          <div class="auth-hero-content">
+            <div class="hero-subtitle">Perfect Chess Academy</div>
+            <h1 class="hero-title">
+              Welcome Back,
+              <span class="highlight">Champion!</span>
+            </h1>
+            <p class="hero-description">
+              Sign in to access your dashboard, track progress, and continue
+              your chess mastery journey.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Auth Tabs Section -->
+      <section class="section auth-tabs-section">
+        <div class="container">
+          <div class="auth-tabs-wrapper">
+            <div class="tabs-navigation">
+              <button class="tab-btn active" data-tab="login">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Sign In</span>
+              </button>
+              <button class="tab-btn" data-tab="register">
+                <i class="fas fa-user-plus"></i>
+                <span>Create Account</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Forms Section -->
+      <section class="section auth-forms-section">
+        <div class="container">
+          <div class="auth-layout">
+            <!-- Login Form -->
+            <div class="auth-form-card active" id="loginForm">
+              <div class="card-header">
+                <div class="icon-wrapper">
+                  <i class="fas fa-chess-king"></i>
+                </div>
+                <h2>Sign In</h2>
+                <p>Enter your credentials to access your account</p>
+              </div>
+
+              <div class="card-body">
+                <!-- Alerts -->
+                <div
+                  class="alert alert-success"
+                  id="loginSuccess"
+                  style="display: none"
+                >
+                  <i class="fas fa-check-circle"></i>
+                  <span>Login successful! Redirecting...</span>
+                </div>
+
+                <div
+                  class="alert alert-error"
+                  id="loginError"
+                  style="display: none"
+                >
+                  <i class="fas fa-exclamation-circle"></i>
+                  <span id="loginErrorText"></span>
+                </div>
+
+                <form class="auth-form" id="loginFormSubmit" novalidate>
+                  <div class="form-group">
+                    <label for="loginEmail">
+                      <i class="fas fa-envelope"></i> Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="loginEmail"
+                      name="email"
+                      placeholder="your@email.com"
+                      required
+                      autocomplete="email"
+                    />
+                    <span class="error-message"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="loginPassword">
+                      <i class="fas fa-lock"></i> Password
+                    </label>
+                    <div class="input-with-icon">
+                      <input
+                        type="password"
+                        id="loginPassword"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password"
+                      />
+                      <button
+                        type="button"
+                        class="input-icon-btn toggle-password"
+                      >
+                        <i class="fas fa-eye"></i>
+                      </button>
+                    </div>
+                    <span class="error-message"></span>
+                  </div>
+
+                  <div class="form-row">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="rememberMe" />
+                      <span>Remember me</span>
+                    </label>
+                    <a href="forgot-password.html" class="link"
+                      >Forgot Password?</a
+                    >
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <span>Sign In</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="card-footer">
+                <p>
+                  Don't have an account?
+                  <button class="link-btn" data-switch="register">
+                    Create Account
+                  </button>
+                </p>
+              </div>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-form-card" id="registerForm">
+              <div class="card-header">
+                <div class="icon-wrapper">
+                  <i class="fas fa-user-plus"></i>
+                </div>
+                <h2>Create Account</h2>
+                <p>Join 1,250+ students mastering chess</p>
+              </div>
+
+              <div class="card-body">
+                <!-- Alerts -->
+                <div
+                  class="alert alert-success"
+                  id="registerSuccess"
+                  style="display: none"
+                >
+                  <i class="fas fa-check-circle"></i>
+                  <span>Account created! Please check your email.</span>
+                </div>
+
+                <div
+                  class="alert alert-error"
+                  id="registerError"
+                  style="display: none"
+                >
+                  <i class="fas fa-exclamation-circle"></i>
+                  <span id="registerErrorText"></span>
+                </div>
+
+                <form class="auth-form" id="registerFormSubmit" novalidate>
+                  <div class="form-group">
+                    <label for="registerName">
+                      <i class="fas fa-user"></i> Full Name
+                    </label>
+                    <input
+                      type="text"
+                      id="registerName"
+                      name="name"
+                      placeholder="John Doe"
+                      required
+                      autocomplete="name"
+                    />
+                    <span class="error-message"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="registerEmail">
+                      <i class="fas fa-envelope"></i> Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="registerEmail"
+                      name="email"
+                      placeholder="your@email.com"
+                      required
+                      autocomplete="email"
+                    />
+                    <span class="error-message"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="registerPhone">
+                      <i class="fas fa-phone"></i> Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="registerPhone"
+                      name="phone"
+                      placeholder="+91 98765 43210"
+                      required
+                      autocomplete="tel"
+                    />
+                    <span class="error-message"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="registerPassword">
+                      <i class="fas fa-lock"></i> Password
+                    </label>
+                    <div class="input-with-icon">
+                      <input
+                        type="password"
+                        id="registerPassword"
+                        name="password"
+                        placeholder="Create a strong password"
+                        required
+                        autocomplete="new-password"
+                      />
+                      <button
+                        type="button"
+                        class="input-icon-btn toggle-password"
+                      >
+                        <i class="fas fa-eye"></i>
+                      </button>
+                    </div>
+                    <div class="password-strength">
+                      <div class="strength-bar">
+                        <div class="strength-fill"></div>
+                      </div>
+                      <span class="strength-text">Weak</span>
+                    </div>
+                    <span class="error-message"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="agreeTerms" required />
+                      <span
+                        >I agree to the
+                        <a href="#" class="link">Terms & Conditions</a></span
+                      >
+                    </label>
+                    <span class="error-message"></span>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <span>Create Account</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="card-footer">
+                <p>
+                  Already have an account?
+                  <button class="link-btn" data-switch="login">Sign In</button>
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefits Sidebar -->
+            <div class="auth-benefits-card">
+              <h3>Why Join Us?</h3>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="benefit-content">
+                  <h4>Track Your Progress</h4>
+                  <p>
+                    Monitor rating improvements, completed lessons, and
+                    achievements
+                  </p>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="benefit-content">
+                  <h4>Upcoming Classes</h4>
+                  <p>Never miss a session with calendar reminders</p>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-chess-board"></i>
+                </div>
+                <div class="benefit-content">
+                  <h4>Game Analysis</h4>
+                  <p>Coach reviews and detailed performance insights</p>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div class="benefit-content">
+                  <h4>Exclusive Resources</h4>
+                  <p>Access puzzles, tutorials, and premium content</p>
+                </div>
+              </div>
+
+              <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                  <strong>1,250+ Active Students</strong>
+                  <p>Join our community of chess enthusiasts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Help Section -->
+      <section class="section auth-help-section">
+        <div class="container">
+          <div class="help-card">
+            <div class="help-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div class="help-content">
+              <h3>Need Help?</h3>
+              <p>Our support team is here to assist you</p>
+            </div>
+            <div class="help-actions">
+              <a href="contact.html" class="btn btn-secondary"
+                >Contact Support</a
+              >
+              <a
+                href="https://wa.me/919252358993"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Perfect Chess Academy</h3>
+          <p>
+            Empowering chess players of all levels to achieve their full
+            potential through expert coaching.
+          </p>
+          <div class="footer-contact-info">
+            <p>Bikaner, Rajasthan, India</p>
+            <p>talktokp23@gmail.com</p>
+            <p>+91 92523 58993</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-social-links">
+          <a
+            href="https://www.facebook.com/kapil.panwar.71"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/perfectchessacademy92"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://wa.me/919252358993"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+        <p>&copy; 2026 Perfect Chess Academy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="assets/js/auth.js"></script>
+  </body>
+</html>

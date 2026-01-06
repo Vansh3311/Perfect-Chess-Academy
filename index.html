@@ -1,0 +1,2741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfect Chess Academy - Master the Game of Kings</title>
+    <meta
+      name="description"
+      content="Learn chess from grandmasters at Perfect Chess Academy. Expert coaching, tournaments, and personalized training for all skill levels."
+    />
+    <link rel="stylesheet" href="assets/css/about-cta.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/lead-magnet.css" />
+    <link rel="stylesheet" href="assets/css/why-choose.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/coaches.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/italian_opening_interactive.css" />
+    <link rel="stylesheet" href="assets/css/new-sections.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/utils.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Chess Libraries (if not already included) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <button
+          class="hamburger-btn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-links-mobile"
+        >
+          <div class="hamburger-icon"></div>
+        </button>
+        <div class="logo">
+          <img
+            src="logo-removebg-preview.png"
+            alt="Perfect Chess Academy Logo"
+          />
+        </div>
+        <div id="nav-links-desktop" class="nav-links desktop-only">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="courses.html">Courses</a>
+          <a href="tournaments.html">Tournaments</a>
+          <a href="coaching.html">Coaching</a>
+          <a href="blog.html">Blog</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <a href="student-dashboard.html" class="dashboard-link">
+              <i class="fas fa-user-circle"></i> My Dashboard
+          </a>
+        </div>
+        <div class="header-spacer"></div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Drawer & Backdrop -->
+    <div class="mobile-menu-backdrop" hidden></div>
+    <div id="nav-links-mobile" class="nav-links mobile-only">
+      <button class="mobile-menu-close" aria-label="Close mobile menu">
+        ✕
+      </button>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="blog.html">Blog</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <div class="social-links mobile-social-links">
+        <a
+          href="https://www.facebook.com/kapil.panwar.71/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://share.google/02jHgLaSt3rA88jFG"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Google Maps"
+          ><i class="fas fa-map-marker-alt"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/perfectchessacademy92/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://wa.me/919252358993"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+      </div>
+    </div>
+
+    <!-- Hero Section - Geometric Minimal Design -->
+    <section class="hero hero-geometric" id="hero-section">
+      <!-- Geometric Shapes Background -->
+      <div class="geometric-overlay">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+
+      <!-- Hero Content Container -->
+      <div class="hero-content-wrapper">
+        <div class="hero-content-centered">
+          <!-- Eyebrow -->
+          <div class="eyebrow">Perfect Chess Academy • Bikaner</div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-headline">
+            <span class="line-1">From Beginner to</span>
+            <span class="line-2 highlight">Rated Player</span>
+            <span class="line-3">in 6 Months</span>
+          </h1>
+
+          <!-- Supporting Text -->
+          <p class="hero-lead">
+            1,250+ students have earned FIDE ratings using our proven training
+            system. Your breakthrough starts here.
+          </p>
+
+          <!-- Stats Badges -->
+          <div class="hero-badges-inline">
+            <span class="stat-pill">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              4.9/5 Rating
+            </span>
+
+            <span class="stat-pill">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              1,250+ Students
+            </span>
+
+            <span class="stat-pill">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path
+                  d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+                ></path>
+                <path
+                  d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+                ></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+              </svg>
+              15 Years Excellence
+            </span>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="hero-buttons-centered">
+            <a
+              href="contact.html"
+              class="btn btn-primary btn-keep-orange"
+              aria-label="Book your free trial class"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                />
+              </svg>
+              <span>Book My Free Trial</span>
+            </a>
+
+            <a
+              href="courses.html"
+              class="btn btn-secondary"
+              aria-label="Explore our chess courses"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+              <span>View Courses</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+     LEAD MAGNET SECTION - Workable/Lyft Pattern
+     Form to the right, big & spacious, 4 fields max
+     ============================================ -->
+    <section class="lead-magnet" id="free-guide">
+      <div class="lead-container">
+        <!-- LEFT: Content Side (Value Proposition) -->
+        <div class="content-side">
+          <div class="eyebrow">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            <span>Instant Access</span>
+          </div>
+
+          <h2 class="section-headline">
+            Get Your Free<br />
+            <span class="gradient-text">Chess Training Guide</span>
+          </h2>
+
+          <p class="section-description">
+            Download our proven 12-week training roadmap used by over 2,500
+            families to take their children from beginner to tournament-ready.
+          </p>
+
+          <!-- Benefits List (16|11 Labs Pattern: Bullet Micro-Proofs) -->
+          <ul class="benefits-list">
+            <li>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              <div>
+                <strong>Week-by-week training plan</strong>
+                <span
+                  >Structured progression from basics to advanced tactics</span
+                >
+              </div>
+            </li>
+            <li>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              <div>
+                <strong>Parent coaching guide</strong>
+                <span
+                  >How to support your child's chess journey effectively</span
+                >
+              </div>
+            </li>
+            <li>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              <div>
+                <strong>Tournament preparation checklist</strong>
+                <span
+                  >Everything needed for your child's first competition</span
+                >
+              </div>
+            </li>
+            <li>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              <div>
+                <strong>Exclusive video lessons</strong>
+                <span>5 starter lessons from our expert coaches</span>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Trust Indicators -->
+          <div class="trust-row">
+            <div class="trust-item">
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              <span>100% Free</span>
+            </div>
+            <div class="trust-item">
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <path d="M22 6l-10 7L2 6" />
+              </svg>
+              <span>No Spam</span>
+            </div>
+            <div class="trust-item">
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>Instant Download</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form Side (Workable Pattern: Big, Spacious, 4 Fields Max) -->
+        <div class="form-side">
+          <div class="form-card">
+            <!-- Form Header -->
+            <div class="form-header">
+              <h3 class="form-title">Get Instant Access</h3>
+              <p class="form-subtitle">
+                Download in <strong>under 60 seconds</strong>
+              </p>
+            </div>
+
+            <!-- Clean Form (Max 4 Fields - Justinmind Best Practice) -->
+            <form class="lead-form" id="leadForm" novalidate>
+              <!-- Name Field -->
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="John Smith"
+                  required
+                  autocomplete="name"
+                />
+                <span class="error-message" role="alert"></span>
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="john@example.com"
+                  required
+                  autocomplete="email"
+                />
+                <span class="error-message" role="alert"></span>
+              </div>
+
+              <!-- Age Select (Optional) -->
+              <div class="form-group">
+                <label for="age">
+                  Child's Age
+                  <span class="optional">(Optional)</span>
+                </label>
+                <select id="age" name="age">
+                  <option value="">Select age range</option>
+                  <option value="5-7">5-7 years</option>
+                  <option value="8-10">8-10 years</option>
+                  <option value="11-14">11-14 years</option>
+                  <option value="15+">15+ years</option>
+                </select>
+                <span class="helper-text">Helps us personalize your guide</span>
+              </div>
+
+              <!-- Submit Button (Clear, Visible, Action-Oriented) -->
+              <button type="submit" class="btn-submit">
+                <span class="btn-text">Download Free Guide</span>
+                <svg
+                  class="btn-icon"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              <!-- Privacy Note (16|11 Labs Pattern) -->
+              <p class="privacy-note">
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Your information is 100% secure. No spam, unsubscribe anytime.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About CTA Section - Philosophical & Curiosity-Driven -->
+    <section class="section about-cta">
+      <div class="about-cta-container">
+        <!-- Philosophical Question Hook -->
+        <div class="about-cta-question">
+          <p class="question-text">
+            What separates a casual player from a champion?
+          </p>
+          <p class="question-subtext">
+            Is it talent? Hours of practice? Or something deeper—a mindset, a
+            legacy, a tradition?
+          </p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="about-cta-content-centered">
+          <h2 class="about-cta-headline">Forge Your Chess Legacy</h2>
+
+          <p class="about-cta-mission">
+            We don't just teach moves. We shape minds. We build champions. We
+            forge legacies that outlast tournaments and echo through
+            generations.
+          </p>
+
+          <div class="about-divider"></div>
+
+          <h3 class="about-cta-story-headline">
+            A Tradition Born from Mastery
+          </h3>
+
+          <p class="about-cta-story">
+            Every grandmaster remembers their first mentor. Every champion
+            recalls the moment chess transformed from a game into a calling.
+            Founded by a FIDE Master who refused to accept mediocrity, our
+            academy has become
+            <strong
+              >the crucible where 1,250+ students discovered their chess
+              identity</strong
+            >.
+          </p>
+
+          <p class="about-cta-story">
+            Through <strong>150+ tournament victories</strong>, we've proven a
+            simple truth:
+            <em
+              >Chess mastery isn't about memorizing openings—it's about
+              understanding the language of strategy, developing the discipline
+              of a warrior, and cultivating the vision of an artist</em
+            >.
+          </p>
+
+          <!-- Stats Showcase -->
+          <div class="about-stats-showcase">
+            <div class="stat-item">
+              <div class="stat-number">1,250+</div>
+              <div class="stat-label">Minds Transformed</div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+              <div class="stat-number">150+</div>
+              <div class="stat-label">Victories Claimed</div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Years of Legacy</div>
+            </div>
+          </div>
+
+          <!-- Final Philosophical Question -->
+          <div class="about-cta-closing">
+            <p class="closing-question">
+              The question isn't whether you can become a better player.<br />
+              <strong
+                >The question is: Are you ready to discover who you become when
+                you do?</strong
+              >
+            </p>
+          </div>
+
+          <!-- CTA Button -->
+          <a href="about.html" class="btn btn-cta">
+            <span>Discover Our Journey</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <!-- Why Choose Section - Professional Redesign -->
+    <section class="why-choose-section">
+      <div class="why-choose-container">
+        <!-- Section Header -->
+        <div class="why-choose-header">
+          <div class="section-eyebrow">
+            The Perfect Chess Academy Difference
+          </div>
+          <h2 class="why-choose-title">Where Strategy Meets Excellence</h2>
+          <p class="why-choose-subtitle">
+            Six pillars of chess mastery that transform beginners into rated
+            players, and rated players into champions.
+          </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+          <!-- Feature Card 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg
+                class="feature-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path
+                  d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+                ></path>
+                <path
+                  d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+                ></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Master-Level Coaching</h3>
+            <p class="feature-description">
+              Learn from FIDE-titled players and international masters who've
+              competed at the highest levels and mastered the art of teaching
+              chess strategy.
+            </p>
+            <div class="feature-stats">
+              <span class="feature-stat-item">15+ Years Experience</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg
+                class="feature-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Personalized Pathways</h3>
+            <p class="feature-description">
+              Every student receives a custom training roadmap designed around
+              their unique strengths, weaknesses, and chess aspirations.
+            </p>
+            <div class="feature-stats">
+              <span class="feature-stat-item">Custom Training Plans</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 3 -->
+          <div class="feature-card feature-card-featured">
+            <div class="featured-badge">Most Popular</div>
+            <div class="feature-icon-wrapper">
+              <svg
+                class="feature-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path
+                  d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+                ></path>
+                <path
+                  d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+                ></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Tournament Excellence</h3>
+            <p class="feature-description">
+              Regular competitive opportunities, professional tournament
+              preparation, and strategic guidance to dominate the board and
+              climb the ratings ladder.
+            </p>
+            <div class="feature-stats">
+              <span class="feature-stat-item">150+ Victories</span>
+              <span class="feature-stat-item">Monthly Events</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg
+                class="feature-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">Cutting-Edge Tech</h3>
+            <p class="feature-description">
+              Advanced chess engines, AI analysis tools, and digital learning
+              platforms that accelerate your progress and deepen your
+              understanding.
+            </p>
+            <div class="feature-stats">
+              <span class="feature-stat-item">Latest Tools</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 5 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg
+                class="feature-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Vibrant Community</h3>
+            <p class="feature-description">
+              Join a supportive network of passionate chess players, engage in
+              group sessions, and build friendships that extend beyond the 64
+              squares.
+            </p>
+            <div class="feature-stats">
+              <span class="feature-stat-item">1,250+ Students</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 6 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg
+                class="feature-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature-title">Proven Track Record</h3>
+            <p class="feature-description">
+              Measurable results with students achieving significant ELO gains,
+              FIDE ratings, and tournament podium finishes within months.
+            </p>
+            <div class="feature-stats">
+              <span class="feature-stat-item">Avg. +200 ELO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chess Journey Section - Philosophical Storytelling -->
+    <section class="chess-journey-section">
+      <div class="journey-container">
+        <!-- Opening Statement (Philosophy) -->
+        <div class="journey-prologue">
+          <div class="prologue-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <h2 class="prologue-title">Every Champion Started as a Beginner</h2>
+          <p class="prologue-text">
+            Our story isn't just about teaching chess—it's about walking beside
+            you on the same journey we've taken. From nervous first moves to
+            confident tournament play, we understand every step because we've
+            lived it.
+          </p>
+        </div>
+
+        <!-- The Journey Path (Visual Timeline) -->
+        <div class="journey-path">
+          <!-- Step 1: The Mentor's Introduction -->
+          <div class="journey-step" data-step="1">
+            <div class="step-content">
+              <!-- Left: Photo & Identity -->
+              <div class="mentor-intro">
+                <div class="mentor-photo-frame">
+                  <img
+                    src="assets/Images/background.webp"
+                    alt="Kapil Panwar - Your Guide"
+                    loading="lazy"
+                  />
+                  <div class="photo-accent-border"></div>
+                </div>
+
+                <div class="mentor-identity">
+                  <div class="name-badge">
+                    <h3 class="mentor-name">Kapil Panwar</h3>
+                    <span class="mentor-title">Your Guide & Mentor</span>
+                  </div>
+                  <div class="credentials-subtle">
+                    <span class="credential-tag">FIDE Master</span>
+                    <span class="credential-tag">15 Years Teaching</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Personal Story -->
+              <div class="mentor-story">
+                <div class="story-quote-mark">"</div>
+                <div class="story-content">
+                  <h4 class="story-heading">I Remember My First Move</h4>
+                  <p class="story-paragraph">
+                    Twenty years ago, I sat across a chessboard feeling exactly
+                    how you might feel now—excited but uncertain. That journey
+                    from beginner to FIDE Master taught me something crucial:
+                    <strong
+                      >chess isn't about memorizing openings, it's about
+                      learning to think.</strong
+                    >
+                  </p>
+                  <p class="story-paragraph">
+                    After training over 1,250 students, I've discovered that the
+                    best teachers aren't just masters of the game—they're
+                    masters of understanding where <em>you</em> are right now.
+                  </p>
+
+                  <!-- Personal Philosophy -->
+                  <div class="philosophy-box">
+                    <svg
+                      class="philosophy-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                      />
+                    </svg>
+                    <p class="philosophy-text">
+                      <strong>My Promise:</strong> I won't just teach you chess.
+                      I'll teach you patience, strategic thinking, and the
+                      confidence to make bold decisions—skills that transform
+                      lives beyond the board.
+                    </p>
+                  </div>
+
+                  <!-- What I Focus On -->
+                  <div class="focus-areas">
+                    <div class="focus-item">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                      </svg>
+                      <span>Building unshakeable fundamentals</span>
+                    </div>
+                    <div class="focus-item">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                      </svg>
+                      <span>Preparing you for real tournament pressure</span>
+                    </div>
+                    <div class="focus-item">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                      </svg>
+                      <span
+                        >Creating personalized paths to your FIDE rating</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transition: The Student Becomes the Teacher -->
+          <div class="journey-transition">
+            <div class="transition-icon-wrapper">
+              <svg
+                class="transition-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M12 8v4M12 16h.01" />
+              </svg>
+            </div>
+            <p class="transition-text">
+              The true test of a teacher? Watch their students succeed.
+            </p>
+          </div>
+
+          <!-- Step 2: The Student's Success Story -->
+          <div class="journey-step journey-step-student" data-step="2">
+            <div class="step-connector step-connector-reverse"></div>
+
+            <div class="step-content step-content-reverse">
+              <!-- Left: Personal Story (reversed layout) -->
+              <div class="mentor-story">
+                <div class="story-quote-mark story-quote-student">"</div>
+                <div class="story-content">
+                  <h4 class="story-heading">
+                    From Nervous Beginner to Confident Coach
+                  </h4>
+                  <p class="story-paragraph">
+                    I walked into Perfect Chess Academy four years ago knowing
+                    only how the pieces moved. I was intimidated, afraid I'd
+                    started too late.
+                    <strong
+                      >Coach Kapil saw potential I didn't know I had.</strong
+                    >
+                  </p>
+                  <p class="story-paragraph">
+                    His patient guidance transformed not just my chess—it
+                    changed how I approach challenges in life. Now, as an
+                    assistant coach, I get to pay forward that same
+                    encouragement to students who feel exactly how I once felt.
+                  </p>
+
+                  <!-- Personal Philosophy -->
+                  <div class="philosophy-box philosophy-box-student">
+                    <svg
+                      class="philosophy-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                      <path d="M2 17l10 5 10-5" />
+                      <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    <p class="philosophy-text">
+                      <strong>What I Learned:</strong> The best coaches remember
+                      what it's like to struggle. I specialize in working with
+                      beginners and youth because I remember every frustration,
+                      every breakthrough, every small victory that built my
+                      confidence.
+                    </p>
+                  </div>
+
+                  <!-- What I Focus On -->
+                  <div class="focus-areas">
+                    <div class="focus-item">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                      </svg>
+                      <span>Making complex concepts feel simple</span>
+                    </div>
+                    <div class="focus-item">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                      </svg>
+                      <span>Building confidence through small wins</span>
+                    </div>
+                    <div class="focus-item">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                      </svg>
+                      <span>Creating a supportive, judgment-free space</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Photo & Identity -->
+              <div class="mentor-intro">
+                <div class="mentor-photo-frame">
+                  <img
+                    src="assets/Images/background.webp"
+                    alt="Arjun Sharma - Fellow Learner"
+                    loading="lazy"
+                  />
+                  <div class="photo-accent-border photo-accent-student"></div>
+                </div>
+
+                <div class="mentor-identity">
+                  <div class="name-badge">
+                    <h3 class="mentor-name">Arjun Sharma</h3>
+                    <span class="mentor-title"
+                      >Fellow Learner & Assistant Coach</span
+                    >
+                  </div>
+                  <div class="credentials-subtle">
+                    <span class="credential-tag credential-tag-student"
+                      >ELO 1650</span
+                    >
+                    <span class="credential-tag credential-tag-student"
+                      >Academy Graduate</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Closing Message (Your Next Step) -->
+        <div class="journey-epilogue">
+          <div class="epilogue-content">
+            <h3 class="epilogue-heading">Your Journey Starts Here</h3>
+            <p class="epilogue-text">
+              Whether you're a complete beginner or looking to reach your first
+              FIDE rating, you're not alone. We've walked this path, and we're
+              here to walk it with you—at your pace, with your goals.
+            </p>
+
+            <div class="epilogue-cta">
+              <a href="#contact" class="btn-journey-primary">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+                <span>Start Your Free Trial</span>
+              </a>
+              <a href="tel:+91XXXXXXXXXX" class="btn-journey-secondary">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <span>Talk to Us First</span>
+              </a>
+            </div>
+
+            <p class="epilogue-reassurance">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              No pressure. No commitment. Just a friendly conversation about
+              your chess goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Our Achievements in Numbers</h2>
+        <p class="section-subtitle">
+          Celebrating years of excellence in chess education and student success
+        </p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-target="1250">0</div>
+          <div class="stat-label">Students Trained</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="156">0</div>
+          <div class="stat-label">Tournaments Won</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="25">0</div>
+          <div class="stat-label">Expert Coaches</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="15">0</div>
+          <div class="stat-label">Years Excellence</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section-enhanced">
+      <div class="container">
+        <!-- Header -->
+        <div class="section-header centered">
+          <span class="eyebrow">Flexible Pricing</span>
+          <h2>Invest in Your Chess Journey</h2>
+          <p class="section-subtitle">
+            Choose the perfect program for your skill level and goals
+          </p>
+        </div>
+
+        <!-- Billing Toggle (CRITICAL ADDITION) -->
+        <div class="billing-toggle-wrapper">
+          <span class="toggle-label">Monthly</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="billing-toggle" />
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">
+            Annual <span class="badge-save">Save 20%</span>
+          </span>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="pricing-grid-modern">
+          <!-- CARD 1: BASIC -->
+          <div class="pricing-card" data-plan="basic">
+            <div class="card-header">
+              <h3 class="plan-name">Chess Fundamentals</h3>
+              <p class="plan-audience">Perfect for beginners</p>
+            </div>
+
+            <div class="price-display">
+              <div class="price-wrapper">
+                <span class="currency">₹</span>
+                <span class="amount" data-monthly="2500" data-annual="2000"
+                  >2,500</span
+                >
+                <span class="period">/month</span>
+              </div>
+              <p class="price-note annual-note" style="display: none">
+                ₹24,000/year (Save ₹6,000)
+              </p>
+            </div>
+
+            <!-- Key Features (TOP 5 ONLY) -->
+            <ul class="features-list">
+              <li><i class="fas fa-check"></i> 2 classes per week</li>
+              <li>
+                <i class="fas fa-check"></i> Group sessions (8-10 students)
+              </li>
+              <li><i class="fas fa-check"></i> Ages 6-12</li>
+              <li><i class="fas fa-check"></i> Basic tactics & openings</li>
+              <li><i class="fas fa-check"></i> 3-month program</li>
+            </ul>
+
+            <!-- Expandable Full Features -->
+            <details class="features-expandable">
+              <summary>View all features</summary>
+              <ul class="features-full">
+                <li>✓ Practice games</li>
+                <li>✓ Progress tracking</li>
+                <li>✓ Study materials</li>
+                <li>✗ Tournament prep</li>
+                <li>✗ One-on-one coaching</li>
+              </ul>
+            </details>
+
+            <a href="#enroll-basic" class="btn-cta btn-secondary">
+              Get Started
+              <small>250+ students enrolled</small>
+            </a>
+          </div>
+
+          <!-- CARD 2: POPULAR (VISUALLY DOMINANT) -->
+          <div class="pricing-card popular-card">
+            <div class="popular-ribbon">
+              <span>Most Popular</span>
+            </div>
+
+            <div class="card-header">
+              <h3 class="plan-name">Tactical Mastery</h3>
+              <p class="plan-audience">For intermediate players</p>
+            </div>
+
+            <div class="price-display">
+              <div class="price-wrapper">
+                <span class="currency">₹</span>
+                <span class="amount" data-monthly="4000" data-annual="3200"
+                  >4,000</span
+                >
+                <span class="period">/month</span>
+              </div>
+              <p class="price-note annual-note" style="display: none">
+                ₹38,400/year (Save ₹9,600)
+              </p>
+            </div>
+
+            <ul class="features-list">
+              <li><i class="fas fa-check"></i> 3 classes per week</li>
+              <li>
+                <i class="fas fa-check"></i> Smaller groups (4-6 students)
+              </li>
+              <li><i class="fas fa-check"></i> Ages 10+</li>
+              <li><i class="fas fa-check"></i> Advanced tactics & patterns</li>
+              <li><i class="fas fa-check"></i> Game analysis sessions</li>
+            </ul>
+
+            <details class="features-expandable">
+              <summary>View all features</summary>
+              <ul class="features-full">
+                <li>✓ Tournament basics</li>
+                <li>✓ Combination play</li>
+                <li>✓ 12-week program</li>
+                <li>✗ One-on-one coaching</li>
+              </ul>
+            </details>
+
+            <a href="#enroll-popular" class="btn-cta btn-primary">
+              Start Free Trial
+              <small>⭐ 4.8/5 from 500+ students</small>
+            </a>
+          </div>
+
+          <!-- CARD 3: PREMIUM -->
+          <div class="pricing-card" data-plan="premium">
+            <div class="card-header">
+              <h3 class="plan-name">Tournament Prep</h3>
+              <p class="plan-audience">For competitive players</p>
+            </div>
+
+            <div class="price-display">
+              <div class="price-wrapper">
+                <span class="currency">₹</span>
+                <span class="amount" data-monthly="6500" data-annual="5200"
+                  >6,500</span
+                >
+                <span class="period">/month</span>
+              </div>
+              <p class="price-note annual-note" style="display: none">
+                ₹62,400/year (Save ₹15,600)
+              </p>
+            </div>
+
+            <ul class="features-list">
+              <li><i class="fas fa-check"></i> 4 classes per week</li>
+              <li><i class="fas fa-check"></i> Tiny groups (2-3 students)</li>
+              <li><i class="fas fa-check"></i> All ages & levels</li>
+              <li><i class="fas fa-check"></i> Opening theory deep-dive</li>
+              <li><i class="fas fa-check"></i> Personalized coaching</li>
+            </ul>
+
+            <details class="features-expandable">
+              <summary>View all features</summary>
+              <ul class="features-full">
+                <li>✓ Endgame mastery</li>
+                <li>✓ Psychological training</li>
+                <li>✓ Competition participation</li>
+                <li>✓ Flexible timing</li>
+              </ul>
+            </details>
+
+            <a href="#enroll-premium" class="btn-cta btn-secondary">
+              Book Consultation
+              <small>🏆 150+ tournament wins</small>
+            </a>
+          </div>
+        </div>
+
+        <!-- Trust Bar (CRITICAL ADDITION) -->
+        <div class="pricing-trust-bar">
+          <div class="trust-item">
+            <i class="fas fa-shield-check"></i>
+            <span>Money-back guarantee</span>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-trophy"></i>
+            <span>156 tournament wins</span>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-users"></i>
+            <span>1,250+ students</span>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-certificate"></i>
+            <span>FIDE certified coaches</span>
+          </div>
+        </div>
+
+        <!-- Feature Comparison Table (Collapsible) -->
+        <details class="comparison-table-wrapper">
+          <summary class="comparison-toggle">
+            <span>Compare All Features</span>
+            <i class="fas fa-chevron-down"></i>
+          </summary>
+
+          <div class="comparison-table">
+            <!-- Sticky Headers -->
+            <div class="table-header sticky-header">
+              <div class="feature-label">Features</div>
+              <div class="plan-column">Fundamentals</div>
+              <div class="plan-column popular">Tactical Mastery</div>
+              <div class="plan-column">Tournament Prep</div>
+            </div>
+
+            <!-- Feature Rows -->
+            <div class="feature-category">
+              <h4>Class Structure</h4>
+              <div class="feature-row">
+                <span class="feature-name">Classes per week</span>
+                <span class="value">2</span>
+                <span class="value">3</span>
+                <span class="value">4</span>
+              </div>
+              <div class="feature-row">
+                <span class="feature-name">Group size</span>
+                <span class="value">8-10</span>
+                <span class="value">4-6</span>
+                <span class="value">2-3</span>
+              </div>
+            </div>
+
+            <div class="feature-category">
+              <h4>Training Focus</h4>
+              <div class="feature-row">
+                <span class="feature-name">
+                  Basic tactics
+                  <i
+                    class="tooltip-icon"
+                    data-tooltip="Learn fundamental chess tactics"
+                  ></i>
+                </span>
+                <span class="check">✓</span>
+                <span class="check">✓</span>
+                <span class="check">✓</span>
+              </div>
+              <!-- More rows... -->
+            </div>
+          </div>
+        </details>
+
+        <!-- FAQ Section (CRITICAL ADDITION) -->
+        <div class="pricing-faq">
+          <h3>Frequently Asked Questions</h3>
+          <div class="faq-grid">
+            <details class="faq-item">
+              <summary>Can I switch plans later?</summary>
+              <p>
+                Yes! You can upgrade or downgrade at any time. Pro-rated refunds
+                apply for annual plans.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Do you offer sibling discounts?</summary>
+              <p>
+                Absolutely. Get 15% off for the second child, 25% for three or
+                more.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>What's included in all plans?</summary>
+              <p>
+                Progress tracking, certificates, study materials, parent-teacher
+                meetings, and access to practice tournaments.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Is there a free trial?</summary>
+              <p>Yes! Try one free class in any program before committing.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Social Proof (CRITICAL ADDITION) -->
+        <div class="pricing-testimonial">
+          <blockquote>
+            "My son joined the Tactical Mastery program and won his first
+            tournament within 3 months. The personalized attention is
+            incredible!"
+          </blockquote>
+          <cite> <strong>Mrs. Sharma</strong> - Parent, Bikaner </cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events Section (NEW - Section 3) -->
+    <section class="section events-section">
+      <div class="section-header">
+        <h2>Upcoming Tournaments & Events</h2>
+        <p class="section-subtitle">
+          Join us for competitive play and community events
+        </p>
+      </div>
+      <div class="events-list">
+        <div class="event-card">
+          <div class="event-date-badge">
+            <span class="event-month">DEC</span>
+            <span class="event-day">25</span>
+          </div>
+          <div class="event-content">
+            <div class="event-meta">
+              <span class="event-type-badge">In-Person</span>
+              <span class="event-level">Intermediate</span>
+            </div>
+            <h3 class="event-title">Bikaner District Championship 2025</h3>
+            <p class="event-description">
+              5-round Swiss tournament for district players. FIDE rated event
+              with cash prizes for top performers.
+            </p>
+            <div class="event-details">
+              <span class="event-detail"
+                >📍 Perfect Chess Academy, Main Branch</span
+              >
+              <span class="event-detail">⏰ 9:00 AM - 6:00 PM</span>
+              <span class="event-detail">💰 Entry: ₹500</span>
+              <span class="event-detail">🗓️ Registration closes: Dec 20</span>
+            </div>
+            <div class="event-actions">
+              <button class="btn btn-primary btn-keep-orange">
+                Register Now
+              </button>
+              <button class="btn btn-secondary">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date-badge">
+            <span class="event-month">JAN</span>
+            <span class="event-day">15</span>
+          </div>
+          <div class="event-content">
+            <div class="event-meta">
+              <span class="event-type-badge">Online</span>
+              <span class="event-level">Beginner</span>
+            </div>
+            <h3 class="event-title">Monthly Junior Rapid League</h3>
+            <p class="event-description">
+              A fun and friendly online rapid tournament for students under 12.
+              Great for first-time competitors.
+            </p>
+            <div class="event-details">
+              <span class="event-detail">📍 Online via Lichess</span>
+              <span class="event-detail">⏰ 4:00 PM - 6:00 PM</span>
+              <span class="event-detail">💰 Entry: Free for students</span>
+              <span class="event-detail">🗓️ Register by Jan 14</span>
+            </div>
+            <div class="event-actions">
+              <button class="btn btn-primary btn-keep-orange">
+                Register Now
+              </button>
+              <button class="btn btn-secondary">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-footer">
+        <a href="tournaments.html" class="btn btn-secondary">View All Events</a>
+      </div>
+    </section>
+
+    <!-- Success Stories Section (NEW - Section 4) -->
+    <section class="section success-stories-section">
+      <div class="section-header">
+        <h2>Student Success Stories</h2>
+        <p class="section-subtitle">
+          Real students, real progress, real tournament wins
+        </p>
+      </div>
+      <div class="success-stories-grid">
+        <div class="success-story-card">
+          <div class="success-story-image">
+            <img
+              src="https://i.pravatar.cc/400?img=8"
+              alt="Student Arjun Sharma"
+              loading="lazy"
+            />
+            <div class="success-badge">Rating +400</div>
+          </div>
+          <div class="success-story-content">
+            <div class="student-info">
+              <h3 class="student-name">Arjun Sharma, Age 12</h3>
+              <span class="student-course">Tournament Preparation Course</span>
+            </div>
+            <div class="success-metrics">
+              <div class="metric">
+                <span class="metric-label">Before</span>
+                <span class="metric-value">Rating: 800</span>
+              </div>
+              <div class="metric-arrow">→</div>
+              <div class="metric">
+                <span class="metric-label">After</span>
+                <span class="metric-value">Rating: 1200</span>
+              </div>
+            </div>
+            <div class="success-achievements">
+              <span class="achievement-tag">🏆 District Champion 2024</span>
+              <span class="achievement-tag">🥇 3 Tournament Wins</span>
+            </div>
+            <blockquote class="success-quote">
+              "My son went from barely knowing the rules to winning district
+              championships in just 8 months. The structured coaching made all
+              the difference."
+            </blockquote>
+            <p class="quote-author">— Parent, Bikaner</p>
+          </div>
+        </div>
+        <div class="success-story-card">
+          <div class="success-story-image">
+            <img
+              src="https://i.pravatar.cc/400?img=9"
+              alt="Student Riya Gupta"
+              loading="lazy"
+            />
+            <div class="success-badge">Rating +350</div>
+          </div>
+          <div class="success-story-content">
+            <div class="student-info">
+              <h3 class="student-name">Riya Gupta, Age 9</h3>
+              <span class="student-course">Tactical Mastery Course</span>
+            </div>
+            <div class="success-metrics">
+              <div class="metric">
+                <span class="metric-label">Before</span>
+                <span class="metric-value">Rating: 650</span>
+              </div>
+              <div class="metric-arrow">→</div>
+              <div class="metric">
+                <span class="metric-label">After</span>
+                <span class="metric-value">Rating: 1000</span>
+              </div>
+            </div>
+            <div class="success-achievements">
+              <span class="achievement-tag">🏆 School Champion 2025</span>
+              <span class="achievement-tag">🥇 Top 5 in State U-10</span>
+            </div>
+            <blockquote class="success-quote">
+              "Riya's confidence has soared since joining. The Tactical Mastery
+              course helped her see the board in a whole new way. Highly
+              recommended!"
+            </blockquote>
+            <p class="quote-author">— Parent, Jaipur</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section (NEW - Section 1) -->
+    <section class="section faq-section">
+      <div class="section-header">
+        <div class="section-header-content">
+          <h2>Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Everything you need to know about our chess coaching
+          </p>
+        </div>
+        <button class="faq-expand-all" data-expanded="false">Expand All</button>
+      </div>
+      <div class="faq-container">
+        <div class="faq-category">
+          <h3 class="faq-category-title">🎯 Getting Started</h3>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >What age can my child start learning chess?</span
+              >
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We welcome students from age 5 onwards. Our beginner courses are
+                designed specifically for young learners, introducing chess
+                through fun, game-based activities that build foundational
+                skills naturally.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >Do I need to buy a chess set to enroll?</span
+              >
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                For in-person classes, all materials, including chess sets, are
+                provided. For online classes, we recommend having a standard
+                chess set for practice, but it's not mandatory to start. We can
+                recommend good quality, affordable sets.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >What if my child misses a class?</span
+              ><span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We offer flexible options for missed classes. Students can
+                attend a make-up session with another batch (subject to
+                availability) or access a recorded video of the session's key
+                lessons. Please inform us at least 24 hours in advance if you
+                plan to miss a class.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >How do you track student progress?</span
+              ><span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Progress is tracked through a combination of regular in-class
+                assessments, puzzle-solving performance, practice game analysis,
+                and official rating changes from tournaments. We provide parents
+                with a detailed progress report every three months.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >Are there opportunities for tournaments?</span
+              ><span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Absolutely! We strongly encourage competitive play. We host our
+                own internal monthly tournaments and guide students on
+                participating in local, state, and national level FIDE-rated
+                events. Our "Tournament Preparation" course is dedicated to
+                this.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >What's the difference between group and private coaching?</span
+              ><span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Group classes provide a collaborative learning environment and
+                are great for learning fundamentals and practicing with peers.
+                Private coaching offers a highly personalized, one-on-one
+                training plan tailored to a student's specific strengths,
+                weaknesses, and goals, leading to accelerated improvement.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >Can adults join these courses?</span
+              ><span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes! While many of our students are children, we have dedicated
+                batches and private coaching options for adult learners of all
+                levels, from complete beginners to experienced club players
+                looking to improve their rating.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">Do you offer online classes?</span
+              ><span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes, we offer a comprehensive online coaching program with live
+                interactive classes, online playing platforms, and digital
+                access to all our study materials. This allows students from
+                anywhere in the world to learn with us.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >What's included in the course fee?</span
+              ><span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                The monthly course fee includes the scheduled number of classes,
+                all digital study materials and workbooks, access to our online
+                practice portal, and participation in our internal academy
+                tournaments.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text"
+                >How long does it take to become proficient?</span
+              ><span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Progress in chess varies greatly depending on the individual's
+                dedication, practice time, and natural aptitude. However, with
+                consistent attendance and practice (2-3 hours per week), most
+                beginners see a significant improvement and can play confidently
+                in tournaments within 6-8 months.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Academy Life in Pictures</h2>
+        <p class="section-subtitle">
+          See our students in action, tournament victories, and memorable
+          moments
+        </p>
+      </div>
+      <div class="gallery-grid">
+        <a href="gallery.html" class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=400"
+              alt="State Championship 2025"
+              loading="lazy"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="item-info">
+            <h3>State Championship 2025</h3>
+            <p>Our students competing in the state level tournament</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=400"
+              alt="Beginner's Class Session"
+              loading="lazy"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="item-info">
+            <h3>Beginner's Class Session</h3>
+            <p>Introduction to chess fundamentals for new students</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1611195974226-ef4c990c905e?w=400"
+              alt="Opening Strategy Tutorial"
+              loading="lazy"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="item-info">
+            <h3>Opening Strategy</h3>
+            <p>Detailed video tutorial on Italian Opening strategies</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400"
+              alt="Trophy Ceremony"
+              loading="lazy"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="item-info">
+            <h3>Trophy Ceremony</h3>
+            <p>Celebrating our students' achievements and victories</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400"
+              alt="Tournament Highlights"
+              loading="lazy"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="item-info">
+            <h3>Tournament Highlights</h3>
+            <p>Best moments from our annual championship</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400"
+              alt="Grandmaster Visit"
+              loading="lazy"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="item-info">
+            <h3>Grandmaster Visit</h3>
+            <p>Special session with visiting international grandmaster</p>
+          </div>
+        </a>
+      </div>
+      <div
+        class="gallery-preview-footer"
+        style="margin-top: 3rem; text-align: center"
+      >
+        <a href="gallery.html" class="btn btn-secondary">View Full Gallery</a>
+      </div>
+    </section>
+
+    <!-- Blog Preview Section (NEW - Section 6) -->
+    <section class="section blog-preview-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header-wrapper">
+          <div class="section-header-content">
+            <span class="section-eyebrow">Latest Insights</span>
+            <h2 class="section-title">From the Perfect Chess Academy Blog</h2>
+            <p class="section-subtitle">
+              Expert chess strategies, tournament preparation guides, and
+              inspiring student success stories from Bikaner's premier chess
+              training center.
+            </p>
+          </div>
+          <a
+            href="blog.html"
+            class="btn-view-all"
+            aria-label="View all blog articles"
+          >
+            <span>View All Articles</span>
+            <svg
+              class="btn-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12H19M19 12L12 5M19 12L12 19"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="blog-posts-grid">
+          <!-- Blog Card 1: Chess Tips -->
+          <article class="blog-card">
+            <a
+              href="blog-post-common-mistakes.html"
+              class="blog-card-link"
+              aria-label="Read article about common chess mistakes"
+            >
+              <!-- Visual Header with Gradient -->
+              <div class="blog-card-header gradient-chess-tips">
+                <div class="header-pattern" aria-hidden="true"></div>
+                <div class="header-content">
+                  <span class="blog-category">
+                    <svg
+                      class="category-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Chess Tips
+                  </span>
+                  <div class="blog-meta-top">
+                    <span class="meta-badge">
+                      <svg
+                        class="meta-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 6V12L16 14"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      5 min read
+                    </span>
+                    <span class="difficulty-badge beginner">Beginner</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content Section -->
+              <div class="blog-card-content">
+                <!-- Title -->
+                <h3 class="blog-card-title">
+                  10 Common Chess Mistakes Every Beginner Makes (And How to Fix
+                  Them)
+                </h3>
+
+                <!-- Tags -->
+                <div class="blog-tags" role="list">
+                  <span class="tag" role="listitem">Opening Principles</span>
+                  <span class="tag" role="listitem">Tactics</span>
+                  <span class="tag" role="listitem">Beginner Guide</span>
+                  <span class="tag" role="listitem">Strategy</span>
+                </div>
+
+                <!-- Excerpt -->
+                <p class="blog-card-excerpt">
+                  Discover the most frequent errors that hold beginners back
+                  from rapid improvement. Learn proven strategies to overcome
+                  common pitfalls in piece development, center control, and
+                  tactical awareness. This comprehensive guide includes
+                  practical exercises and real game examples from our academy
+                  students.
+                </p>
+
+                <!-- Footer: Author + CTA -->
+                <div class="blog-card-footer">
+                  <div class="blog-author">
+                    <div class="author-avatar">
+                      <svg
+                        class="avatar-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div class="author-info">
+                      <span class="author-name">Hemant Sharma</span>
+                      <span class="author-role">Head Coach</span>
+                    </div>
+                  </div>
+                  <div class="blog-meta-footer">
+                    <span class="meta-date">
+                      <svg
+                        class="date-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      Dec 10, 2025
+                    </span>
+                  </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="blog-card-cta">
+                  <span class="cta-text">Read Full Article</span>
+                  <svg
+                    class="cta-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Blog Card 2: Tournaments -->
+          <article class="blog-card">
+            <a
+              href="blog-post-tournament-prep.html"
+              class="blog-card-link"
+              aria-label="Read article about tournament preparation"
+            >
+              <div class="blog-card-header gradient-tournaments">
+                <div class="header-pattern" aria-hidden="true"></div>
+                <div class="header-content">
+                  <span class="blog-category">
+                    <svg
+                      class="category-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 15C15.866 15 19 11.866 19 8C19 4.13401 15.866 1 12 1C8.13401 1 5 4.13401 5 8C5 11.866 8.13401 15 12 15Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Tournaments
+                  </span>
+                  <div class="blog-meta-top">
+                    <span class="meta-badge">
+                      <svg
+                        class="meta-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 6V12L16 14"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      7 min read
+                    </span>
+                    <span class="difficulty-badge intermediate"
+                      >Intermediate</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">
+                  How to Prepare for Your First FIDE-Rated Tournament
+                </h3>
+
+                <div class="blog-tags" role="list">
+                  <span class="tag" role="listitem">Tournament Prep</span>
+                  <span class="tag" role="listitem">FIDE Rating</span>
+                  <span class="tag" role="listitem">Mental Training</span>
+                  <span class="tag" role="listitem">Competition</span>
+                </div>
+
+                <p class="blog-card-excerpt">
+                  A comprehensive step-by-step guide covering everything you
+                  need for your first official FIDE tournament. Learn about
+                  registration procedures, time management strategies, opening
+                  preparation, and mental conditioning techniques used by top
+                  players. Includes a downloadable pre-tournament checklist and
+                  preparation schedule.
+                </p>
+
+                <div class="blog-card-footer">
+                  <div class="blog-author">
+                    <div class="author-avatar">
+                      <svg
+                        class="avatar-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div class="author-info">
+                      <span class="author-name">Hemant Sharma</span>
+                      <span class="author-role">Head Coach</span>
+                    </div>
+                  </div>
+                  <div class="blog-meta-footer">
+                    <span class="meta-date">
+                      <svg
+                        class="date-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      Dec 05, 2025
+                    </span>
+                  </div>
+                </div>
+
+                <div class="blog-card-cta">
+                  <span class="cta-text">Read Full Article</span>
+                  <svg
+                    class="cta-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Blog Card 3: Student Stories -->
+          <article class="blog-card">
+            <a
+              href="blog-post-student-spotlight.html"
+              class="blog-card-link"
+              aria-label="Read student success story"
+            >
+              <div class="blog-card-header gradient-student-stories">
+                <div class="header-pattern" aria-hidden="true"></div>
+                <div class="header-content">
+                  <span class="blog-category">
+                    <svg
+                      class="category-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Student Stories
+                  </span>
+                  <div class="blog-meta-top">
+                    <span class="meta-badge">
+                      <svg
+                        class="meta-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 6V12L16 14"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      4 min read
+                    </span>
+                    <span class="difficulty-badge all-levels">All Levels</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">
+                  Student Spotlight: How Arjun Sharma Became District Champion
+                </h3>
+
+                <div class="blog-tags" role="list">
+                  <span class="tag" role="listitem">Success Story</span>
+                  <span class="tag" role="listitem">Training Journey</span>
+                  <span class="tag" role="listitem">Motivation</span>
+                  <span class="tag" role="listitem">Achievement</span>
+                </div>
+
+                <p class="blog-card-excerpt">
+                  An inspiring inside look at the dedication and training
+                  regimen that propelled 12-year-old Arjun from a complete
+                  beginner to Bikaner District Champion in just 18 months.
+                  Discover the daily practice routines, mental conditioning
+                  techniques, and key moments that defined his chess journey at
+                  Perfect Chess Academy.
+                </p>
+
+                <div class="blog-card-footer">
+                  <div class="blog-author">
+                    <div class="author-avatar">
+                      <svg
+                        class="avatar-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div class="author-info">
+                      <span class="author-name">Rajat Choudhary</span>
+                      <span class="author-role">Assistant Coach</span>
+                    </div>
+                  </div>
+                  <div class="blog-meta-footer">
+                    <span class="meta-date">
+                      <svg
+                        class="date-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      Nov 28, 2025
+                    </span>
+                  </div>
+                </div>
+
+                <div class="blog-card-cta">
+                  <span class="cta-text">Read Full Article</span>
+                  <svg
+                    class="cta-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <!-- Optional: Featured Posts or Newsletter CTA -->
+        <div class="blog-section-footer">
+          <div class="newsletter-cta-card">
+            <div class="newsletter-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22 6L12 13L2 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="newsletter-content">
+              <h3 class="newsletter-title">Never Miss a Chess Insight</h3>
+              <p class="newsletter-text">
+                Get weekly tips, tournament updates, and exclusive training
+                content delivered to your inbox.
+              </p>
+            </div>
+            <a href="#free-guide" class="btn-newsletter">Subscribe Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <h2 class="section-title">Ready to Begin Your Chess Journey?</h2>
+      <p class="section-subtitle">
+        Join thousands of students who have improved their chess skills with our
+        expert guidance
+      </p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary btn-keep-orange"
+          >Enroll Now</a
+        >
+        <a href="courses.html" class="btn btn-secondary">Browse Courses</a>
+      </div>
+    </section>
+
+    <!-- World Map Section -->
+    <section class="section world-map-section">
+      <div class="section-header">
+        <h2 class="section-title">Our Global Reach</h2>
+        <p class="section-subtitle">
+          Available for students in USA, India, and Canada
+        </p>
+      </div>
+      <div class="map-container">
+        <img
+          src="https://www.vectorworldmap.com/vectormaps/vector-world-map-v2.2-blank.jpg"
+          alt="World map showing Perfect Chess Academy's global reach in USA, India, and Canada"
+          style="
+            width: 100%;
+            height: auto;
+            filter: grayscale(1) brightness(0.5);
+          "
+        />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section footer-map">
+          <h3>Our Location</h3>
+          <!-- Google Map will be embedded here -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.2841823405383!2d73.31320467460951!3d28.015788811821672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393fdd1078b21f2d%3A0x67d3140bf3bcdd44!2sPerfect%20chess%20academy!5e0!3m2!1sen!2sin!4v1756562822478!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="footer-section">
+          <h3>Perfect Chess Academy</h3>
+          <p>
+            Empowering chess players of all levels to achieve their full
+            potential through expert coaching and comprehensive training
+            programs.
+          </p>
+          <div class="footer-contact-info">
+            <p>📍 Bikaner, Rajasthan, India</p>
+            <p>📧 talktokp23@gmail.com</p>
+            <p>📱 +91 92523 58993</p>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="coaching.html">Private Coaching</a></li>
+            <li><a href="tournaments.html">Tournaments</a></li>
+            <li><a href="blog.html">Chess Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Programs</h3>
+          <ul>
+            <li><a href="courses.html">Beginner Classes</a></li>
+            <li><a href="courses.html">Advanced Training</a></li>
+            <li><a href="courses.html">Tournament Prep</a></li>
+            <li><a href="coaching.html">Online Coaching</a></li>
+            <li><a href="tournaments.html">Summer Camps</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li>
+              <a
+                href="https://wa.me/919252358993"
+                target="_blank"
+                rel="noopener noreferrer"
+                >WhatsApp</a
+              >
+            </li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="contact.html">Student Portal</a></li>
+            <li><a href="contact.html">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-social-links">
+          <a
+            href="https://www.facebook.com/kapil.panwar.71/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://share.google/02jHgLaSt3rA88jFG"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google Maps"
+            ><i class="fas fa-map-marker-alt"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/perfectchessacademy92/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://wa.me/919252358993"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+        <p>
+          &copy; 2025 Perfect Chess Academy. All rights reserved. | Designed
+          with ♟️ for chess enthusiasts
+        </p>
+      </div>
+    </footer>
+
+    <div class="floating-action-buttons">
+      <!-- Back to Top Button with SVG -->
+      <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </button>
+
+      <!-- Settings Button - Heroicons Style -->
+      <button class="settings-toggle" aria-label="Open user preferences">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel">
+      <div class="settings-header">
+        <h3>🎨 User Preferences</h3>
+        <button class="settings-close" aria-label="Close user preferences">
+          ✕
+        </button>
+      </div>
+
+      <div class="setting-item">
+        <label>🌗 Theme</label>
+        <div id="theme-toggle" class="theme-toggle">
+          <span>🌙 Dark Mode</span>
+          <div class="toggle-switch"></div>
+          <span>☀️ Light Mode</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🎭 Visual Effects</label>
+        <div id="animations-toggle" class="theme-toggle">
+          <span>⚡ Off</span>
+          <div class="toggle-switch active"></div>
+          <span>✨ On</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🖱️ Mouse Trail</label>
+        <div id="mouse-trail-toggle" class="theme-toggle">
+          <span>⚡ Off</span>
+          <div class="toggle-switch"></div>
+          <span>✨ On</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label
+          >🔊 Sound Effects
+          <span class="experimental-tag">Experimental</span></label
+        >
+        <div id="sound-toggle" class="theme-toggle">
+          <span>🔇 Off</span>
+          <div class="toggle-switch"></div>
+          <span>🔊 On</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>📏 Font Size</label>
+        <div class="font-size-controls">
+          <button id="font-smaller" class="font-btn">A-</button>
+          <span id="font-display">100%</span>
+          <button id="font-larger" class="font-btn">A+</button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🎨 Site Theme</label>
+        <div class="theme-palette-container">
+          <div class="theme-palette active" data-theme="default">
+            <div style="background-color: var(--showcase-default-1)"></div>
+            <div style="background-color: var(--showcase-default-2)"></div>
+            <div style="background-color: var(--showcase-default-3)"></div>
+          </div>
+          <div class="theme-palette" data-theme="ocean">
+            <div style="background-color: var(--showcase-ocean-1)"></div>
+            <div style="background-color: var(--showcase-ocean-2)"></div>
+            <div style="background-color: var(--showcase-ocean-3)"></div>
+          </div>
+          <div class="theme-palette" data-theme="forest">
+            <div style="background-color: var(--showcase-forest-1)"></div>
+            <div style="background-color: var(--showcase-forest-2)"></div>
+            <div style="background-color: var(--showcase-forest-3)"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button id="reset-settings" class="btn btn-secondary">
+          🔄 Reset All
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Interface -->
+    <div class="chat-container">
+      <div class="chat-header">
+        <h3>AI Assistant</h3>
+        <button class="chat-close" aria-label="Close AI Assistant">✕</button>
+      </div>
+      <div class="chat-messages"></div>
+      <div class="chat-input-container">
+        <form id="chat-form">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Ask about chess, courses, or tournaments..."
+            autocomplete="off"
+          />
+          <button type="submit">➤</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="universal-settings.js"></script>
+    <canvas id="mouse-trail-canvas"></canvas>
+  </body>
+  <script>
+    "undefined" === typeof _trfq || (window._trfq = []);
+    "undefined" === typeof _trfd && (window._trfd = []),
+      _trfd.push(
+        { "tccl.baseHost": "secureserver.net" },
+        { ap: "cpsh-oh" },
+        { server: "sg2plzcpnl509511" },
+        { dcenter: "sg2" },
+        { cp_id: "10618141" },
+        { cp_cl: "8" }
+      ); // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
+  </script>
+  <script src="https://img1.wsimg.com/traffic-assets/js/tccl.min.js"></script>
+</html>

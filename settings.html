@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - Perfect Chess Academy</title>
+    <meta name="description" content="Manage your account settings, profile, addresses, and preferences.">
+    
+    <!-- Existing Stylesheets -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    
+    <!-- NEW: Settings CSS -->
+    <link rel="stylesheet" href="assets/css/settings.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Your Existing Header -->
+    <header>
+        <nav>
+            <button class="hamburger-btn" aria-label="Toggle navigation menu">
+                <div class="hamburger-icon"></div>
+            </button>
+            
+            <div class="logo">
+                <img src="logo-removebg-preview.png" alt="Perfect Chess Academy Logo">
+            </div>
+            
+            <div id="nav-links-desktop" class="nav-links desktop-only">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="courses.html">Courses</a>
+                <a href="tournaments.html">Tournaments</a>
+                <a href="coaching.html">Coaching</a>
+                <a href="shop.html">Shop</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="header-shop-icons">
+                <button class="icon-btn" onclick="openSearch()" aria-label="Search products">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="icon-btn" onclick="toggleWishlist()" aria-label="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </button>
+                <button class="icon-btn" onclick="toggleCart()" aria-label="Shopping cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="settings-page">
+        <div class="container-settings">
+            
+            <!-- Page Header -->
+            <div class="settings-header">
+                <div class="header-content">
+                    <h1 class="page-title">Account Settings</h1>
+                    <p class="page-subtitle">Manage your profile, preferences, and account security</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-save-all" onclick="saveAllSettings()">
+                        <i class="fas fa-save"></i>
+                        <span>Save All Changes</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                
+                <!-- LEFT: Settings Navigation -->
+                <aside class="settings-sidebar">
+                    <nav class="settings-nav">
+                        
+                        <button class="nav-item active" data-section="profile" onclick="switchSection('profile')">
+                            <div class="nav-icon">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">Profile</span>
+                                <span class="nav-desc">Personal information</span>
+                            </div>
+                            <i class="fas fa-chevron-right nav-arrow"></i>
+                        </button>
+
+                        <button class="nav-item" data-section="account" onclick="switchSection('account')">
+                            <div class="nav-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">Account Details</span>
+                                <span class="nav-desc">Email, phone, username</span>
+                            </div>
+                            <i class="fas fa-chevron-right nav-arrow"></i>
+                        </button>
+
+                        <button class="nav-item" data-section="security" onclick="switchSection('security')">
+                            <div class="nav-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">Security</span>
+                                <span class="nav-desc">Password & authentication</span>
+                            </div>
+                            <i class="fas fa-chevron-right nav-arrow"></i>
+                        </button>
+
+                        <button class="nav-item" data-section="addresses" onclick="switchSection('addresses')">
+                            <div class="nav-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">Addresses</span>
+                                <span class="nav-desc">Saved delivery locations</span>
+                            </div>
+                            <span class="nav-badge">3</span>
+                            <i class="fas fa-chevron-right nav-arrow"></i>
+                        </button>
+
+                        <button class="nav-item" data-section="notifications" onclick="switchSection('notifications')">
+                            <div class="nav-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">Notifications</span>
+                                <span class="nav-desc">Email, SMS, WhatsApp</span>
+                            </div>
+                            <i class="fas fa-chevron-right nav-arrow"></i>
+                        </button>
+
+                        <button class="nav-item" data-section="preferences" onclick="switchSection('preferences')">
+                            <div class="nav-icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">Preferences</span>
+                                <span class="nav-desc">Shopping & display</span>
+                            </div>
+                            <i class="fas fa-chevron-right nav-arrow"></i>
+                        </button>
+
+                        <button class="nav-item" data-section="privacy" onclick="switchSection('privacy')">
+                            <div class="nav-icon">
+                                <i class="fas fa-user-lock"></i>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">Privacy</span>
+                                <span class="nav-desc">Data & permissions</span>
+                            </div>
+                            <i class="fas fa-chevron-right nav-arrow"></i>
+                        </button>
+
+                        <div class="nav-divider"></div>
+
+                        <button class="nav-item nav-danger" onclick="confirmLogout()">
+                            <div class="nav-icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">Logout</span>
+                            </div>
+                        </button>
+
+                    </nav>
+                </aside>
+
+                <!-- RIGHT: Settings Content -->
+                <div class="settings-content">
+                    
+                    <!-- SECTION: PROFILE -->
+                    <section class="settings-section active" id="section-profile">
+                        
+                        <div class="section-header">
+                            <h2 class="section-title">Profile Information</h2>
+                            <p class="section-desc">Update your photo and personal details</p>
+                        </div>
+
+                        <!-- Profile Photo -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Profile Photo</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="profile-photo-section">
+                                    <div class="photo-preview">
+                                        <img src="https://ui-avatars.com/api/?name=Rajesh+Kumar&size=120&background=d4af37&color=fff&bold=true" 
+                                             alt="Profile Photo" 
+                                             id="profilePhotoPreview">
+                                        <div class="photo-overlay">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                    </div>
+                                    <div class="photo-actions">
+                                        <label class="btn-upload" for="profilePhotoInput">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Upload Photo</span>
+                                            <input type="file" id="profilePhotoInput" accept="image/*" style="display: none;" onchange="uploadProfilePhoto(event)">
+                                        </label>
+                                        <button class="btn-remove" onclick="removeProfilePhoto()">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Remove</span>
+                                        </button>
+                                        <div class="photo-hint">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span>JPG, PNG or GIF. Max 2MB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Basic Information -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Basic Information</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="settings-form">
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" class="form-input" id="firstName" value="Rajesh" placeholder="Enter first name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Last Name</label>
+                                            <input type="text" class="form-input" id="lastName" value="Kumar" placeholder="Enter last name">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Display Name</label>
+                                        <input type="text" class="form-input" id="displayName" value="Rajesh K." placeholder="How should we call you?">
+                                        <span class="form-hint">This will be shown across the platform</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Bio</label>
+                                        <textarea class="form-textarea" id="userBio" rows="4" placeholder="Tell us about yourself...">Chess enthusiast and student at Perfect Chess Academy. Learning advanced tactics and strategies.</textarea>
+                                        <span class="form-hint char-counter">
+                                            <span id="bioCharCount">95</span> / 200 characters
+                                        </span>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label">Date of Birth</label>
+                                            <input type="date" class="form-input" id="dateOfBirth" value="1995-05-15">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Gender</label>
+                                            <select class="form-input" id="gender">
+                                                <option value="">Prefer not to say</option>
+                                                <option value="male" selected>Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Chess Rating (FIDE)</label>
+                                        <input type="number" class="form-input" id="chessRating" value="1450" placeholder="Enter your rating">
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" onclick="saveProfileInfo()">
+                                    <i class="fas fa-save"></i>
+                                    Save Changes
+                                </button>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- SECTION: ACCOUNT DETAILS -->
+                    <section class="settings-section" id="section-account">
+                        
+                        <div class="section-header">
+                            <h2 class="section-title">Account Details</h2>
+                            <p class="section-desc">Manage your contact information</p>
+                        </div>
+
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Contact Information</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="settings-form">
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Email Address</label>
+                                        <div class="input-with-badge">
+                                            <input type="email" class="form-input" id="email" value="rajesh.kumar@example.com" readonly>
+                                            <span class="verified-badge">
+                                                <i class="fas fa-check-circle"></i>
+                                                Verified
+                                            </span>
+                                        </div>
+                                        <button type="button" class="btn-link" onclick="changeEmail()">
+                                            <i class="fas fa-edit"></i>
+                                            Change Email
+                                        </button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number</label>
+                                        <div class="input-with-badge">
+                                            <div class="phone-input-group">
+                                                <select class="country-code">
+                                                    <option value="+91" selected>🇮🇳 +91</option>
+                                                    <option value="+1">🇺🇸 +1</option>
+                                                    <option value="+44">🇬🇧 +44</option>
+                                                </select>
+                                                <input type="tel" class="form-input" id="phone" value="9876543210">
+                                            </div>
+                                            <span class="verified-badge">
+                                                <i class="fas fa-check-circle"></i>
+                                                Verified
+                                            </span>
+                                        </div>
+                                        <button type="button" class="btn-link" onclick="verifyPhone()">
+                                            <i class="fas fa-shield-alt"></i>
+                                            Re-verify Phone
+                                        </button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Username</label>
+                                        <input type="text" class="form-input" id="username" value="rajesh_chess95">
+                                        <span class="form-hint">
+                                            Your username will be: perfectchessacademy.com/@rajesh_chess95
+                                        </span>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" onclick="saveAccountDetails()">
+                                    <i class="fas fa-save"></i>
+                                    Save Changes
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Account Status -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Account Status</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="status-grid">
+                                    <div class="status-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <div class="status-content">
+                                            <span class="status-label">Member Since</span>
+                                            <span class="status-value">January 15, 2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-item">
+                                        <i class="fas fa-star"></i>
+                                        <div class="status-content">
+                                            <span class="status-label">Membership</span>
+                                            <span class="status-value premium">Premium</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-item">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <div class="status-content">
+                                            <span class="status-label">Total Orders</span>
+                                            <span class="status-value">12</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-item">
+                                        <i class="fas fa-trophy"></i>
+                                        <div class="status-content">
+                                            <span class="status-label">Tournaments</span>
+                                            <span class="status-value">5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- SECTION: SECURITY -->
+                    <section class="settings-section" id="section-security">
+                        
+                        <div class="section-header">
+                            <h2 class="section-title">Security Settings</h2>
+                            <p class="section-desc">Keep your account secure</p>
+                        </div>
+
+                        <!-- Change Password -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Change Password</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="settings-form">
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Current Password</label>
+                                        <div class="password-input">
+                                            <input type="password" class="form-input" id="currentPassword" placeholder="Enter current password">
+                                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('currentPassword')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">New Password</label>
+                                        <div class="password-input">
+                                            <input type="password" class="form-input" id="newPassword" placeholder="Enter new password">
+                                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('newPassword')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="password-strength" id="passwordStrength">
+                                            <div class="strength-bar">
+                                                <div class="strength-fill"></div>
+                                            </div>
+                                            <span class="strength-text">Password strength</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Confirm New Password</label>
+                                        <div class="password-input">
+                                            <input type="password" class="form-input" id="confirmPassword" placeholder="Confirm new password">
+                                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('confirmPassword')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="password-requirements">
+                                        <p class="requirements-title">Password must contain:</p>
+                                        <ul class="requirements-list">
+                                            <li id="req-length">
+                                                <i class="fas fa-circle"></i>
+                                                At least 8 characters
+                                            </li>
+                                            <li id="req-uppercase">
+                                                <i class="fas fa-circle"></i>
+                                                One uppercase letter
+                                            </li>
+                                            <li id="req-lowercase">
+                                                <i class="fas fa-circle"></i>
+                                                One lowercase letter
+                                            </li>
+                                            <li id="req-number">
+                                                <i class="fas fa-circle"></i>
+                                                One number
+                                            </li>
+                                            <li id="req-special">
+                                                <i class="fas fa-circle"></i>
+                                                One special character
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" onclick="changePassword()">
+                                    <i class="fas fa-key"></i>
+                                    Change Password
+                                </button>
+                                <button class="btn btn-secondary" onclick="forgotPassword()">
+                                    Forgot Password?
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Two-Factor Authentication -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Two-Factor Authentication (2FA)</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="feature-row">
+                                    <div class="feature-info">
+                                        <div class="feature-icon">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                        <div class="feature-content">
+                                            <h4>SMS Authentication</h4>
+                                            <p>Receive verification codes via SMS</p>
+                                        </div>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="sms2fa" checked onchange="toggle2FA('sms')">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="feature-row">
+                                    <div class="feature-info">
+                                        <div class="feature-icon">
+                                            <i class="fas fa-qrcode"></i>
+                                        </div>
+                                        <div class="feature-content">
+                                            <h4>Authenticator App</h4>
+                                            <p>Use Google Authenticator or similar</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-secondary btn-sm" onclick="setupAuthenticator()">
+                                        Setup
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Sessions -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Active Sessions</h3>
+                                <button class="btn btn-danger btn-sm" onclick="logoutAllDevices()">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout All
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="session-list">
+                                    
+                                    <div class="session-item current">
+                                        <div class="session-icon">
+                                            <i class="fas fa-desktop"></i>
+                                        </div>
+                                        <div class="session-details">
+                                            <div class="session-header">
+                                                <h4>Windows PC • Chrome</h4>
+                                                <span class="current-badge">Current</span>
+                                            </div>
+                                            <p class="session-info">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                Mumbai, India • 192.168.1.1
+                                            </p>
+                                            <p class="session-time">Last active: Just now</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="session-item">
+                                        <div class="session-icon">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                        <div class="session-details">
+                                            <div class="session-header">
+                                                <h4>iPhone 14 • Safari</h4>
+                                            </div>
+                                            <p class="session-info">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                Mumbai, India • 192.168.1.105
+                                            </p>
+                                            <p class="session-time">Last active: 2 hours ago</p>
+                                        </div>
+                                        <button class="btn btn-danger btn-sm" onclick="logoutSession('mobile-1')">
+                                            Logout
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- SECTION: ADDRESSES -->
+                    <section class="settings-section" id="section-addresses">
+                        
+                        <div class="section-header">
+                            <h2 class="section-title">Saved Addresses</h2>
+                            <p class="section-desc">Manage your delivery addresses</p>
+                        </div>
+
+                        <div class="addresses-grid">
+                            
+                            <!-- Add New Address Card -->
+                            <div class="address-card add-new" onclick="showAddAddressModal()">
+                                <div class="add-new-content">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Add New Address</span>
+                                </div>
+                            </div>
+
+                            <!-- Address Card 1 -->
+                            <div class="address-card">
+                                <div class="address-header">
+                                    <span class="address-type home">
+                                        <i class="fas fa-home"></i>
+                                        Home
+                                    </span>
+                                    <span class="default-badge">Default</span>
+                                </div>
+                                <div class="address-body">
+                                    <h4 class="address-name">Rajesh Kumar</h4>
+                                    <p class="address-text">
+                                        Shop No. 12, Central Market<br>
+                                        Near Railway Station<br>
+                                        Bikaner, Rajasthan - 334001<br>
+                                        Phone: +91 9876543210
+                                    </p>
+                                </div>
+                                <div class="address-footer">
+                                    <button class="btn-icon-text" onclick="editAddress(1)">
+                                        <i class="fas fa-edit"></i>
+                                        Edit
+                                    </button>
+                                    <button class="btn-icon-text danger" onclick="deleteAddress(1)">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Address Card 2 -->
+                            <div class="address-card">
+                                <div class="address-header">
+                                    <span class="address-type office">
+                                        <i class="fas fa-briefcase"></i>
+                                        Office
+                                    </span>
+                                </div>
+                                <div class="address-body">
+                                    <h4 class="address-name">Rajesh Kumar</h4>
+                                    <p class="address-text">
+                                        3rd Floor, Tech Tower<br>
+                                        Cyber City, Sector 18<br>
+                                        Mumbai, Maharashtra - 400001<br>
+                                        Phone: +91 9876543210
+                                    </p>
+                                </div>
+                                <div class="address-footer">
+                                    <button class="btn-icon-text" onclick="setDefaultAddress(2)">
+                                        <i class="fas fa-star"></i>
+                                        Set as Default
+                                    </button>
+                                    <button class="btn-icon-text" onclick="editAddress(2)">
+                                        <i class="fas fa-edit"></i>
+                                        Edit
+                                    </button>
+                                    <button class="btn-icon-text danger" onclick="deleteAddress(2)">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Address Card 3 -->
+                            <div class="address-card">
+                                <div class="address-header">
+                                    <span class="address-type other">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Other
+                                    </span>
+                                </div>
+                                <div class="address-body">
+                                    <h4 class="address-name">Parents House</h4>
+                                    <p class="address-text">
+                                        House No. 45, Street 12<br>
+                                        Gandhi Nagar Colony<br>
+                                        Jaipur, Rajasthan - 302001<br>
+                                        Phone: +91 9876543210
+                                    </p>
+                                </div>
+                                <div class="address-footer">
+                                    <button class="btn-icon-text" onclick="setDefaultAddress(3)">
+                                        <i class="fas fa-star"></i>
+                                        Set as Default
+                                    </button>
+                                    <button class="btn-icon-text" onclick="editAddress(3)">
+                                        <i class="fas fa-edit"></i>
+                                        Edit
+                                    </button>
+                                    <button class="btn-icon-text danger" onclick="deleteAddress(3)">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!-- SECTION: NOTIFICATIONS -->
+                    <section class="settings-section" id="section-notifications">
+                        
+                        <div class="section-header">
+                            <h2 class="section-title">Notification Preferences</h2>
+                            <p class="section-desc">Choose how you want to be notified</p>
+                        </div>
+
+                        <!-- Email Notifications -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Notifications
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="notification-list">
+                                    
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Order Updates</h4>
+                                            <p>Notifications about your orders, delivery status, and tracking</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Promotional Emails</h4>
+                                            <p>Special offers, discounts, and new product announcements</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Course Updates</h4>
+                                            <p>Notifications about new courses, tournaments, and coaching sessions</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Newsletter</h4>
+                                            <p>Weekly newsletter with chess tips, strategies, and academy updates</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SMS Notifications -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-sms"></i>
+                                    SMS Notifications
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="notification-list">
+                                    
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Order Confirmation</h4>
+                                            <p>SMS when your order is confirmed</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Delivery Updates</h4>
+                                            <p>SMS when your order is out for delivery</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Tournament Reminders</h4>
+                                            <p>SMS reminders before your registered tournaments</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp Notifications -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fab fa-whatsapp"></i>
+                                    WhatsApp Notifications
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="notification-list">
+                                    
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Order Tracking</h4>
+                                            <p>Real-time order status updates on WhatsApp</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Exclusive Offers</h4>
+                                            <p>Get exclusive deals and early access offers on WhatsApp</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h4>Class Reminders</h4>
+                                            <p>Reminders for your upcoming chess classes</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- SECTION: PREFERENCES -->
+                    <section class="settings-section" id="section-preferences">
+                        
+                        <div class="section-header">
+                            <h2 class="section-title">Shopping Preferences</h2>
+                            <p class="section-desc">Customize your shopping experience</p>
+                        </div>
+
+                        <!-- Default Settings -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Default Settings</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="settings-form">
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Default Payment Method</label>
+                                        <select class="form-input">
+                                            <option value="online" selected>UPI / Cards / Netbanking</option>
+                                            <option value="cod">Cash on Delivery</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Preferred Delivery Address</label>
+                                        <select class="form-input">
+                                            <option value="1" selected>Home - Central Market, Bikaner</option>
+                                            <option value="2">Office - Tech Tower, Mumbai</option>
+                                            <option value="3">Other - Gandhi Nagar, Jaipur</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Product Display</label>
+                                        <select class="form-input">
+                                            <option value="grid" selected>Grid View</option>
+                                            <option value="list">List View</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Items Per Page</label>
+                                        <select class="form-input">
+                                            <option value="12">12 Products</option>
+                                            <option value="24" selected>24 Products</option>
+                                            <option value="48">48 Products</option>
+                                            <option value="all">All Products</option>
+                                        </select>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" onclick="savePreferences()">
+                                    <i class="fas fa-save"></i>
+                                    Save Preferences
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Display Settings -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Display Settings</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="preference-list">
+                                    
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h4>Dark Mode</h4>
+                                            <p>Use dark theme across the website</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" id="darkModeToggle" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h4>Reduce Animations</h4>
+                                            <p>Minimize motion and animations for better performance</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h4>Show Product Prices</h4>
+                                            <p>Display prices in Indian Rupees (₹)</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- SECTION: PRIVACY -->
+                    <section class="settings-section" id="section-privacy">
+                        
+                        <div class="section-header">
+                            <h2 class="section-title">Privacy & Data</h2>
+                            <p class="section-desc">Control your data and privacy settings</p>
+                        </div>
+
+                        <!-- Privacy Settings -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Privacy Controls</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="privacy-list">
+                                    
+                                    <div class="privacy-item">
+                                        <div class="privacy-info">
+                                            <h4>Profile Visibility</h4>
+                                            <p>Make your profile visible to other users</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="privacy-item">
+                                        <div class="privacy-info">
+                                            <h4>Show Activity Status</h4>
+                                            <p>Let others see when you're online</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="privacy-item">
+                                        <div class="privacy-info">
+                                            <h4>Purchase History</h4>
+                                            <p>Allow us to use your purchase history for recommendations</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="privacy-item">
+                                        <div class="privacy-info">
+                                            <h4>Personalized Ads</h4>
+                                            <p>See ads tailored to your interests</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Management -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Data Management</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="data-actions">
+                                    
+                                    <div class="data-action-item">
+                                        <div class="data-action-info">
+                                            <i class="fas fa-download"></i>
+                                            <div>
+                                                <h4>Download Your Data</h4>
+                                                <p>Get a copy of all your data in JSON format</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-secondary" onclick="downloadData()">
+                                            Download
+                                        </button>
+                                    </div>
+
+                                    <div class="data-action-item">
+                                        <div class="data-action-info">
+                                            <i class="fas fa-trash-restore"></i>
+                                            <div>
+                                                <h4>Clear Browsing Data</h4>
+                                                <p>Clear your search history and browsing data</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-secondary" onclick="clearBrowsingData()">
+                                            Clear
+                                        </button>
+                                    </div>
+
+                                    <div class="data-action-item danger">
+                                        <div class="data-action-info">
+                                            <i class="fas fa-user-times"></i>
+                                            <div>
+                                                <h4>Delete Account</h4>
+                                                <p>Permanently delete your account and all data</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-danger" onclick="confirmDeleteAccount()">
+                                            Delete Account
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Connected Apps -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Connected Apps</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="connected-apps-list">
+                                    
+                                    <div class="connected-app">
+                                        <div class="app-icon google">
+                                            <i class="fab fa-google"></i>
+                                        </div>
+                                        <div class="app-details">
+                                            <h4>Google Account</h4>
+                                            <p>Connected on January 15, 2024</p>
+                                        </div>
+                                        <button class="btn btn-danger btn-sm" onclick="disconnectApp('google')">
+                                            Disconnect
+                                        </button>
+                                    </div>
+
+                                    <div class="connected-app">
+                                        <div class="app-icon facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </div>
+                                        <div class="app-details">
+                                            <h4>Facebook</h4>
+                                            <p>Connected on March 10, 2024</p>
+                                        </div>
+                                        <button class="btn btn-danger btn-sm" onclick="disconnectApp('facebook')">
+                                            Disconnect
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Your Existing Footer -->
+    <footer>
+        <!-- Your existing footer code -->
+    </footer>
+
+    <!-- Add Address Modal -->
+    <div class="modal" id="addAddressModal">
+        <div class="modal-overlay" onclick="closeAddAddressModal()"></div>
+        <div class="modal-container modal-medium">
+            <button class="modal-close" onclick="closeAddAddressModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <h3 class="modal-title">Add New Address</h3>
+                
+                <form class="address-form">
+                    <div class="form-group">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" class="form-input" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-input" placeholder="10-digit mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Pincode *</label>
+                            <input type="text" class="form-input" placeholder="6-digit pincode" maxlength="6" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Address *</label>
+                        <input type="text" class="form-input" placeholder="House No., Building Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Area, Street, Locality</label>
+                        <input type="text" class="form-input" placeholder="Landmark, Area">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">City *</label>
+                            <input type="text" class="form-input" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">State *</label>
+                            <select class="form-input" required>
+                                <option value="">Select State</option>
+                                <option value="RJ">Rajasthan</option>
+                                <option value="MH">Maharashtra</option>
+                                <option value="DL">Delhi</option>
+                                <!-- Add more states -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Address Type</label>
+                        <div class="address-type-buttons">
+                            <label class="type-btn">
+                                <input type="radio" name="addressType" value="home" checked>
+                                <span>
+                                    <i class="fas fa-home"></i>
+                                    Home
+                                </span>
+                            </label>
+                            <label class="type-btn">
+                                <input type="radio" name="addressType" value="office">
+                                <span>
+                                    <i class="fas fa-briefcase"></i>
+                                    Office
+                                </span>
+                            </label>
+                            <label class="type-btn">
+                                <input type="radio" name="addressType" value="other">
+                                <span>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Other
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-wrapper">
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span class="checkbox-custom">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span>Set as default address</span>
+                        </label>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeAddAddressModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary" onclick="saveAddress(event)">
+                            <i class="fas fa-save"></i>
+                            Save Address
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="assets/js/shop.js"></script>
+    <script src="assets/js/settings.js"></script>
+</body>
+</html>

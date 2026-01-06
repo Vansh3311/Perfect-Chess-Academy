@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Chess Shop - Perfect Chess Academy | Buy Chess Sets, Books & More
+    </title>
+    <meta
+      name="description"
+      content="Buy premium chess sets, books, digital courses and tournament equipment. Free shipping above ₹999. 30-day easy returns."
+    />
+
+    <!-- Existing Stylesheets -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+
+    <!-- NEW: Shop CSS -->
+    <link rel="stylesheet" href="assets/css/shop.css" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Your Existing Header -->
+    <header>
+      <nav>
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <div class="hamburger-icon"></div>
+        </button>
+
+        <div class="logo">
+          <img
+            src="logo-removebg-preview.png"
+            alt="Perfect Chess Academy Logo"
+          />
+        </div>
+
+        <div id="nav-links-desktop" class="nav-links desktop-only">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="courses.html">Courses</a>
+          <a href="tournaments.html">Tournaments</a>
+          <a href="coaching.html">Coaching</a>
+          <a href="shop.html" class="active">Shop</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Shop Icons -->
+        <div class="header-shop-icons">
+          <button
+            class="icon-btn"
+            onclick="openSearch()"
+            aria-label="Search products"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+          <button
+            class="icon-btn"
+            onclick="toggleWishlist()"
+            aria-label="Wishlist"
+          >
+            <i class="fas fa-heart"></i>
+            <span class="badge" id="wishlistCount">0</span>
+          </button>
+          <button
+            class="icon-btn"
+            onclick="toggleCart()"
+            aria-label="Shopping cart"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge" id="cartCount">0</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-backdrop"></div>
+    <div id="nav-links-mobile" class="nav-links mobile-only">
+      <button class="mobile-menu-close">×</button>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <main class="shop-page">
+      <!-- HERO SECTION -->
+      <section class="shop-hero">
+        <div class="container">
+          <div class="shop-hero-content">
+            <div class="breadcrumb">
+              <a href="index.html"><i class="fas fa-home"></i> Home</a>
+              <span class="separator">/</span>
+              <span>Shop</span>
+            </div>
+
+            <h1 class="shop-hero-title">
+              Premium Chess <span class="highlight">Shop</span>
+            </h1>
+
+            <p class="shop-hero-subtitle">
+              Quality equipment trusted by 1,250+ students. Free shipping on
+              orders above ₹999.
+            </p>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+              <div class="trust-badge">
+                <i class="fas fa-shipping-fast"></i>
+                <span>Free Shipping ₹999+</span>
+              </div>
+              <div class="trust-badge">
+                <i class="fas fa-undo"></i>
+                <span>30-Day Returns</span>
+              </div>
+              <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure Payments</span>
+              </div>
+              <div class="trust-badge">
+                <i class="fas fa-headset"></i>
+                <span>24/7 Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK CATEGORIES -->
+      <section class="quick-categories">
+        <div class="container">
+          <div class="categories-slider">
+            <button class="category-card" data-category="all">
+              <div class="category-icon">
+                <i class="fas fa-th"></i>
+              </div>
+              <span>All Products</span>
+            </button>
+
+            <button class="category-card" data-category="chess-sets">
+              <div class="category-icon">
+                <i class="fas fa-chess-board"></i>
+              </div>
+              <span>Chess Sets</span>
+            </button>
+
+            <button class="category-card" data-category="books">
+              <div class="category-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <span>Books</span>
+            </button>
+
+            <button class="category-card" data-category="digital">
+              <div class="category-icon">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <span>Digital Courses</span>
+            </button>
+
+            <button class="category-card" data-category="equipment">
+              <div class="category-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <span>Equipment</span>
+            </button>
+
+            <button class="category-card" data-category="merchandise">
+              <div class="category-icon">
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <span>Merchandise</span>
+            </button>
+
+            <button class="category-card" data-category="bundles">
+              <div class="category-icon">
+                <i class="fas fa-gift"></i>
+              </div>
+              <span>Bundles</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILTERS & PRODUCTS SECTION -->
+      <section class="products-section">
+        <div class="container">
+          <div class="products-layout">
+            <!-- SIDEBAR FILTERS -->
+            <aside class="filters-sidebar" id="filtersSidebar">
+              <div class="filters-header">
+                <h3><i class="fas fa-filter"></i> Filters</h3>
+                <button class="btn-reset-filters" onclick="resetFilters()">
+                  <i class="fas fa-redo"></i> Reset All
+                </button>
+              </div>
+
+              <!-- Price Range Filter -->
+              <div class="filter-group">
+                <h4 class="filter-title">Price Range</h4>
+                <div class="price-range-filter">
+                  <input
+                    type="range"
+                    id="priceRange"
+                    min="0"
+                    max="10000"
+                    value="10000"
+                    step="100"
+                  />
+                  <div class="price-range-values">
+                    <span>₹0</span>
+                    <span id="priceValue">₹10,000</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Type Filter -->
+              <div class="filter-group">
+                <h4 class="filter-title">Product Type</h4>
+                <div class="filter-checkboxes">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="productType"
+                      value="physical"
+                      checked
+                    />
+                    <span>Physical Products</span>
+                    <span class="count">(24)</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="productType"
+                      value="digital"
+                      checked
+                    />
+                    <span>Digital Products</span>
+                    <span class="count">(12)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Skill Level Filter -->
+              <div class="filter-group">
+                <h4 class="filter-title">Skill Level</h4>
+                <div class="filter-checkboxes">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="skillLevel"
+                      value="beginner"
+                      checked
+                    />
+                    <span>Beginner</span>
+                    <span class="count">(18)</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="skillLevel"
+                      value="intermediate"
+                      checked
+                    />
+                    <span>Intermediate</span>
+                    <span class="count">(15)</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="skillLevel"
+                      value="advanced"
+                      checked
+                    />
+                    <span>Advanced</span>
+                    <span class="count">(9)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Rating Filter -->
+              <div class="filter-group">
+                <h4 class="filter-title">Customer Rating</h4>
+                <div class="filter-ratings">
+                  <label class="rating-label">
+                    <input type="radio" name="rating" value="4" checked />
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span>4+ Stars</span>
+                  </label>
+                  <label class="rating-label">
+                    <input type="radio" name="rating" value="3" />
+                    <span class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    <span>3+ Stars</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Discount Filter -->
+              <div class="filter-group">
+                <h4 class="filter-title">Discounts</h4>
+                <div class="filter-checkboxes">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="discount" value="10" />
+                    <span>10% or more</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="discount" value="20" />
+                    <span>20% or more</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="discount" value="30" />
+                    <span>30% or more</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Availability Filter -->
+              <div class="filter-group">
+                <h4 class="filter-title">Availability</h4>
+                <div class="filter-checkboxes">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="availability"
+                      value="in-stock"
+                      checked
+                    />
+                    <span>In Stock</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="availability"
+                      value="pre-order"
+                    />
+                    <span>Pre-Order</span>
+                  </label>
+                </div>
+              </div>
+            </aside>
+
+            <!-- PRODUCTS GRID -->
+            <div class="products-main">
+              <!-- Toolbar -->
+              <div class="products-toolbar">
+                <div class="toolbar-left">
+                  <button
+                    class="btn-toggle-filters mobile-only"
+                    onclick="toggleFilters()"
+                  >
+                    <i class="fas fa-filter"></i> Filters
+                  </button>
+                  <p class="results-count">
+                    Showing <strong id="resultCount">36</strong> of
+                    <strong>36</strong> products
+                  </p>
+                </div>
+
+                <div class="toolbar-right">
+                  <label for="sortBy">Sort by:</label>
+                  <select id="sortBy" class="sort-select">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Customer Rating</option>
+                    <option value="newest">Newest First</option>
+                    <option value="popularity">Popularity</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Products Grid -->
+              <div class="products-grid" id="productsGrid">
+                <!-- Product Card 1: Premium Chess Set -->
+                <article
+                  class="product-card"
+                  data-category="chess-sets"
+                  data-price="2499"
+                  data-rating="5"
+                  data-skill="beginner"
+                >
+                  <div class="product-badges">
+                    <span class="badge badge-bestseller">Bestseller</span>
+                    <span class="badge badge-discount">15% OFF</span>
+                  </div>
+
+                  <button
+                    class="btn-wishlist"
+                    onclick="toggleWishlistItem(this)"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=500"
+                      alt="Premium Wooden Chess Set"
+                      loading="lazy"
+                    />
+                    <div class="product-overlay">
+                      <button
+                        class="btn btn-primary btn-quick-view"
+                        onclick="quickView('product-1')"
+                      >
+                        <i class="fas fa-eye"></i> Quick View
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-content">
+                    <div class="product-category">Chess Sets • Beginner</div>
+                    <h3 class="product-title">
+                      <a href="product-detail.html?id=1"
+                        >Premium Wooden Chess Set with Board</a
+                      >
+                    </h3>
+
+                    <div class="product-rating">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <span class="rating-text">(124 reviews)</span>
+                    </div>
+
+                    <p class="product-description">
+                      High-quality wooden pieces with 19" folding board. Perfect
+                      for beginners and practice.
+                    </p>
+
+                    <div class="product-footer">
+                      <div class="product-price">
+                        <span class="price-current">₹2,499</span>
+                        <span class="price-original">₹2,999</span>
+                      </div>
+
+                      <button
+                        class="btn btn-add-to-cart"
+                        onclick="addToCart('product-1')"
+                      >
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Product Card 2: Digital Course -->
+                <article
+                  class="product-card"
+                  data-category="digital"
+                  data-price="1999"
+                  data-rating="5"
+                  data-skill="intermediate"
+                >
+                  <div class="product-badges">
+                    <span class="badge badge-new">New</span>
+                    <span class="badge badge-digital">Digital</span>
+                  </div>
+
+                  <button
+                    class="btn-wishlist"
+                    onclick="toggleWishlistItem(this)"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1611195974226-ef4c990c905e?w=500"
+                      alt="Tactical Mastery Course"
+                      loading="lazy"
+                    />
+                    <div class="product-overlay">
+                      <button
+                        class="btn btn-primary btn-quick-view"
+                        onclick="quickView('product-2')"
+                      >
+                        <i class="fas fa-eye"></i> Quick View
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-content">
+                    <div class="product-category">
+                      Digital Course • Intermediate
+                    </div>
+                    <h3 class="product-title">
+                      <a href="product-detail.html?id=2"
+                        >Tactical Mastery Video Course (50 Hours)</a
+                      >
+                    </h3>
+
+                    <div class="product-rating">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <span class="rating-text">(89 reviews)</span>
+                    </div>
+
+                    <p class="product-description">
+                      Complete video series with 500+ tactics puzzles. Instant
+                      digital delivery.
+                    </p>
+
+                    <div class="product-features">
+                      <span><i class="fas fa-check"></i> Lifetime Access</span>
+                      <span><i class="fas fa-check"></i> Certificate</span>
+                    </div>
+
+                    <div class="product-footer">
+                      <div class="product-price">
+                        <span class="price-current">₹1,999</span>
+                      </div>
+
+                      <button
+                        class="btn btn-add-to-cart"
+                        onclick="addToCart('product-2')"
+                      >
+                        <i class="fas fa-download"></i>
+                        Buy Now
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Product Card 3: Chess Books Bundle -->
+                <article
+                  class="product-card"
+                  data-category="books"
+                  data-price="1499"
+                  data-rating="4"
+                  data-skill="beginner"
+                >
+                  <div class="product-badges">
+                    <span class="badge badge-bundle">Bundle</span>
+                    <span class="badge badge-discount">20% OFF</span>
+                  </div>
+
+                  <button
+                    class="btn-wishlist"
+                    onclick="toggleWishlistItem(this)"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=500"
+                      alt="Chess Books Bundle"
+                      loading="lazy"
+                    />
+                    <div class="product-overlay">
+                      <button
+                        class="btn btn-primary btn-quick-view"
+                        onclick="quickView('product-3')"
+                      >
+                        <i class="fas fa-eye"></i> Quick View
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-content">
+                    <div class="product-category">Books • Beginner</div>
+                    <h3 class="product-title">
+                      <a href="product-detail.html?id=3"
+                        >Beginner Chess Books Bundle (3 Books)</a
+                      >
+                    </h3>
+
+                    <div class="product-rating">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <span class="rating-text">(67 reviews)</span>
+                    </div>
+
+                    <p class="product-description">
+                      Essential chess books for beginners: Opening Principles,
+                      Tactics, and Endgames.
+                    </p>
+
+                    <div class="product-footer">
+                      <div class="product-price">
+                        <span class="price-current">₹1,499</span>
+                        <span class="price-original">₹1,899</span>
+                      </div>
+
+                      <button
+                        class="btn btn-add-to-cart"
+                        onclick="addToCart('product-3')"
+                      >
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Product Card 4: Digital Clock -->
+                <article
+                  class="product-card"
+                  data-category="equipment"
+                  data-price="899"
+                  data-rating="5"
+                  data-skill="all"
+                >
+                  <div class="product-badges">
+                    <span class="badge badge-stock">Only 5 Left</span>
+                  </div>
+
+                  <button
+                    class="btn-wishlist"
+                    onclick="toggleWishlistItem(this)"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=500"
+                      alt="Digital Chess Clock"
+                      loading="lazy"
+                    />
+                    <div class="product-overlay">
+                      <button
+                        class="btn btn-primary btn-quick-view"
+                        onclick="quickView('product-4')"
+                      >
+                        <i class="fas fa-eye"></i> Quick View
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-content">
+                    <div class="product-category">Equipment • All Levels</div>
+                    <h3 class="product-title">
+                      <a href="product-detail.html?id=4"
+                        >Professional Digital Chess Clock</a
+                      >
+                    </h3>
+
+                    <div class="product-rating">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <span class="rating-text">(43 reviews)</span>
+                    </div>
+
+                    <p class="product-description">
+                      Tournament-approved digital clock with multiple time
+                      control modes.
+                    </p>
+
+                    <div class="product-footer">
+                      <div class="product-price">
+                        <span class="price-current">₹899</span>
+                      </div>
+
+                      <button
+                        class="btn btn-add-to-cart"
+                        onclick="addToCart('product-4')"
+                      >
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Product Card 5: T-Shirt -->
+                <article
+                  class="product-card"
+                  data-category="merchandise"
+                  data-price="599"
+                  data-rating="4"
+                  data-skill="all"
+                >
+                  <div class="product-badges">
+                    <span class="badge badge-discount">10% OFF</span>
+                  </div>
+
+                  <button
+                    class="btn-wishlist"
+                    onclick="toggleWishlistItem(this)"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
+                      alt="Academy T-Shirt"
+                      loading="lazy"
+                    />
+                    <div class="product-overlay">
+                      <button
+                        class="btn btn-primary btn-quick-view"
+                        onclick="quickView('product-5')"
+                      >
+                        <i class="fas fa-eye"></i> Quick View
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-content">
+                    <div class="product-category">Merchandise • All Levels</div>
+                    <h3 class="product-title">
+                      <a href="product-detail.html?id=5"
+                        >Perfect Chess Academy Premium T-Shirt</a
+                      >
+                    </h3>
+
+                    <div class="product-rating">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <span class="rating-text">(31 reviews)</span>
+                    </div>
+
+                    <p class="product-description">
+                      100% cotton premium quality. Available in S, M, L, XL
+                      sizes.
+                    </p>
+
+                    <div class="product-footer">
+                      <div class="product-price">
+                        <span class="price-current">₹599</span>
+                        <span class="price-original">₹699</span>
+                      </div>
+
+                      <button
+                        class="btn btn-add-to-cart"
+                        onclick="addToCart('product-5')"
+                      >
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Product Card 6: Starter Bundle -->
+                <article
+                  class="product-card featured"
+                  data-category="bundles"
+                  data-price="3999"
+                  data-rating="5"
+                  data-skill="beginner"
+                >
+                  <div class="product-badges">
+                    <span class="badge badge-featured">Featured</span>
+                    <span class="badge badge-discount">25% OFF</span>
+                  </div>
+
+                  <button
+                    class="btn-wishlist"
+                    onclick="toggleWishlistItem(this)"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=500"
+                      alt="Complete Starter Kit"
+                      loading="lazy"
+                    />
+                    <div class="product-overlay">
+                      <button
+                        class="btn btn-primary btn-quick-view"
+                        onclick="quickView('product-6')"
+                      >
+                        <i class="fas fa-eye"></i> Quick View
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-content">
+                    <div class="product-category">Bundle • Beginner</div>
+                    <h3 class="product-title">
+                      <a href="product-detail.html?id=6"
+                        >Complete Beginner Starter Kit</a
+                      >
+                    </h3>
+
+                    <div class="product-rating">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <span class="rating-text">(156 reviews)</span>
+                    </div>
+
+                    <p class="product-description">
+                      Chess set + 3 books + digital course + clock. Everything a
+                      beginner needs!
+                    </p>
+
+                    <div class="product-features">
+                      <span><i class="fas fa-check"></i> Chess Set</span>
+                      <span><i class="fas fa-check"></i> 3 Books</span>
+                      <span><i class="fas fa-check"></i> Video Course</span>
+                      <span><i class="fas fa-check"></i> Chess Clock</span>
+                    </div>
+
+                    <div class="product-footer">
+                      <div class="product-price">
+                        <span class="price-current">₹3,999</span>
+                        <span class="price-original">₹5,396</span>
+                        <span class="savings">Save ₹1,397!</span>
+                      </div>
+
+                      <button
+                        class="btn btn-add-to-cart btn-primary"
+                        onclick="addToCart('product-6')"
+                      >
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Add more product cards as needed (copy structure above) -->
+              </div>
+
+              <!-- Pagination -->
+              <div class="pagination">
+                <button class="page-btn" disabled>
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED BUNDLES CTA -->
+      <section class="featured-bundles-cta">
+        <div class="container">
+          <div class="cta-content">
+            <div class="cta-text">
+              <h2>Save Big with Our Curated Bundles</h2>
+              <p>
+                Complete packages designed for every chess journey. Save up to
+                30% compared to individual purchases.
+              </p>
+            </div>
+            <button
+              class="btn btn-primary btn-large"
+              onclick="filterByCategory('bundles')"
+            >
+              <i class="fas fa-gift"></i>
+              View All Bundles
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SHOPPING CART SIDEBAR -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>
+          <i class="fas fa-shopping-cart"></i> Shopping Cart (<span
+            id="cartItemCount"
+            >0</span
+          >)
+        </h3>
+        <button class="btn-close-cart" onclick="toggleCart()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="cart-body" id="cartBody">
+        <div class="empty-cart">
+          <i class="fas fa-shopping-cart"></i>
+          <p>Your cart is empty</p>
+          <button class="btn btn-primary" onclick="toggleCart()">
+            Continue Shopping
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-footer" id="cartFooter" style="display: none">
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Subtotal:</span>
+            <span id="cartSubtotal">₹0</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping:</span>
+            <span id="cartShipping">FREE</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total:</span>
+            <span id="cartTotal">₹0</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block" onclick="goToCheckout()">
+          <i class="fas fa-lock"></i>
+          Proceed to Checkout
+        </button>
+        <button
+          class="btn btn-secondary-outline btn-block"
+          onclick="toggleCart()"
+        >
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- WISHLIST SIDEBAR -->
+    <div class="wishlist-sidebar" id="wishlistSidebar">
+      <div class="wishlist-header">
+        <h3>
+          <i class="fas fa-heart"></i> Wishlist (<span id="wishlistItemCount"
+            >0</span
+          >)
+        </h3>
+        <button class="btn-close-wishlist" onclick="toggleWishlist()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="wishlist-body" id="wishlistBody">
+        <div class="empty-wishlist">
+          <i class="fas fa-heart"></i>
+          <p>Your wishlist is empty</p>
+          <button class="btn btn-primary" onclick="toggleWishlist()">
+            Browse Products
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wishlist Overlay -->
+    <div
+      class="wishlist-overlay"
+      id="wishlistOverlay"
+      onclick="toggleWishlist()"
+    ></div>
+
+    <!-- QUICK VIEW MODAL -->
+    <div class="modal modal-quick-view" id="quickViewModal">
+      <div class="modal-overlay" onclick="closeQuickView()"></div>
+      <div class="modal-container modal-xl">
+        <button class="modal-close" onclick="closeQuickView()">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="quick-view-content" id="quickViewContent">
+          <!-- Content loaded dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Your Existing Footer -->
+    <footer>
+      <!-- Your existing footer code -->
+    </footer>
+
+    <!-- Sticky Quick Access -->
+    <div class="sticky-quick-access">
+      <button class="quick-btn" onclick="toggleCart()" aria-label="View cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="badge" id="stickyCartCount">0</span>
+      </button>
+      <button
+        class="quick-btn"
+        onclick="openWhatsApp()"
+        aria-label="WhatsApp support"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </button>
+      <button
+        class="quick-btn"
+        onclick="scrollToTop()"
+        aria-label="Scroll to top"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="assets/js/shop.js"></script>
+  </body>
+</html>

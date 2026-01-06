@@ -1,0 +1,383 @@
+/* ========================================
+   COACHES SECTION - PROFESSIONAL REDESIGN
+   2 coaches, modern layout, proper sizing
+======================================== */
+
+.coaches-section {
+  padding: 6rem 2rem;
+  background: 
+    radial-gradient(ellipse at top, rgba(245, 158, 11, 0.04) 0%, transparent 60%),
+    var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.coaches-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADER
+======================================== */
+
+.coaches-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.coaches-title {
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.coaches-subtitle {
+  font-size: clamp(16px, 2vw, 18px);
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ========================================
+   COACHES GRID - 2 COLUMNS
+======================================== */
+
+.coaches-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+/* ========================================
+   MODERN COACH CARDS
+======================================== */
+
+.coach-card-modern {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.coach-card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-primary);
+}
+
+.coach-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ========================================
+   PHOTO SECTION - COMPACT
+======================================== */
+
+.coach-photo-section {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, 
+    rgba(245, 158, 11, 0.1) 0%, 
+    rgba(251, 146, 60, 0.05) 100%
+  );
+}
+
+.coach-photo-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.coach-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(20%);
+}
+
+.coach-card-modern:hover .coach-photo-wrapper img {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+/* Badge on Photo */
+.coach-badge-modern {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.coach-badge-assistant {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* ========================================
+   INFO SECTION - BETTER SIZING
+======================================== */
+
+.coach-info-section {
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+/* Header Info */
+.coach-header-info {
+  border-bottom: 1px solid var(--border-secondary);
+  padding-bottom: 1rem;
+}
+
+.coach-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.375rem;
+  line-height: 1.2;
+}
+
+.coach-role {
+  font-size: 1rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* ========================================
+   CREDENTIALS - CLEAN ICONS
+======================================== */
+
+.coach-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.credential-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.credential-item:hover {
+  color: var(--text-primary);
+}
+
+/* ========================================
+   BIO TEXT
+======================================== */
+
+.coach-bio {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ========================================
+   EXPERTISE TAGS - REFINED
+======================================== */
+
+.coach-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.expertise-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.expertise-tag:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   LIGHT MODE ADJUSTMENTS
+======================================== */
+
+body.light-mode .coaches-section {
+  background: 
+    radial-gradient(ellipse at top, rgba(245, 158, 11, 0.06) 0%, transparent 60%),
+    var(--bg-primary);
+}
+
+body.light-mode .coach-card-modern {
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .coach-card-modern:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .coach-photo-wrapper img {
+  filter: grayscale(10%);
+}
+
+body.light-mode .coach-card-modern:hover .coach-photo-wrapper img {
+  filter: grayscale(0%);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet */
+@media (max-width: 968px) {
+  .coaches-section {
+    padding: 5rem 2rem;
+  }
+
+  .coaches-grid-two {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .coach-photo-section {
+    height: 320px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .coaches-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .coaches-header {
+    margin-bottom: 3rem;
+  }
+
+  .coach-photo-section {
+    height: 280px;
+  }
+
+  .coach-info-section {
+    padding: 1.75rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .coach-name {
+    font-size: 1.35rem;
+  }
+
+  .coach-role {
+    font-size: 0.95rem;
+  }
+
+  .coach-credentials {
+    gap: 0.625rem;
+  }
+
+  .credential-item {
+    font-size: 0.85rem;
+  }
+
+  .credential-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .coach-bio {
+    font-size: 0.9rem;
+  }
+
+  .expertise-tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.875rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .coaches-section {
+    padding: 3rem 1rem;
+  }
+
+  .coach-photo-section {
+    height: 240px;
+  }
+
+  .coach-info-section {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .coach-badge-modern {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.875rem;
+  }
+
+  .coaches-title {
+    font-size: 28px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .coach-card-modern,
+  .coach-photo-wrapper img,
+  .expertise-tag {
+    transition: none;
+  }
+
+  .coach-card-modern:hover {
+    transform: none;
+  }
+
+  .coach-card-modern:hover .coach-photo-wrapper img {
+    transform: none;
+  }
+}
+
+/* ========================================
+   END OF COACHES SECTION
+======================================== */

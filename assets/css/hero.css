@@ -1,0 +1,503 @@
+/* ========================================
+   HERO SECTION - GEOMETRIC MINIMAL DESIGN
+   Fixed: Gradients visible in BOTH dark and light modes
+======================================== */
+
+/* Main Hero Container - Dark Mode */
+.hero-geometric {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  overflow: hidden;
+  
+  /* Beautiful gradient background - DARK MODE */
+  background: 
+    radial-gradient(ellipse at top left, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+    linear-gradient(135deg, 
+      rgba(6, 6, 23, 1) 0%,
+      rgba(15, 20, 45, 1) 50%,
+      rgba(6, 6, 23, 1) 100%
+    );
+  
+  color: var(--text-primary);
+}
+
+/* Geometric Overlay Layer */
+.geometric-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Geometric Shapes - DARK MODE */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3; /* Visible in dark mode */
+  mix-blend-mode: screen;
+  transition: opacity 0.3s ease;
+}
+
+.shape-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  top: -15%;
+  right: -10%;
+  animation: float1 20s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%);
+  bottom: -10%;
+  left: -10%;
+  animation: float2 25s ease-in-out infinite;
+}
+
+.shape-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float3 30s ease-in-out infinite;
+}
+
+/* Float Animations */
+@keyframes float1 {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1); 
+  }
+  33% { 
+    transform: translate(50px, -50px) scale(1.1); 
+  }
+  66% { 
+    transform: translate(-30px, 30px) scale(0.95); 
+  }
+}
+
+@keyframes float2 {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1); 
+  }
+  33% { 
+    transform: translate(-40px, 40px) scale(1.05); 
+  }
+  66% { 
+    transform: translate(40px, -30px) scale(0.9); 
+  }
+}
+
+@keyframes float3 {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.15); 
+  }
+}
+
+/* Content Wrapper */
+.hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content-centered {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Eyebrow Badge */
+.eyebrow {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fadeInDown 0.8s ease 0.2s both;
+}
+
+/* Main Headline */
+.hero-headline {
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 2rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.hero-headline span {
+  display: block;
+}
+
+.hero-headline .line-1 {
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.hero-headline .line-2 {
+  animation: fadeInUp 0.8s ease 0.4s both;
+  margin: 0.5rem 0;
+}
+
+.hero-headline .line-3 {
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.hero-headline .highlight {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+/* Supporting Text */
+.hero-lead {
+  font-size: clamp(17px, 2.2vw, 20px);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+  font-weight: 400;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+/* Stats Badges */
+.hero-badges-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease 0.7s both;
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-pill:hover {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.2);
+}
+
+.stat-pill svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+/* CTA Buttons */
+.hero-buttons-centered {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+.hero-buttons-centered .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-buttons-centered .btn svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: 2px solid var(--accent-primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(245, 158, 11, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Fade In Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   LIGHT MODE - FIXED GRADIENTS VISIBLE! ✅
+======================================== */
+
+body.light-mode .hero-geometric {
+  /* Beautiful gradient background - LIGHT MODE */
+  background: 
+    radial-gradient(ellipse at top left, rgba(245, 158, 11, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, 
+      rgba(248, 250, 252, 1) 0%,
+      rgba(241, 245, 249, 1) 50%,
+      rgba(248, 250, 252, 1) 100%
+    );
+}
+
+/* Geometric Shapes - LIGHT MODE (MORE VISIBLE) */
+body.light-mode .shape {
+  opacity: 0.4; /* Increased from 0.15 */
+  mix-blend-mode: multiply; /* Changed from screen to multiply for light backgrounds */
+}
+
+body.light-mode .shape-1 {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);
+}
+
+body.light-mode .shape-2 {
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, transparent 70%);
+}
+
+body.light-mode .shape-3 {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.28) 0%, transparent 70%);
+}
+
+/* Eyebrow - Light Mode */
+body.light-mode .eyebrow {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+/* Stats Pills - Light Mode */
+body.light-mode .stat-pill {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .stat-pill:hover {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* Buttons - Light Mode */
+body.light-mode .btn-secondary {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: var(--accent-primary);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-geometric {
+    min-height: 85vh;
+    padding: 5rem 1.5rem;
+  }
+
+  .shape-1 {
+    width: 500px;
+    height: 500px;
+  }
+
+  .shape-2 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .shape-3 {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-geometric {
+    min-height: 80vh;
+    padding: 4rem 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .hero-headline {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-lead {
+    font-size: 16px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-badges-inline {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-pill {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons-centered {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons-centered .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+  }
+
+  /* Simplify shapes on mobile */
+  .shape {
+    filter: blur(60px);
+  }
+
+  .shape-1 {
+    width: 350px;
+    height: 350px;
+  }
+
+  .shape-2 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .shape-3 {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-geometric {
+    padding: 3rem 1rem;
+  }
+
+  .hero-headline {
+    font-size: 36px;
+  }
+
+  .stat-pill svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-geometric,
+  .eyebrow,
+  .hero-headline span,
+  .hero-lead,
+  .hero-badges-inline,
+  .hero-buttons-centered {
+    animation: none !important;
+  }
+
+  .shape {
+    animation: none !important;
+  }
+
+  .stat-pill:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   END OF HERO GEOMETRIC SECTION
+======================================== */

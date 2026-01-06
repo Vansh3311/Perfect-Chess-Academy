@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore Perfect Chess Academy's gallery featuring tournaments, training sessions, student achievements, and memorable moments from our chess community."
+    />
+    <meta
+      name="keywords"
+      content="chess academy gallery, chess tournaments, chess training, chess students, chess achievements"
+    />
+    <title>Gallery - Perfect Chess Academy</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/ico" href="logo-removebg-preview.ico" />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/about-cta.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/lead-magnet.css" />
+    <link rel="stylesheet" href="assets/css/why-choose.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/about-enhanced.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/coaches.css" />
+    <link rel="stylesheet" href="assets/css/coaching.css" />
+    <link rel="stylesheet" href="assets/css/course-cards.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/italian_opening_interactive.css" />
+    <link rel="stylesheet" href="assets/css/new-sections.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/utils.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <button
+          class="hamburger-btn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-links-mobile"
+        >
+          <div class="hamburger-icon"></div>
+        </button>
+        <div class="logo">
+          <img
+            src="logo-removebg-preview.png"
+            alt="Perfect Chess Academy Logo"
+          />
+        </div>
+        <div id="nav-links-desktop" class="nav-links desktop-only">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="courses.html">Courses</a>
+          <a href="tournaments.html">Tournaments</a>
+          <a href="coaching.html">Coaching</a>
+          <a href="blog.html">Blog</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="header-spacer"></div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Drawer & Backdrop -->
+    <div class="mobile-menu-backdrop" hidden></div>
+    <div id="nav-links-mobile" class="nav-links mobile-only">
+      <button class="mobile-menu-close" aria-label="Close mobile menu">
+        ✕
+      </button>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="blog.html">Blog</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <div class="social-links mobile-social-links">
+        <a
+          href="https://www.facebook.com/kapil.panwar.71/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://share.google/02jHgLaSt3rA88jFG"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Google Maps"
+          ><i class="fas fa-map-marker-alt"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/perfectchessacademy92/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://wa.me/919252358993"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="gallery-header">
+      <h1>Gallery</h1>
+      <p>
+        Capturing moments of excellence, learning, and triumph at Perfect Chess
+        Academy
+      </p>
+    </header>
+
+    <!-- Filter Controls -->
+    <div class="filter-container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-th"></i>
+          <span>All Media</span>
+        </button>
+        <button class="filter-btn" data-filter="tournaments">
+          <i class="fas fa-trophy"></i>
+          <span>Tournaments</span>
+        </button>
+        <button class="filter-btn" data-filter="training">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <span>Classes & Training</span>
+        </button>
+        <button class="filter-btn" data-filter="achievements">
+          <i class="fas fa-medal"></i>
+          <span>Achievements</span>
+        </button>
+        <button class="filter-btn" data-filter="events">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Events</span>
+        </button>
+        <button class="filter-btn" data-filter="facilities">
+          <i class="fas fa-building"></i>
+          <span>Facilities</span>
+        </button>
+      </div>
+
+      <div class="controls">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search gallery..." />
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="grid" title="Grid View">
+            <i class="fas fa-th"></i>
+          </button>
+          <button class="view-btn" data-view="list" title="List View">
+            <i class="fas fa-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="total-count">
+        Showing <span id="showingCount">0</span> of
+        <span id="totalCount">0</span> items
+      </div>
+      <div class="last-updated">Last updated: November 2025</div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-container">
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Gallery items will be dynamically inserted here -->
+      </div>
+
+      <!-- Loading Spinner -->
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Loading media...</p>
+      </div>
+
+      <!-- No Results -->
+      <div class="no-results" id="noResults">
+        <i class="fas fa-search"></i>
+        <h3>No Results Found</h3>
+        <p>Try adjusting your search or filter criteria</p>
+      </div>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="load-more">
+      <button class="load-more-btn" id="loadMoreBtn" style="display: none">
+        <i class="fas fa-plus-circle"></i> Load More
+      </button>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-close" id="lightboxClose">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="lightbox-prev" id="lightboxPrev">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="lightbox-next" id="lightboxNext">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <div class="lightbox-content">
+        <div class="lightbox-media-container" id="lightboxMediaContainer">
+          <img src="" alt="" id="lightboxImg" style="display: none" />
+          <video id="lightboxVideo" controls style="display: none"></video>
+        </div>
+        <div class="lightbox-caption">
+          <h3 id="lightboxTitle"></h3>
+          <p id="lightboxDesc"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section footer-map">
+          <h3>Our Location</h3>
+          <!-- Google Map will be embedded here -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.2841823405383!2d73.31320467460951!3d28.015788811821672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393fdd1078b21f2d%3A0x67d3140bf3bcdd44!2sPerfect%20chess%20academy!5e0!3m2!1sen!2sin!4v1756562822478!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="footer-section">
+          <h3>Perfect Chess Academy</h3>
+          <p>
+            Empowering chess players of all levels to achieve their full
+            potential through expert coaching and comprehensive training
+            programs.
+          </p>
+          <div class="footer-contact-info">
+            <p>📍 Bikaner, Rajasthan, India</p>
+            <p>📧 talktokp23@gmail.com</p>
+            <p>📱 +91 92523 58993</p>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="coaching.html">Private Coaching</a></li>
+            <li><a href="tournaments.html">Tournaments</a></li>
+            <li><a href="blog.html">Chess Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Programs</h3>
+          <ul>
+            <li><a href="courses.html">Beginner Classes</a></li>
+            <li><a href="courses.html">Advanced Training</a></li>
+            <li><a href="courses.html">Tournament Prep</a></li>
+            <li><a href="coaching.html">Online Coaching</a></li>
+            <li><a href="tournaments.html">Summer Camps</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li>
+              <a href="https.wa.me/919252358993" target="_blank">WhatsApp</a>
+            </li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="contact.html">Student Portal</a></li>
+            <li><a href="contact.html">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-social-links">
+          <a
+            href="https://www.facebook.com/kapil.panwar.71/"
+            target="_blank"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://share.google/02jHgLaSt3rA88jFG"
+            target="_blank"
+            aria-label="Google Maps"
+            ><i class="fas fa-map-marker-alt"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/perfectchessacademy92/"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://wa.me/919252358993"
+            target="_blank"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+        <p>
+          &copy; 2025 Perfect Chess Academy. All rights reserved. | Designed
+          with ♟️ for chess enthusiasts
+        </p>
+      </div>
+    </footer>
+
+    <div class="floating-action-buttons">
+      <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        ↑
+      </button>
+      <button class="settings-toggle" aria-label="Open user preferences">
+        ⚙️
+      </button>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel">
+      <div class="settings-header">
+        <h3>🎨 User Preferences</h3>
+        <button class="settings-close" aria-label="Close user preferences">
+          ✕
+        </button>
+      </div>
+
+      <div class="setting-item">
+        <label>🌗 Theme</label>
+        <div id="theme-toggle" class="theme-toggle">
+          <span>🌙 Dark Mode</span>
+          <div class="toggle-switch"></div>
+          <span>☀️ Light Mode</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🎭 Visual Effects</label>
+        <div id="animations-toggle" class="theme-toggle">
+          <span>✨ On</span>
+          <div class="toggle-switch active"></div>
+          <span>⚡ Off</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>📱 Auto-scroll</label>
+        <div id="smooth-scroll-toggle" class="theme-toggle">
+          <span>📄 Smooth</span>
+          <div class="toggle-switch active"></div>
+          <span>⚡ Instant</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🖱️ Mouse Trail</label>
+        <div id="mouse-trail-toggle" class="theme-toggle">
+          <span>✨ On</span>
+          <div class="toggle-switch"></div>
+          <span>⚡ Off</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>🔊 Sound Effects</label>
+        <div id="sound-toggle" class="theme-toggle">
+          <span>🔊 On</span>
+          <div class="toggle-switch"></div>
+          <span>🔇 Off</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>📏 Font Size</label>
+        <div class="font-size-controls">
+          <button id="font-smaller" class="font-btn">A-</button>
+          <span id="font-display">100%</span>
+          <button id="font-larger" class="font-btn">A+</button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label>👤 User Status</label>
+        <div class="user-status">
+          <div class="status-indicator online"></div>
+          <span>Online</span>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button id="reset-settings" class="btn btn-secondary">
+          🔄 Reset All
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="universal-settings.js"></script>
+    <script>
+      // Gallery Data with VIDEO support
+      const galleryData = [
+        {
+          id: 1,
+          title: "State Championship 2025",
+          description: "Our students competing in the state level tournament",
+          category: "tournaments",
+          tags: ["tournament", "competition"],
+          date: "2025-10-15",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=400",
+        },
+        {
+          id: 2,
+          title: "Beginner's Class Session",
+          description: "Introduction to chess fundamentals for new students",
+          category: "training",
+          tags: ["beginners", "training"],
+          date: "2025-09-20",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=400",
+        },
+        {
+          id: 3,
+          title: "Opening Strategy Tutorial",
+          description: "Detailed video tutorial on Italian Opening strategies",
+          category: "training",
+          tags: ["video", "tutorial", "strategy"],
+          date: "2025-10-30",
+          type: "video",
+          video: "https://www.w3schools.com/html/mov_bbb.mp4", // Sample video - replace with your videos
+          thumbnail:
+            "https://images.unsplash.com/photo-1611195974226-ef4c990c905e?w=400",
+        },
+        {
+          id: 4,
+          title: "Trophy Ceremony",
+          description: "Celebrating our students' achievements and victories",
+          category: "achievements",
+          tags: ["awards", "celebration"],
+          date: "2025-11-01",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400",
+        },
+        {
+          id: 5,
+          title: "Tournament Highlights",
+          description: "Best moments from our annual championship",
+          category: "tournaments",
+          tags: ["video", "highlights", "tournament"],
+          date: "2025-10-20",
+          type: "video",
+          video: "https://www.w3schools.com/html/movie.mp4", // Sample video
+          thumbnail:
+            "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400",
+        },
+        {
+          id: 6,
+          title: "Chess Workshop 2025",
+          description: "Special workshop on advanced tactics and strategies",
+          category: "events",
+          tags: ["workshop", "learning"],
+          date: "2025-08-12",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1611195974226-ef4c990c905e?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1611195974226-ef4c990c905e?w=400",
+        },
+        {
+          id: 7,
+          title: "Training Room",
+          description: "Our spacious and well-equipped training facility",
+          category: "facilities",
+          tags: ["facility", "infrastructure"],
+          date: "2025-07-05",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=400",
+        },
+        {
+          id: 8,
+          title: "Inter-School Tournament",
+          description: "Annual inter-school chess championship",
+          category: "tournaments",
+          tags: ["tournament", "schools"],
+          date: "2025-09-28",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400",
+        },
+        {
+          id: 9,
+          title: "Advanced Tactics Class",
+          description: "Intensive training session on complex chess positions",
+          category: "training",
+          tags: ["advanced", "tactics"],
+          date: "2025-10-10",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1604704112431-4e8d0f62b97a?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1604704112431-4e8d0f62b97a?w=400",
+        },
+        {
+          id: 10,
+          title: "National Medal Winners",
+          description: "Students who won medals at national level competitions",
+          category: "achievements",
+          tags: ["national", "medals"],
+          date: "2025-11-03",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1565373679350-3f8c4b5a7d07?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1565373679350-3f8c4b5a7d07?w=400",
+        },
+        {
+          id: 11,
+          title: "Endgame Masterclass",
+          description: "Comprehensive video guide on endgame techniques",
+          category: "training",
+          tags: ["video", "endgame", "masterclass"],
+          date: "2025-09-15",
+          type: "video",
+          video: "https://www.w3schools.com/html/mov_bbb.mp4", // Sample video
+          thumbnail:
+            "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400",
+        },
+        {
+          id: 12,
+          title: "Grandmaster Visit",
+          description:
+            "Special session with visiting international grandmaster",
+          category: "events",
+          tags: ["grandmaster", "special"],
+          date: "2025-08-25",
+          type: "image",
+          image:
+            "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800",
+          thumbnail:
+            "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400",
+        },
+      ];
+
+      // Gallery State
+      let currentFilter = "all";
+      let currentView = "grid";
+      let currentIndex = 0;
+      let filteredData = [...galleryData];
+      let itemsPerPage = 12;
+      let currentPage = 1;
+
+      // DOM Elements
+      const galleryGrid = document.getElementById("galleryGrid");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const viewButtons = document.querySelectorAll(".view-btn");
+      const searchInput = document.getElementById("searchInput");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxVideo = document.getElementById("lightboxVideo");
+      const lightboxMediaContainer = document.getElementById(
+        "lightboxMediaContainer"
+      );
+      const lightboxTitle = document.getElementById("lightboxTitle");
+      const lightboxDesc = document.getElementById("lightboxDesc");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const lightboxPrev = document.getElementById("lightboxPrev");
+      const lightboxNext = document.getElementById("lightboxNext");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+      const loading = document.getElementById("loading");
+      const noResults = document.getElementById("noResults");
+      const showingCount = document.getElementById("showingCount");
+      const totalCount = document.getElementById("totalCount");
+
+      // Initialize Gallery
+      function initGallery() {
+        renderGallery();
+        updateStats();
+      }
+
+      // Render Gallery
+      function renderGallery() {
+        const itemsToShow = currentPage * itemsPerPage;
+        const items = filteredData.slice(0, itemsToShow);
+
+        galleryGrid.innerHTML = "";
+
+        if (items.length === 0) {
+          noResults.style.display = "block";
+          loadMoreBtn.style.display = "none";
+          return;
+        }
+
+        noResults.style.display = "none";
+
+        items.forEach((item, index) => {
+          const galleryItem = createGalleryItem(item, index);
+          galleryGrid.appendChild(galleryItem);
+        });
+
+        // Show/hide load more button
+        if (itemsToShow < filteredData.length) {
+          loadMoreBtn.style.display = "inline-block";
+        } else {
+          loadMoreBtn.style.display = "none";
+        }
+
+        // Initialize lazy loading
+        lazyLoadImages();
+        updateStats();
+      }
+
+      // Create Gallery Item
+      function createGalleryItem(item, index) {
+        const div = document.createElement("div");
+        div.className = "gallery-item";
+        div.setAttribute("data-category", item.category);
+        div.setAttribute("data-index", index);
+        div.style.animationDelay = `${(index % 12) * 0.05}s`;
+
+        const mediaElement =
+          item.type === "video"
+            ? `<video src="${item.video}" muted></video>
+                   <div class="video-play-overlay">
+                       <i class="fas fa-play"></i>
+                   </div>`
+            : `<img data-src="${item.image}" src="${item.thumbnail}" alt="${item.title}" loading="lazy">`;
+
+        div.innerHTML = `
+                <div class="image-wrapper">
+                    ${mediaElement}
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <div class="tags">
+                                ${item.tags
+                                  .map(
+                                    (tag) => `<span class="tag">${tag}</span>`
+                                  )
+                                  .join("")}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                    <div class="item-meta">
+                        <span><i class="fas fa-calendar"></i> ${formatDate(
+                          item.date
+                        )}</span>
+                        <span><i class="fas fa-${
+                          item.type === "video" ? "video" : "image"
+                        }"></i> ${item.type}</span>
+                    </div>
+                </div>
+            `;
+
+        div.addEventListener("click", () => openLightbox(index));
+
+        return div;
+      }
+
+      // Filter Gallery
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          currentFilter = btn.dataset.filter;
+          currentPage = 1;
+          applyFilters();
+        });
+      });
+
+      // Search Functionality
+      let searchTimeout;
+      searchInput.addEventListener("input", (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          currentPage = 1;
+          applyFilters();
+        }, 300);
+      });
+
+      // Apply Filters
+      function applyFilters() {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        filteredData = galleryData.filter((item) => {
+          const matchesFilter =
+            currentFilter === "all" || item.category === currentFilter;
+          const matchesSearch =
+            searchTerm === "" ||
+            item.title.toLowerCase().includes(searchTerm) ||
+            item.description.toLowerCase().includes(searchTerm) ||
+            item.tags.some((tag) => tag.toLowerCase().includes(searchTerm));
+
+          return matchesFilter && matchesSearch;
+        });
+
+        renderGallery();
+      }
+
+      // View Toggle
+      viewButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          viewButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          currentView = btn.dataset.view;
+
+          if (currentView === "list") {
+            galleryGrid.classList.add("list-view");
+          } else {
+            galleryGrid.classList.remove("list-view");
+          }
+        });
+      });
+
+      // Lightbox - WITH VIDEO SUPPORT
+      function openLightbox(index) {
+        currentIndex = index;
+        const item = filteredData[index];
+
+        // Pause any playing video first
+        lightboxVideo.pause();
+        lightboxVideo.src = "";
+
+        if (item.type === "video") {
+          lightboxImg.style.display = "none";
+          lightboxVideo.style.display = "block";
+          lightboxVideo.src = item.video;
+          lightboxVideo.load();
+        } else {
+          lightboxVideo.style.display = "none";
+          lightboxImg.style.display = "block";
+          lightboxImg.src = item.image;
+          lightboxImg.alt = item.title;
+        }
+
+        lightboxTitle.textContent = item.title;
+        lightboxDesc.textContent = item.description;
+
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "auto";
+
+        // Stop video if playing
+        if (lightboxVideo.src) {
+          lightboxVideo.pause();
+          lightboxVideo.src = "";
+        }
+      }
+
+      function navigateLightbox(direction) {
+        currentIndex += direction;
+
+        if (currentIndex < 0) {
+          currentIndex = filteredData.length - 1;
+        } else if (currentIndex >= filteredData.length) {
+          currentIndex = 0;
+        }
+
+        const item = filteredData[currentIndex];
+
+        // Stop current video
+        lightboxVideo.pause();
+        lightboxVideo.src = "";
+
+        if (item.type === "video") {
+          lightboxImg.style.display = "none";
+          lightboxVideo.style.display = "block";
+          lightboxVideo.src = item.video;
+          lightboxVideo.load();
+        } else {
+          lightboxVideo.style.display = "none";
+          lightboxImg.style.display = "block";
+          lightboxImg.src = item.image;
+          lightboxImg.alt = item.title;
+        }
+
+        lightboxTitle.textContent = item.title;
+        lightboxDesc.textContent = item.description;
+      }
+
+      // Lightbox Event Listeners
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxPrev.addEventListener("click", () => navigateLightbox(-1));
+      lightboxNext.addEventListener("click", () => navigateLightbox(1));
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Keyboard Navigation
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
+
+        if (e.key === "Escape") {
+          closeLightbox();
+        } else if (e.key === "ArrowLeft") {
+          navigateLightbox(-1);
+        } else if (e.key === "ArrowRight") {
+          navigateLightbox(1);
+        }
+      });
+
+      // Load More
+      loadMoreBtn.addEventListener("click", () => {
+        currentPage++;
+        renderGallery();
+      });
+
+      // Lazy Loading
+      function lazyLoadImages() {
+        const images = document.querySelectorAll("img[data-src]");
+
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.add("loaded");
+              img.removeAttribute("data-src");
+              observer.unobserve(img);
+            }
+          });
+        });
+
+        images.forEach((img) => imageObserver.observe(img));
+      }
+
+      // Update Stats
+      function updateStats() {
+        const showing = Math.min(
+          currentPage * itemsPerPage,
+          filteredData.length
+        );
+        showingCount.textContent = showing;
+        totalCount.textContent = filteredData.length;
+      }
+
+      // Format Date
+      function formatDate(dateString) {
+        const options = { year: "numeric", month: "short", day: "numeric" };
+        return new Date(dateString).toLocaleDateString("en-US", options);
+      }
+
+      // Touch Swipe Support for Lightbox
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      lightbox.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      lightbox.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+          navigateLightbox(1); // Swipe left
+        }
+        if (touchEndX > touchStartX + 50) {
+          navigateLightbox(-1); // Swipe right
+        }
+      }
+
+      // Initialize
+      initGallery();
+
+      // Simulate loading (remove in production)
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          loading.style.display = "none";
+        }, 500);
+      });
+    </script>
+  </body>
+</html>

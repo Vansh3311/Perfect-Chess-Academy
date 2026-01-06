@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual Admin Panel Demo - Perfect Chess Academy</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/admin-visual.css" />
+  </head>
+  <body>
+    <!-- ADMIN TOP BAR (Always Visible in Edit Mode) -->
+    <div id="adminTopBar" class="admin-top-bar">
+      <div class="admin-brand">
+        <i class="fas fa-chess-king"></i>
+        <span>Perfect Chess Academy</span>
+        <span class="admin-badge">ADMIN MODE</span>
+      </div>
+
+      <div class="admin-mode-toggle">
+        <button class="mode-btn active" data-mode="edit">
+          <i class="fas fa-edit"></i>
+          Edit Mode
+        </button>
+        <button class="mode-btn" data-mode="preview">
+          <i class="fas fa-eye"></i>
+          Preview
+        </button>
+      </div>
+
+      <div class="admin-actions">
+        <button class="admin-btn" onclick="openAnalytics()">
+          <i class="fas fa-chart-line"></i>
+          Analytics
+        </button>
+        <button class="admin-btn" onclick="openImageManager()">
+          <i class="fas fa-images"></i> Images
+        </button>
+        <button class="admin-btn" onclick="openColorTheme()">
+          <i class="fas fa-palette"></i> Colors
+        </button>
+        <button class="admin-btn" onclick="openPageManager()">
+          <i class="fas fa-copy"></i>
+          Pages
+        </button>
+        <button class="admin-btn" onclick="openBlogCreator()">
+          <i class="fas fa-blog"></i>
+          New Blog
+        </button>
+        <button class="admin-btn" onclick="openTournamentCreator()">
+          <i class="fas fa-trophy"></i>
+          New Tournament
+        </button>
+        <button class="admin-btn btn-save" onclick="saveAllChanges()">
+          <i class="fas fa-save"></i>
+          Save Changes
+        </button>
+        <button class="admin-btn btn-logout" onclick="exitAdminMode()">
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- FLOATING TOOLBAR (Shows on Hover) -->
+    <div id="floatingToolbar" class="floating-toolbar" style="display: none">
+      <button class="tool-btn" onclick="editElement()" title="Edit">
+        <i class="fas fa-pen"></i>
+      </button>
+      <button class="tool-btn" onclick="duplicateElement()" title="Duplicate">
+        <i class="fas fa-copy"></i>
+      </button>
+      <button class="tool-btn" onclick="deleteElement()" title="Delete">
+        <i class="fas fa-trash"></i>
+      </button>
+      <button class="tool-btn" onclick="moveElementUp()" title="Move Up">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+      <button class="tool-btn" onclick="moveElementDown()" title="Move Down">
+        <i class="fas fa-arrow-down"></i>
+      </button>
+      <button class="tool-btn" onclick="editSettings()" title="Settings">
+        <i class="fas fa-cog"></i>
+      </button>
+    </div>
+
+    <!-- EDIT PANEL (Slides from Right) -->
+    <div id="editPanel" class="edit-panel">
+      <div class="edit-panel-header">
+        <h3>Edit Element</h3>
+        <button class="close-panel" onclick="closeEditPanel()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="edit-panel-body" id="editPanelBody">
+        <!-- Dynamic content based on element type -->
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT (Sample Homepage) -->
+    <main class="website-content">
+      <!-- Hero Section (Editable) -->
+      <section class="hero-section editable-section" data-section="hero">
+        <div class="container">
+          <div
+            class="hero-badge editable-text"
+            data-field="hero-badge"
+            contenteditable="false"
+          >
+            ⚡ Perfect Chess Academy Bikaner
+          </div>
+
+          <h1
+            class="hero-title editable-text"
+            data-field="hero-title"
+            contenteditable="false"
+          >
+            From Beginner to <span class="highlight">Rated Player</span> in 6
+            Months
+          </h1>
+
+          <p
+            class="hero-description editable-text"
+            data-field="hero-description"
+            contenteditable="false"
+          >
+            1,250+ students have earned FIDE ratings using our proven training
+            system. Your breakthrough starts here.
+          </p>
+
+          <div class="hero-stats editable-group" data-field="hero-stats">
+            <div class="stat-pill editable-text" contenteditable="false">
+              <i class="fas fa-star"></i>
+              <span data-field="stat-rating">4.95</span> Rating
+            </div>
+            <div class="stat-pill editable-text" contenteditable="false">
+              <i class="fas fa-users"></i>
+              <span data-field="stat-students">1,250</span> Students
+            </div>
+            <div class="stat-pill editable-text" contenteditable="false">
+              <i class="fas fa-trophy"></i>
+              <span data-field="stat-years">15</span> Years Excellence
+            </div>
+          </div>
+
+          <div class="hero-buttons editable-group" data-field="hero-buttons">
+            <a href="contact.html" class="btn btn-primary editable-button">
+              <i class="fas fa-calendar"></i>
+              <span class="editable-text" contenteditable="false"
+                >Book My Free Trial</span
+              >
+            </a>
+            <a href="courses.html" class="btn btn-secondary editable-button">
+              <i class="fas fa-arrow-right"></i>
+              <span class="editable-text" contenteditable="false"
+                >View Courses</span
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section (Editable) -->
+      <section
+        class="features-section editable-section"
+        data-section="features"
+      >
+        <div class="container">
+          <div class="section-header editable-group">
+            <span class="section-badge editable-text" contenteditable="false"
+              >Why Choose Us</span
+            >
+            <h2 class="section-title editable-text" contenteditable="false">
+              Where Strategy Meets Excellence
+            </h2>
+            <p class="section-subtitle editable-text" contenteditable="false">
+              Six pillars of chess mastery that transform beginners into
+              champions
+            </p>
+          </div>
+
+          <div class="features-grid editable-grid" data-field="features">
+            <!-- Feature Card 1 -->
+            <div class="feature-card editable-card" data-card-id="feature-1">
+              <div class="feature-icon editable-icon" data-icon="trophy">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <h3 class="feature-title editable-text" contenteditable="false">
+                Master-Level Coaching
+              </h3>
+              <p
+                class="feature-description editable-text"
+                contenteditable="false"
+              >
+                Learn from FIDE-titled players with proven track records in
+                competitive chess.
+              </p>
+              <span class="feature-stat editable-text" contenteditable="false">
+                15 Years Experience
+              </span>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="feature-card editable-card" data-card-id="feature-2">
+              <div class="feature-icon editable-icon" data-icon="compass">
+                <i class="fas fa-compass"></i>
+              </div>
+              <h3 class="feature-title editable-text" contenteditable="false">
+                Personalized Pathways
+              </h3>
+              <p
+                class="feature-description editable-text"
+                contenteditable="false"
+              >
+                Custom training roadmap designed around your unique strengths
+                and goals.
+              </p>
+              <span class="feature-stat editable-text" contenteditable="false">
+                Custom Training Plans
+              </span>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div
+              class="feature-card editable-card featured"
+              data-card-id="feature-3"
+            >
+              <div class="featured-badge">Most Popular</div>
+              <div class="feature-icon editable-icon" data-icon="trophy">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <h3 class="feature-title editable-text" contenteditable="false">
+                Tournament Excellence
+              </h3>
+              <p
+                class="feature-description editable-text"
+                contenteditable="false"
+              >
+                Regular competitive opportunities with professional tournament
+                preparation.
+              </p>
+              <span class="feature-stat editable-text" contenteditable="false">
+                150+ Victories
+              </span>
+            </div>
+
+            <!-- ADD NEW CARD BUTTON -->
+            <div class="add-card-btn" onclick="addNewFeatureCard()">
+              <i class="fas fa-plus-circle"></i>
+              <span>Add New Feature</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section (Editable) -->
+      <section class="cta-section editable-section" data-section="cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2 class="cta-title editable-text" contenteditable="false">
+              Ready to Start Your Chess Journey?
+            </h2>
+            <p class="cta-subtitle editable-text" contenteditable="false">
+              Book a free trial session today and see why 1,250+ students trust
+              us
+            </p>
+            <div class="cta-actions editable-group">
+              <button class="btn btn-primary btn-large editable-button">
+                <i class="fas fa-rocket"></i>
+                <span class="editable-text" contenteditable="false"
+                  >Find Your Coach</span
+                >
+              </button>
+              <button
+                class="btn btn-secondary-outline btn-large editable-button"
+              >
+                <i class="fab fa-whatsapp"></i>
+                <span class="editable-text" contenteditable="false"
+                  >Chat on WhatsApp</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- BLOG CREATOR MODAL -->
+    <div id="blogCreatorModal" class="modal-overlay">
+      <div class="modal-container large">
+        <div class="modal-header">
+          <h2><i class="fas fa-blog"></i> Create New Blog Post</h2>
+          <button class="close-modal" onclick="closeBlogCreator()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="blog-creator-grid">
+            <!-- Left: Form -->
+            <div class="blog-form">
+              <div class="form-group">
+                <label>Post Title</label>
+                <input
+                  type="text"
+                  id="blogTitle"
+                  class="form-control"
+                  placeholder="Enter blog post title..."
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Featured Image</label>
+                <div
+                  class="image-upload-box"
+                  onclick="document.getElementById('blogImage').click()"
+                >
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Click to upload image</span>
+                  <input
+                    type="file"
+                    id="blogImage"
+                    accept="image/*"
+                    style="display: none"
+                    onchange="previewBlogImage(event)"
+                  />
+                </div>
+                <div id="blogImagePreview" class="image-preview"></div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Category</label>
+                  <select id="blogCategory" class="form-control">
+                    <option>Opening Theory</option>
+                    <option>Tactics</option>
+                    <option>Endgame</option>
+                    <option>Tournaments</option>
+                    <option>Training Tips</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Difficulty Level</label>
+                  <select id="blogDifficulty" class="form-control">
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Post Content</label>
+                <div
+                  id="blogContentEditor"
+                  class="visual-editor"
+                  contenteditable="true"
+                  data-placeholder="Start writing your blog post..."
+                ></div>
+                <div class="editor-toolbar">
+                  <button onclick="formatText('bold')" title="Bold">
+                    <i class="fas fa-bold"></i>
+                  </button>
+                  <button onclick="formatText('italic')" title="Italic">
+                    <i class="fas fa-italic"></i>
+                  </button>
+                  <button onclick="formatText('underline')" title="Underline">
+                    <i class="fas fa-underline"></i>
+                  </button>
+                  <button
+                    onclick="formatText('insertUnorderedList')"
+                    title="Bullet List"
+                  >
+                    <i class="fas fa-list-ul"></i>
+                  </button>
+                  <button
+                    onclick="formatText('insertOrderedList')"
+                    title="Numbered List"
+                  >
+                    <i class="fas fa-list-ol"></i>
+                  </button>
+                  <button
+                    onclick="insertChessBoard()"
+                    title="Insert Chess Board"
+                  >
+                    <i class="fas fa-chess-board"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Tags (comma separated)</label>
+                <input
+                  type="text"
+                  id="blogTags"
+                  class="form-control"
+                  placeholder="e.g. Italian Opening, Tactics, Beginner"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>SEO Meta Description</label>
+                <textarea
+                  id="blogMeta"
+                  class="form-control"
+                  rows="2"
+                  placeholder="Brief description for search engines..."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Right: Live Preview -->
+            <div class="blog-preview">
+              <div class="preview-header">
+                <i class="fas fa-eye"></i>
+                Live Preview
+              </div>
+              <div class="preview-content" id="blogPreview">
+                <div class="blog-preview-card">
+                  <div class="blog-preview-image" id="previewImage">
+                    <div class="placeholder-image">
+                      <i class="fas fa-image"></i>
+                    </div>
+                  </div>
+                  <div class="blog-preview-meta">
+                    <span class="preview-category" id="previewCategory"
+                      >Opening Theory</span
+                    >
+                    <span class="preview-difficulty" id="previewDifficulty"
+                      >Beginner</span
+                    >
+                  </div>
+                  <h3 class="blog-preview-title" id="previewTitle">
+                    Your Blog Title Appears Here
+                  </h3>
+                  <div class="blog-preview-body" id="previewContent">
+                    Start typing to see your content...
+                  </div>
+                  <div class="blog-preview-footer">
+                    <span><i class="fas fa-user"></i> Admin</span>
+                    <span><i class="fas fa-calendar"></i> Today</span>
+                    <span><i class="fas fa-clock"></i> 5 min read</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="saveBlogDraft()">
+            <i class="fas fa-file"></i>
+            Save as Draft
+          </button>
+          <button class="btn btn-primary" onclick="publishBlog()">
+            <i class="fas fa-rocket"></i>
+            Publish Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOURNAMENT CREATOR MODAL -->
+    <div id="tournamentCreatorModal" class="modal-overlay">
+      <div class="modal-container large">
+        <div class="modal-header">
+          <h2><i class="fas fa-trophy"></i> Create New Tournament</h2>
+          <button class="close-modal" onclick="closeTournamentCreator()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="tournament-creator-grid">
+            <!-- Left: Form -->
+            <div class="tournament-form">
+              <div class="form-group">
+                <label>Tournament Name</label>
+                <input
+                  type="text"
+                  id="tournamentName"
+                  class="form-control"
+                  placeholder="e.g. Bikaner District Championship 2026"
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Date</label>
+                  <input type="date" id="tournamentDate" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label>Time</label>
+                  <input type="time" id="tournamentTime" class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Banner Image</label>
+                <div
+                  class="image-upload-box"
+                  onclick="document.getElementById('tournamentBanner').click()"
+                >
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Click to upload tournament banner</span>
+                  <input
+                    type="file"
+                    id="tournamentBanner"
+                    accept="image/*"
+                    style="display: none"
+                    onchange="previewTournamentBanner(event)"
+                  />
+                </div>
+                <div id="tournamentBannerPreview" class="image-preview"></div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Event Type</label>
+                  <select id="tournamentType" class="form-control">
+                    <option>In-Person</option>
+                    <option>Online</option>
+                    <option>Hybrid</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Skill Level</label>
+                  <select id="tournamentLevel" class="form-control">
+                    <option>All Levels</option>
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Venue</label>
+                <input
+                  type="text"
+                  id="tournamentVenue"
+                  class="form-control"
+                  placeholder="Location or online platform"
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Entry Fee</label>
+                  <input
+                    type="number"
+                    id="tournamentFee"
+                    class="form-control"
+                    placeholder="₹500"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Max Participants</label>
+                  <input
+                    type="number"
+                    id="tournamentMaxParticipants"
+                    class="form-control"
+                    placeholder="50"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Description</label>
+                <textarea
+                  id="tournamentDescription"
+                  class="form-control"
+                  rows="4"
+                  placeholder="Tournament details, rules, prizes..."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Prizes</label>
+                <div class="prize-builder">
+                  <div class="prize-item">
+                    <span>🥇 1st Place:</span>
+                    <input
+                      type="text"
+                      class="form-control-sm"
+                      placeholder="₹5,000"
+                    />
+                  </div>
+                  <div class="prize-item">
+                    <span>🥈 2nd Place:</span>
+                    <input
+                      type="text"
+                      class="form-control-sm"
+                      placeholder="₹3,000"
+                    />
+                  </div>
+                  <div class="prize-item">
+                    <span>🥉 3rd Place:</span>
+                    <input
+                      type="text"
+                      class="form-control-sm"
+                      placeholder="₹2,000"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Registration Deadline</label>
+                <input
+                  type="date"
+                  id="tournamentDeadline"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <!-- Right: Preview -->
+            <div class="tournament-preview">
+              <div class="preview-header">
+                <i class="fas fa-eye"></i>
+                Tournament Card Preview
+              </div>
+              <div class="preview-content">
+                <div class="tournament-preview-card">
+                  <div
+                    class="tournament-preview-banner"
+                    id="previewTournamentBanner"
+                  >
+                    <div class="placeholder-image">
+                      <i class="fas fa-trophy"></i>
+                    </div>
+                  </div>
+                  <div class="tournament-preview-date">
+                    <span class="month" id="previewMonth">JAN</span>
+                    <span class="day" id="previewDay">15</span>
+                  </div>
+                  <div class="tournament-preview-content">
+                    <div class="tournament-preview-badges">
+                      <span class="badge-type" id="previewType">In-Person</span>
+                      <span class="badge-level" id="previewLevel"
+                        >All Levels</span
+                      >
+                    </div>
+                    <h3
+                      class="tournament-preview-title"
+                      id="previewTournamentTitle"
+                    >
+                      Tournament Name
+                    </h3>
+                    <p
+                      class="tournament-preview-desc"
+                      id="previewTournamentDesc"
+                    >
+                      Description will appear here...
+                    </p>
+                    <div class="tournament-preview-details">
+                      <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="previewVenue">Venue</span>
+                      </div>
+                      <div>
+                        <i class="fas fa-clock"></i>
+                        <span id="previewTime">Time</span>
+                      </div>
+                      <div>
+                        <i class="fas fa-rupee-sign"></i> Entry:
+                        <span id="previewFee">₹500</span>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">
+                      Register Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="saveTournamentDraft()">
+            <i class="fas fa-file"></i>
+            Save as Draft
+          </button>
+          <button class="btn btn-primary" onclick="publishTournament()">
+            <i class="fas fa-rocket"></i>
+            Publish Tournament
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANALYTICS DASHBOARD MODAL -->
+    <div id="analyticsModal" class="modal-overlay">
+      <div class="modal-container extra-large">
+        <div class="modal-header">
+          <h2><i class="fas fa-chart-line"></i> Website Analytics Dashboard</h2>
+          <button class="close-modal" onclick="closeAnalytics()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="analytics-dashboard">
+            <!-- Top Stats -->
+            <div class="analytics-stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon blue">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-label">Total Visitors</span>
+                  <h3 class="stat-value">12,543</h3>
+                  <span class="stat-change positive">
+                    <i class="fas fa-arrow-up"></i> 15.3% vs last month
+                  </span>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon green">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-label">New Enrollments</span>
+                  <h3 class="stat-value">47</h3>
+                  <span class="stat-change positive">
+                    <i class="fas fa-arrow-up"></i> 8.2% vs last month
+                  </span>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon yellow">
+                  <i class="fas fa-envelope-open"></i>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-label">Lead Magnet Downloads</span>
+                  <h3 class="stat-value">234</h3>
+                  <span class="stat-change positive">
+                    <i class="fas fa-arrow-up"></i> 22.1% vs last month
+                  </span>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon purple">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-label">Tournament Registrations</span>
+                  <h3 class="stat-value">89</h3>
+                  <span class="stat-change negative">
+                    <i class="fas fa-arrow-down"></i> 3.5% vs last month
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="analytics-charts">
+              <div class="chart-card">
+                <h4>Visitor Traffic (Last 30 Days)</h4>
+                <div class="chart-placeholder">
+                  <canvas id="trafficChart"></canvas>
+                </div>
+              </div>
+
+              <div class="chart-card">
+                <h4>Popular Pages</h4>
+                <div class="popular-pages-list">
+                  <div class="page-item">
+                    <span class="page-name">/index.html</span>
+                    <span class="page-views">5,432 views</span>
+                  </div>
+                  <div class="page-item">
+                    <span class="page-name">/courses.html</span>
+                    <span class="page-views">3,214 views</span>
+                  </div>
+                  <div class="page-item">
+                    <span class="page-name">/coaching.html</span>
+                    <span class="page-views">2,876 views</span>
+                  </div>
+                  <div class="page-item">
+                    <span class="page-name">/blog.html</span>
+                    <span class="page-views">1,987 views</span>
+                  </div>
+                  <div class="page-item">
+                    <span class="page-name">/tournaments.html</span>
+                    <span class="page-views">1,654 views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Behavior -->
+            <div class="analytics-behavior">
+              <h4>
+                <i class="fas fa-mouse-pointer"></i> User Behavior Insights
+              </h4>
+              <div class="behavior-grid">
+                <div class="behavior-card">
+                  <span class="behavior-label">Avg. Session Duration</span>
+                  <span class="behavior-value">4m 32s</span>
+                </div>
+                <div class="behavior-card">
+                  <span class="behavior-label">Bounce Rate</span>
+                  <span class="behavior-value">34.2%</span>
+                </div>
+                <div class="behavior-card">
+                  <span class="behavior-label">Pages per Session</span>
+                  <span class="behavior-value">3.4</span>
+                </div>
+                <div class="behavior-card">
+                  <span class="behavior-label">Contact Form Submissions</span>
+                  <span class="behavior-value">156</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE MANAGER MODAL -->
+    <div id="pageManagerModal" class="modal-overlay">
+      <div class="modal-container large">
+        <div class="modal-header">
+          <h2><i class="fas fa-copy"></i> Page Manager</h2>
+          <button class="close-modal" onclick="closePageManager()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="page-manager-list">
+            <div class="page-item">
+              <div class="page-icon"><i class="fas fa-home"></i></div>
+              <div class="page-info">
+                <h4>Homepage (index.html)</h4>
+                <span>Last edited: 2 hours ago</span>
+              </div>
+              <div class="page-actions">
+                <button
+                  class="btn-sm btn-primary"
+                  onclick="editPage('index.html')"
+                >
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn-sm btn-secondary">
+                  <i class="fas fa-eye"></i> View
+                </button>
+              </div>
+            </div>
+
+            <div class="page-item">
+              <div class="page-icon"><i class="fas fa-book"></i></div>
+              <div class="page-info">
+                <h4>Courses (courses.html)</h4>
+                <span>Last edited: 1 day ago</span>
+              </div>
+              <div class="page-actions">
+                <button
+                  class="btn-sm btn-primary"
+                  onclick="editPage('courses.html')"
+                >
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn-sm btn-secondary">
+                  <i class="fas fa-eye"></i> View
+                </button>
+              </div>
+            </div>
+
+            <div class="page-item">
+              <div class="page-icon"><i class="fas fa-user-tie"></i></div>
+              <div class="page-info">
+                <h4>Coaching (coaching.html)</h4>
+                <span>Last edited: 3 days ago</span>
+              </div>
+              <div class="page-actions">
+                <button
+                  class="btn-sm btn-primary"
+                  onclick="editPage('coaching.html')"
+                >
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn-sm btn-secondary">
+                  <i class="fas fa-eye"></i> View
+                </button>
+              </div>
+            </div>
+
+            <div class="page-item">
+              <div class="page-icon"><i class="fas fa-trophy"></i></div>
+              <div class="page-info">
+                <h4>Tournaments (tournaments.html)</h4>
+                <span>Last edited: 5 days ago</span>
+              </div>
+              <div class="page-actions">
+                <button
+                  class="btn-sm btn-primary"
+                  onclick="editPage('tournaments.html')"
+                >
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn-sm btn-secondary">
+                  <i class="fas fa-eye"></i> View
+                </button>
+              </div>
+            </div>
+
+            <div class="page-item">
+              <div class="page-icon"><i class="fas fa-blog"></i></div>
+              <div class="page-info">
+                <h4>Blog (blog.html)</h4>
+                <span>Last edited: 1 week ago</span>
+              </div>
+              <div class="page-actions">
+                <button
+                  class="btn-sm btn-primary"
+                  onclick="editPage('blog.html')"
+                >
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn-sm btn-secondary">
+                  <i class="fas fa-eye"></i> View
+                </button>
+              </div>
+            </div>
+
+            <div class="add-page-btn" onclick="createNewPage()">
+              <i class="fas fa-plus-circle"></i>
+              <span>Create New Page</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS NOTIFICATION -->
+    <div id="successNotification" class="success-notification">
+      <i class="fas fa-check-circle"></i>
+      <span id="notificationText">Changes saved successfully!</span>
+    </div>
+
+    <!-- IMAGE MANAGER MODAL - CLIENT-SIDE ONLY -->
+    <div id="imageManagerModal" class="modal-overlay">
+      <div class="modal-container large">
+        <div class="modal-header">
+          <h2><i class="fas fa-images"></i> Image Manager (Simulation Mode)</h2>
+          <button class="close-modal" onclick="closeImageManager()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="image-manager-grid">
+            <!-- Upload Section -->
+            <div class="upload-section">
+              <div class="upload-box" id="imageUploadBox">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Click or Drag Images Here</h3>
+                <p>Simulated upload - no backend needed</p>
+                <input
+                  type="file"
+                  id="imageUploadInput"
+                  accept="image/*"
+                  multiple
+                  hidden
+                />
+                <button
+                  class="btn btn-primary"
+                  onclick="document.getElementById('imageUploadInput').click()"
+                >
+                  <i class="fas fa-upload"></i> Choose Images
+                </button>
+              </div>
+
+              <div class="upload-info">
+                <p>
+                  <i class="fas fa-info-circle"></i> Images load from your
+                  browser only
+                </p>
+                <p>
+                  <i class="fas fa-check-circle"></i> JPG, PNG, WebP, GIF
+                  supported
+                </p>
+              </div>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="image-gallery-section">
+              <div class="gallery-header">
+                <h3>Recently Loaded Images</h3>
+                <button class="btn btn-secondary" onclick="clearImageGallery()">
+                  <i class="fas fa-trash"></i> Clear All
+                </button>
+              </div>
+
+              <div class="image-gallery-grid" id="imageGalleryGrid">
+                <!-- Simulated demo images -->
+                <div
+                  class="gallery-image-card"
+                  data-url="assets/Images/student-success.webp"
+                >
+                  <img src="assets/Images/student-success.webp" alt="Demo" />
+                  <div class="image-card-overlay">
+                    <button onclick="selectImageForReplace(this)">
+                      <i class="fas fa-check"></i> Use This
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="gallery-image-card"
+                  data-url="assets/Images/tactical-board.webp"
+                >
+                  <img src="assets/Images/tactical-board.webp" alt="Demo" />
+                  <div class="image-card-overlay">
+                    <button onclick="selectImageForReplace(this)">
+                      <i class="fas fa-check"></i> Use This
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="gallery-image-card"
+                  data-url="assets/Images/parent-child-chess.webp"
+                >
+                  <img src="assets/Images/parent-child-chess.webp" alt="Demo" />
+                  <div class="image-card-overlay">
+                    <button onclick="selectImageForReplace(this)">
+                      <i class="fas fa-check"></i> Use This
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <p class="hint">
+            <i class="fas fa-lightbulb"></i> Click any image on the page, then
+            select replacement here
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOR THEME MODAL - CLIENT-SIDE ONLY -->
+    <div id="colorThemeModal" class="modal-overlay">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2><i class="fas fa-palette"></i> Color Theme Manager</h2>
+          <button class="close-modal" onclick="closeColorTheme()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="theme-manager-layout">
+            <!-- Quick Presets -->
+            <div class="theme-presets">
+              <h3>Quick Themes</h3>
+              <div class="preset-grid">
+                <div
+                  class="preset-card"
+                  onclick="applyPresetTheme('professional')"
+                >
+                  <div class="preset-colors">
+                    <span style="background: #f59e0b"></span>
+                    <span style="background: #1a2332"></span>
+                  </div>
+                  <p>Professional (Current)</p>
+                </div>
+                <div class="preset-card" onclick="applyPresetTheme('vibrant')">
+                  <div class="preset-colors">
+                    <span style="background: #7c3aed"></span>
+                    <span style="background: #ec4899"></span>
+                  </div>
+                  <p>Vibrant Purple</p>
+                </div>
+                <div class="preset-card" onclick="applyPresetTheme('ocean')">
+                  <div class="preset-colors">
+                    <span style="background: #0ea5e9"></span>
+                    <span style="background: #06b6d4"></span>
+                  </div>
+                  <p>Ocean Blue</p>
+                </div>
+                <div class="preset-card" onclick="applyPresetTheme('forest')">
+                  <div class="preset-colors">
+                    <span style="background: #10b981"></span>
+                    <span style="background: #059669"></span>
+                  </div>
+                  <p>Forest Green</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Colors -->
+            <div class="custom-colors-section">
+              <h3>Custom Brand Colors</h3>
+
+              <div class="color-picker-row">
+                <label>Primary Color (Buttons, Links)</label>
+                <input type="color" id="primaryColorPicker" value="#f59e0b" />
+                <input
+                  type="text"
+                  id="primaryColorHex"
+                  value="#f59e0b"
+                  class="hex-input"
+                />
+              </div>
+
+              <div class="color-picker-row">
+                <label>Secondary Color (Accents)</label>
+                <input type="color" id="secondaryColorPicker" value="#fbbf24" />
+                <input
+                  type="text"
+                  id="secondaryColorHex"
+                  value="#fbbf24"
+                  class="hex-input"
+                />
+              </div>
+
+              <button
+                class="btn btn-primary btn-block"
+                onclick="applyCustomColors()"
+              >
+                <i class="fas fa-magic"></i> Apply Custom Colors
+              </button>
+            </div>
+
+            <!-- Preview -->
+            <div class="theme-preview-box">
+              <h3>Live Preview</h3>
+              <div class="preview-sample">
+                <h4 style="color: var(--accent-primary)">
+                  Perfect Chess Academy
+                </h4>
+                <p>This is sample text showing how colors look.</p>
+                <button class="btn btn-primary">Sample Button</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="resetThemeColors()">
+            <i class="fas fa-undo"></i> Reset Default
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/admin-visual.js"></script>
+  </body>
+</html>

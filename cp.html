@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get in Touch - Perfect Chess Academy</title>
+    <meta name="description" content="Experience chess training like never before. Book your free trial and join 1,250+ students mastering the game.">
+    
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/utils.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    
+    <!-- NEW: Premium Contact CSS -->
+    <link rel="stylesheet" href="cp.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Your existing header -->
+    <header>
+        <!-- Keep your existing header -->
+    </header>
+
+    <!-- FLOATING CHESS PIECES BACKGROUND -->
+    <div class="chess-particles" aria-hidden="true">
+        <div class="chess-piece piece-1">♔</div>
+        <div class="chess-piece piece-2">♕</div>
+        <div class="chess-piece piece-3">♖</div>
+        <div class="chess-piece piece-4">♗</div>
+        <div class="chess-piece piece-5">♘</div>
+        <div class="chess-piece piece-6">♙</div>
+    </div>
+
+    <!-- ============================================
+         SECTION 1: HERO WITH LIVE STATS
+         ============================================ -->
+    <section class="contact-hero-premium">
+        <div class="container">
+            <div class="hero-content-premium">
+                <!-- Live Status Badge -->
+                <div class="live-status-badge">
+                    <div class="pulse-dot"></div>
+                    <span>3 Coaches Available Now</span>
+                </div>
+
+                <h1 class="hero-title-premium">
+                    Your Chess <span class="gradient-text">Transformation</span> Starts Here
+                </h1>
+                <p class="hero-subtitle-premium">
+                    Join 1,250+ students who've achieved FIDE ratings through our proven system. 
+                    <strong>Free trial class available today.</strong>
+                </p>
+
+                <!-- Animated Stats Counter -->
+                <div class="hero-stats-animated">
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="1250">0</div>
+                        <div class="stat-label">Happy Students</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">Tournament Wins</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Years Excellence</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">% Satisfaction</div>
+                    </div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="hero-cta-group">
+                    <a href="#contact-form" class="btn-premium btn-primary-premium">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Free Trial</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="https://wa.me/919252358993?text=Hi!%20I%27d%20like%20to%20book%20a%20free%20trial%20class" 
+                       class="btn-premium btn-whatsapp-premium" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 2: LIMITED TIME OFFER (URGENCY)
+         ============================================ -->
+    <section class="limited-offer-section">
+        <div class="container">
+            <div class="offer-card">
+                <div class="offer-badge">
+                    <i class="fas fa-gift"></i>
+                    <span>Limited Time Offer</span>
+                </div>
+                <h2 class="offer-title">
+                    <span class="highlight-yellow">First 10 students</span> this week get 20% OFF + Free Chess Set!
+                </h2>
+                <p class="offer-description">
+                    Only <strong id="spotsLeft">7 spots</strong> remaining. Offer expires in:
+                </p>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown-timer">
+                    <div class="time-box">
+                        <div class="time-value" id="hours">23</div>
+                        <div class="time-label">Hours</div>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-box">
+                        <div class="time-value" id="minutes">45</div>
+                        <div class="time-label">Minutes</div>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-box">
+                        <div class="time-value" id="seconds">32</div>
+                        <div class="time-label">Seconds</div>
+                    </div>
+                </div>
+
+                <a href="#contact-form" class="btn-claim-offer">
+                    <i class="fas fa-rocket"></i>
+                    Claim Your Spot Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: INTERACTIVE COACH MATCHER QUIZ
+         ============================================ -->
+    <section class="coach-matcher-section">
+        <div class="container">
+            <div class="section-header-premium">
+                <span class="section-badge">Personalized Match</span>
+                <h2 class="section-title-premium">Find Your Perfect Coach in 30 Seconds</h2>
+                <p class="section-description">Answer 3 quick questions and we'll match you with the ideal coach for your goals</p>
+            </div>
+
+            <div class="quiz-container" id="coachQuiz">
+                <!-- Question 1 -->
+                <div class="quiz-step active" data-step="1">
+                    <div class="question-number">Question 1 of 3</div>
+                    <h3 class="quiz-question">What's your current chess level?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="beginner">
+                            <div class="option-icon">🌱</div>
+                            <strong>Complete Beginner</strong>
+                            <span>I'm just starting out</span>
+                        </button>
+                        <button class="quiz-option" data-value="intermediate">
+                            <div class="option-icon">📚</div>
+                            <strong>Intermediate</strong>
+                            <span>I know the basics</span>
+                        </button>
+                        <button class="quiz-option" data-value="advanced">
+                            <div class="option-icon">🏆</div>
+                            <strong>Advanced</strong>
+                            <span>I compete in tournaments</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-step" data-step="2">
+                    <div class="question-number">Question 2 of 3</div>
+                    <h3 class="quiz-question">What's your primary goal?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="learn">
+                            <div class="option-icon">🎯</div>
+                            <strong>Learn for Fun</strong>
+                            <span>Enjoy the game casually</span>
+                        </button>
+                        <button class="quiz-option" data-value="rating">
+                            <div class="option-icon">📈</div>
+                            <strong>Improve Rating</strong>
+                            <span>Get FIDE rated</span>
+                        </button>
+                        <button class="quiz-option" data-value="compete">
+                            <div class="option-icon">🥇</div>
+                            <strong>Win Tournaments</strong>
+                            <span>Competitive chess</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-step" data-step="3">
+                    <div class="question-number">Question 3 of 3</div>
+                    <h3 class="quiz-question">Preferred learning style?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="online">
+                            <div class="option-icon">💻</div>
+                            <strong>Online Classes</strong>
+                            <span>Learn from home</span>
+                        </button>
+                        <button class="quiz-option" data-value="offline">
+                            <div class="option-icon">🏫</div>
+                            <strong>In-Person</strong>
+                            <span>Face-to-face training</span>
+                        </button>
+                        <button class="quiz-option" data-value="hybrid">
+                            <div class="option-icon">🔄</div>
+                            <strong>Hybrid</strong>
+                            <span>Mix of both</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result -->
+                <div class="quiz-result" id="quizResult">
+                    <div class="result-icon">✨</div>
+                    <h3>Your Perfect Match!</h3>
+                    <div class="matched-coach">
+                        <div class="coach-avatar">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Coach">
+                            <div class="verified-badge"><i class="fas fa-check-circle"></i></div>
+                        </div>
+                        <div class="coach-details">
+                            <h4 id="coachName">GM Rajesh Kumar</h4>
+                            <p class="coach-title">Grandmaster • Tournament Specialist</p>
+                            <div class="coach-stats">
+                                <span><i class="fas fa-star"></i> 4.9/5 Rating</span>
+                                <span><i class="fas fa-users"></i> 150+ Students</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="result-message" id="resultMessage">
+                        Based on your answers, GM Rajesh specializes in competitive tournament preparation and has helped 150+ students achieve FIDE ratings.
+                    </p>
+                    <button class="btn-book-coach" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Session with Rajesh
+                    </button>
+                    <button class="btn-retake" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i>
+                        Retake Quiz
+                    </button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="quiz-progress">
+                    <div class="progress-bar" id="quizProgressBar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4: LIVE CLASS SCHEDULE PREVIEW
+         ============================================ -->
+    <section class="live-schedule-section">
+        <div class="container">
+            <div class="section-header-premium">
+                <span class="section-badge">This Week's Classes</span>
+                <h2 class="section-title-premium">Upcoming Sessions You Can Join</h2>
+                <p class="section-description">See what's happening live at Perfect Chess Academy</p>
+            </div>
+
+            <div class="schedule-carousel">
+                <div class="class-card">
+                    <div class="class-time-badge">
+                        <div class="badge-day">Today</div>
+                        <div class="badge-time">6:00 PM</div>
+                    </div>
+                    <div class="class-content">
+                        <h4 class="class-title">Beginner's Opening Masterclass</h4>
+                        <div class="class-meta">
+                            <span><i class="fas fa-user"></i> GM Rajesh Kumar</span>
+                            <span><i class="fas fa-users"></i> 5 spots left</span>
+                        </div>
+                        <div class="class-tags">
+                            <span class="tag">Live Online</span>
+                            <span class="tag">Beginner</span>
+                        </div>
+                    </div>
+                    <button class="btn-join-class">Join Free Trial</button>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-time-badge">
+                        <div class="badge-day">Tomorrow</div>
+                        <div class="badge-time">5:00 PM</div>
+                    </div>
+                    <div class="class-content">
+                        <h4 class="class-title">Tactical Patterns Workshop</h4>
+                        <div class="class-meta">
+                            <span><i class="fas fa-user"></i> IM Priya Sharma</span>
+                            <span><i class="fas fa-users"></i> 8 spots left</span>
+                        </div>
+                        <div class="class-tags">
+                            <span class="tag">In-Person</span>
+                            <span class="tag">Intermediate</span>
+                        </div>
+                    </div>
+                    <button class="btn-join-class">Reserve Spot</button>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-time-badge">
+                        <div class="badge-day">Sat</div>
+                        <div class="badge-time">10:00 AM</div>
+                    </div>
+                    <div class="class-content">
+                        <h4 class="class-title">Tournament Preparation</h4>
+                        <div class="class-meta">
+                            <span><i class="fas fa-user"></i> FM Vikram Singh</span>
+                            <span><i class="fas fa-users"></i> 3 spots left</span>
+                        </div>
+                        <div class="class-tags">
+                            <span class="tag">Hybrid</span>
+                            <span class="tag">Advanced</span>
+                        </div>
+                    </div>
+                    <button class="btn-join-class">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5: YOUR JOURNEY PREVIEW (GAMIFIED)
+         ============================================ -->
+    <section class="journey-preview-section">
+        <div class="container">
+            <div class="section-header-premium">
+                <span class="section-badge">Your Path to Mastery</span>
+                <h2 class="section-title-premium">Visualize Your Chess Journey</h2>
+                <p class="section-description">This is what your transformation looks like in 6 months</p>
+            </div>
+
+            <div class="journey-roadmap">
+                <div class="milestone-card unlocked">
+                    <div class="milestone-icon">
+                        <i class="fas fa-play-circle"></i>
+                        <div class="completion-ring">100%</div>
+                    </div>
+                    <div class="milestone-content">
+                        <h4>Week 1: Foundations</h4>
+                        <p>Learn board setup, piece movements, and basic tactics</p>
+                        <div class="milestone-badge earned">Completed</div>
+                    </div>
+                </div>
+
+                <div class="milestone-card current">
+                    <div class="milestone-icon">
+                        <i class="fas fa-chess-knight"></i>
+                        <div class="completion-ring">60%</div>
+                    </div>
+                    <div class="milestone-content">
+                        <h4>Month 1: Opening Principles</h4>
+                        <p>Master 3 main openings and develop your style</p>
+                        <div class="milestone-badge current">In Progress</div>
+                    </div>
+                </div>
+
+                <div class="milestone-card locked">
+                    <div class="milestone-icon">
+                        <i class="fas fa-trophy"></i>
+                        <div class="completion-ring">0%</div>
+                    </div>
+                    <div class="milestone-content">
+                        <h4>Month 3: First Tournament</h4>
+                        <p>Compete in your first rated tournament</p>
+                        <div class="milestone-badge locked">Locked</div>
+                    </div>
+                </div>
+
+                <div class="milestone-card locked">
+                    <div class="milestone-icon">
+                        <i class="fas fa-medal"></i>
+                        <div class="completion-ring">0%</div>
+                    </div>
+                    <div class="milestone-content">
+                        <h4>Month 6: FIDE Rating</h4>
+                        <p>Achieve your official FIDE chess rating</p>
+                        <div class="milestone-badge locked">Locked</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="journey-cta">
+                <p>Ready to start <strong>your</strong> journey?</p>
+                <a href="#contact-form" class="btn-start-journey">
+                    <i class="fas fa-rocket"></i>
+                    Begin Your Transformation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 6: STUDENT SUCCESS STORIES WALL
+         ============================================ -->
+    <section class="success-stories-section">
+        <div class="container">
+            <div class="section-header-premium">
+                <span class="section-badge">Real Results</span>
+                <h2 class="section-title-premium">1,250+ Success Stories</h2>
+                <p class="section-description">See what students are saying about their transformation</p>
+            </div>
+
+            <div class="testimonial-wall">
+                <!-- Video Testimonial Featured -->
+                <div class="testimonial-card featured">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600" alt="Student testimonial">
+                        <button class="play-btn" onclick="openVideoModal()">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="video-badge">
+                            <i class="fas fa-video"></i>
+                            Watch Story
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">
+                            My son went from knowing nothing to winning his first tournament in just 4 months. The coaches here are phenomenal!
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/60?img=8" alt="Parent">
+                            <div>
+                                <strong>Meera Patel</strong>
+                                <span>Parent of Arjun (Age 9)</span>
+                            </div>
+                        </div>
+                        <div class="achievement-badges">
+                            <span class="badge-pill">1st Tournament Win</span>
+                            <span class="badge-pill">Rating: 1250</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Testimonials Grid -->
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The personalized coaching helped me break through my rating plateau. Now I'm 1800+ and competing at state level!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=15" alt="Student">
+                        <div>
+                            <strong>Rohit Sharma</strong>
+                            <span>Student, Age 16</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "As an adult learner, I was skeptical. But the structured approach made chess finally 'click' for me. Best decision ever!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=33" alt="Student">
+                        <div>
+                            <strong>Anita Desai</strong>
+                            <span>Adult Student</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "My daughter's confidence has skyrocketed. She's not just learning chess—she's learning life skills: patience, strategy, critical thinking."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=5" alt="Parent">
+                        <div>
+                            <strong>Kavita Singh</strong>
+                            <span>Parent of Diya (Age 12)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Metrics -->
+            <div class="trust-metrics">
+                <div class="metric-item">
+                    <div class="metric-icon"><i class="fas fa-star"></i></div>
+                    <div class="metric-data">
+                        <strong>4.9/5</strong>
+                        <span>Average Rating</span>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="metric-data">
+                        <strong>150+</strong>
+                        <span>Tournament Wins</span>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="metric-data">
+                        <strong>98%</strong>
+                        <span>Success Rate</span>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon"><i class="fas fa-heart"></i></div>
+                    <div class="metric-data">
+                        <strong>100%</strong>
+                        <span>Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 7: LIVE AVAILABILITY DASHBOARD
+         ============================================ -->
+    <section class="availability-dashboard">
+        <div class="container">
+            <div class="section-header-premium">
+                <span class="section-badge">Real-Time Availability</span>
+                <h2 class="section-title-premium">Our Coaches Are Online Now</h2>
+                <p class="section-description">Book instantly with available coaches</p>
+            </div>
+
+            <div class="coaches-availability-grid">
+                <div class="coach-availability-card online">
+                    <div class="availability-status">
+                        <div class="status-dot online"></div>
+                        <span>Available Now</span>
+                    </div>
+                    <div class="coach-info">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="Coach" class="coach-photo">
+                        <div class="coach-details-compact">
+                            <h4>GM Rajesh Kumar</h4>
+                            <p>Grandmaster • 15 years exp</p>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i> 4.9 (120 reviews)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-available">
+                        <i class="fas fa-clock"></i>
+                        Next slot: Today, 6:00 PM
+                    </div>
+                    <button class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Now
+                    </button>
+                </div>
+
+                <div class="coach-availability-card online">
+                    <div class="availability-status">
+                        <div class="status-dot online"></div>
+                        <span>Available Now</span>
+                    </div>
+                    <div class="coach-info">
+                        <img src="https://i.pravatar.cc/100?img=45" alt="Coach" class="coach-photo">
+                        <div class="coach-details-compact">
+                            <h4>IM Priya Sharma</h4>
+                            <p>International Master • Youth Specialist</p>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i> 5.0 (98 reviews)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-available">
+                        <i class="fas fa-clock"></i>
+                        Next slot: Today, 7:30 PM
+                    </div>
+                    <button class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Now
+                    </button>
+                </div>
+
+                <div class="coach-availability-card busy">
+                    <div class="availability-status">
+                        <div class="status-dot busy"></div>
+                        <span>In Session</span>
+                    </div>
+                    <div class="coach-info">
+                        <img src="https://i.pravatar.cc/100?img=33" alt="Coach" class="coach-photo">
+                        <div class="coach-details-compact">
+                            <h4>FM Vikram Singh</h4>
+                            <p>FIDE Master • Tactical Expert</p>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i> 4.8 (85 reviews)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-available">
+                        <i class="fas fa-clock"></i>
+                        Next slot: Tomorrow, 5:00 PM
+                    </div>
+                    <button class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Ahead
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 8: MAIN CONTACT FORM (ENHANCED)
+         ============================================ -->
+    <section class="contact-form-premium" id="contact-form">
+        <div class="container">
+            <div class="form-layout-premium">
+                <!-- Left: Form -->
+                <div class="form-column">
+                    <div class="form-header-premium">
+                        <div class="header-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <h2>Let's Get Started</h2>
+                        <p>Fill out the form below and we'll respond within 2 hours</p>
+                        
+                        <!-- Response Time Indicator -->
+                        <div class="response-indicator">
+                            <i class="fas fa-clock"></i>
+                            <span>Average response time: <strong>1 hour 45 minutes</strong></span>
+                        </div>
+                    </div>
+
+                    <form id="premiumContactForm" class="modern-form" action="contact.php" method="POST" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">
+                                    <i class="fas fa-user"></i>
+                                    Your Name <span class="required">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" class="form-input" 
+                                       placeholder="e.g., Rajesh Kumar" required autocomplete="name">
+                                <span class="field-error" id="name-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number <span class="required">*</span>
+                                </label>
+                                <input type="tel" id="phone" name="phone" class="form-input" 
+                                       placeholder="+91 98765 43210" required autocomplete="tel">
+                                <span class="field-error" id="phone-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address <span class="required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" 
+                                   placeholder="your@email.com" required autocomplete="email">
+                            <span class="field-error" id="email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest">
+                                <i class="fas fa-chess"></i>
+                                I'm Interested In <span class="required">*</span>
+                            </label>
+                            <div class="interest-pills">
+                                <input type="radio" id="trial" name="interest" value="trial-class" required>
+                                <label for="trial" class="pill-option">
+                                    <i class="fas fa-star"></i>
+                                    Free Trial Class
+                                </label>
+
+                                <input type="radio" id="beginner" name="interest" value="beginner-course">
+                                <label for="beginner" class="pill-option">
+                                    <i class="fas fa-seedling"></i>
+                                    Beginner Courses
+                                </label>
+
+                                <input type="radio" id="advanced" name="interest" value="advanced">
+                                <label for="advanced" class="pill-option">
+                                    <i class="fas fa-trophy"></i>
+                                    Advanced Training
+                                </label>
+
+                                <input type="radio" id="private" name="interest" value="private-coaching">
+                                <label for="private" class="pill-option">
+                                    <i class="fas fa-user-graduate"></i>
+                                    Private Coaching
+                                </label>
+
+                                <input type="radio" id="online" name="interest" value="online">
+                                <label for="online" class="pill-option">
+                                    <i class="fas fa-laptop"></i>
+                                    Online Classes
+                                </label>
+
+                                <input type="radio" id="tournament" name="interest" value="tournament">
+                                <label for="tournament" class="pill-option">
+                                    <i class="fas fa-medal"></i>
+                                    Tournament Prep
+                                </label>
+                            </div>
+                            <span class="field-error" id="interest-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-dots"></i>
+                                Additional Details <span class="optional">(optional)</span>
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" 
+                                      placeholder="Tell us about your chess goals, availability, or any questions you have..."></textarea>
+                        </div>
+
+                        <!-- Preferred Contact Method -->
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-comments"></i>
+                                Preferred Contact Method
+                            </label>
+                            <div class="contact-method-select">
+                                <label class="radio-card">
+                                    <input type="radio" name="contact_method" value="email" checked>
+                                    <div class="radio-card-content">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Email</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="contact_method" value="phone">
+                                    <div class="radio-card-content">
+                                        <i class="fas fa-phone"></i>
+                                        <span>Phone</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="contact_method" value="whatsapp">
+                                    <div class="radio-card-content">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>WhatsApp</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Anti-spam hidden field -->
+                        <input type="hidden" name="timestamp" id="timestamp" value="">
+
+                        <button type="submit" class="btn-submit-premium">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                            <div class="btn-spinner"></div>
+                        </button>
+
+                        <!-- Success Message -->
+                        <div class="form-success-premium" id="successMessage">
+                            <div class="success-animation">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="success-content">
+                                <h4>Message Sent Successfully!</h4>
+                                <p>We'll get back to you within 2 hours. Check your email for confirmation.</p>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- What Happens Next Timeline -->
+                    <div class="process-timeline">
+                        <h3>What Happens Next?</h3>
+                        <div class="timeline-steps">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <strong>Instant Confirmation</strong>
+                                    <span>Receive email confirmation immediately</span>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <strong>Personal Call</strong>
+                                    <span>Our team calls within 2 hours</span>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <strong>Free Trial Class</strong>
+                                    <span>Experience our teaching firsthand</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Info Sidebar -->
+                <div class="info-column">
+                    <!-- Quick Contact Card -->
+                    <div class="info-card-premium primary-card">
+                        <div class="card-icon-header">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Prefer to Talk Directly?</h3>
+                        <p>We're available Monday - Saturday, 9 AM - 8 PM IST</p>
+
+                        <div class="contact-quick-links">
+                            <a href="tel:+919252358993" class="quick-link">
+                                <div class="link-icon phone">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="link-content">
+                                    <span class="link-label">Call Us</span>
+                                    <strong>+91 92523 58993</strong>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+
+                            <a href="https://wa.me/919252358993" class="quick-link" target="_blank">
+                                <div class="link-icon whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="link-content">
+                                    <span class="link-label">WhatsApp</span>
+                                    <strong>Chat Now</strong>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+
+                            <a href="mailto:info@perfectchessacademy.com" class="quick-link">
+                                <div class="link-icon email">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="link-content">
+                                    <span class="link-label">Email</span>
+                                    <strong>info@perfectchessacademy.com</strong>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Location Card with Map Preview -->
+                    <div class="info-card-premium">
+                        <div class="card-icon-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Our Academy</h3>
+                        <p class="location-text">
+                            Perfect Chess Academy<br>
+                            Bikaner, Rajasthan, India
+                        </p>
+                        <div class="map-preview">
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=400&h=200&fit=crop" alt="Location">
+                            <a href="https://www.google.com/maps/place/Bikaner,+Rajasthan" 
+                               target="_blank" class="map-overlay">
+                                <i class="fas fa-directions"></i>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours Card -->
+                    <div class="info-card-premium">
+                        <div class="card-icon-header">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Business Hours</h3>
+                        <div class="hours-list-premium">
+                            <div class="hours-row">
+                                <span>Monday - Friday</span>
+                                <strong>9:00 AM - 8:00 PM</strong>
+                            </div>
+                            <div class="hours-row">
+                                <span>Saturday</span>
+                                <strong>10:00 AM - 6:00 PM</strong>
+                            </div>
+                            <div class="hours-row closed">
+                                <span>Sunday</span>
+                                <strong>Closed</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Proof Badge -->
+                    <div class="social-proof-badge">
+                        <div class="proof-avatars">
+                            <img src="https://i.pravatar.cc/40?img=1" alt="Student">
+                            <img src="https://i.pravatar.cc/40?img=2" alt="Student">
+                            <img src="https://i.pravatar.cc/40?img=3" alt="Student">
+                            <img src="https://i.pravatar.cc/40?img=4" alt="Student">
+                            <span class="proof-count">+1,246</span>
+                        </div>
+                        <p><strong>1,250+ students</strong> have started their journey this year</p>
+                    </div>
+
+                    <!-- Follow Us -->
+                    <div class="social-connect-premium">
+                        <h4>Follow Our Journey</h4>
+                        <div class="social-links-premium">
+                            <a href="https://facebook.com/perfectchessacademy" target="_blank" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com/perfectchessacademy" target="_blank" class="social-btn instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com/perfectchessacademy" target="_blank" class="social-btn youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://twitter.com/perfectchessaca" target="_blank" class="social-btn twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 9: INTERACTIVE MAP
+         ============================================ -->
+    <section class="map-section-premium">
+        <div class="map-container-premium">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228205.70064254546!2d73.14701594999999!3d28.01762695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393fdd3d8b1c76ed%3A0x13f9b41df1defa2c!2sBikaner%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Perfect Chess Academy Location">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 10: FAQ (ENHANCED)
+         ============================================ -->
+    <section class="faq-premium-section">
+        <div class="container">
+            <div class="section-header-premium">
+                <span class="section-badge">Got Questions?</span>
+                <h2 class="section-title-premium">Quick Answers</h2>
+                <p class="section-description">Everything you need to know before getting started</p>
+            </div>
+
+            <div class="faq-grid-premium">
+                <div class="faq-item-premium">
+                    <button class="faq-question-premium" aria-expanded="false">
+                        <span class="faq-icon"><i class="fas fa-gift"></i></span>
+                        <span class="faq-text">Do you offer a free trial class?</span>
+                        <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer-premium">
+                        <p><strong>Yes, absolutely!</strong> Every new student gets a complimentary trial class. This allows you to:</p>
+                        <ul>
+                            <li>Experience our teaching methodology</li>
+                            <li>Meet your potential coach</li>
+                            <li>Assess if we're the right fit</li>
+                            <li>Ask questions about our programs</li>
+                        </ul>
+                        <p>Book your trial class using the form above or call us directly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-premium">
+                    <button class="faq-question-premium" aria-expanded="false">
+                        <span class="faq-icon"><i class="fas fa-users"></i></span>
+                        <span class="faq-text">What age groups do you teach?</span>
+                        <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer-premium">
+                        <p>We offer programs for all age groups:</p>
+                        <ul>
+                            <li><strong>Kids (6-12 years):</strong> Fun, interactive classes focusing on fundamentals</li>
+                            <li><strong>Teens (13-18 years):</strong> Competitive training and tournament preparation</li>
+                            <li><strong>Adults (18+ years):</strong> Flexible schedules, personalized coaching</li>
+                        </ul>
+                        <p>Our programs are tailored to each student's skill level and goals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-premium">
+                    <button class="faq-question-premium" aria-expanded="false">
+                        <span class="faq-icon"><i class="fas fa-laptop"></i></span>
+                        <span class="faq-text">Do you offer online classes?</span>
+                        <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer-premium">
+                        <p><strong>Yes!</strong> We offer both in-person and online classes with the same quality of instruction:</p>
+                        <ul>
+                            <li>Live video sessions (not pre-recorded)</li>
+                            <li>Interactive digital chessboards</li>
+                            <li>Screen sharing for analysis</li>
+                            <li>Recorded sessions for review</li>
+                        </ul>
+                        <p>Many students opt for a hybrid model—combining both formats.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-premium">
+                    <button class="faq-question-premium" aria-expanded="false">
+                        <span class="faq-icon"><i class="fas fa-clock"></i></span>
+                        <span class="faq-text">How quickly will I see improvement?</span>
+                        <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer-premium">
+                        <p>Results vary by starting level and commitment, but typically:</p>
+                        <ul>
+                            <li><strong>Month 1:</strong> Noticeable improvement in tactics and opening knowledge</li>
+                            <li><strong>Month 3:</strong> Readiness for first rated tournament</li>
+                            <li><strong>Month 6:</strong> Complete beginners achieve FIDE rating eligibility</li>
+                        </ul>
+                        <p>Our average student shows measurable improvement within the first 4-6 weeks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-premium">
+                    <button class="faq-question-premium" aria-expanded="false">
+                        <span class="faq-icon"><i class="fas fa-certificate"></i></span>
+                        <span class="faq-text">Are your coaches certified?</span>
+                        <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer-premium">
+                        <p><strong>Absolutely.</strong> All our coaches are:</p>
+                        <ul>
+                            <li>FIDE-certified trainers</li>
+                            <li>Titled players (GM, IM, FM)</li>
+                            <li>Tournament-experienced</li>
+                            <li>Background-verified</li>
+                        </ul>
+                        <p>We maintain the highest standards in coach selection and training.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-premium">
+                    <button class="faq-question-premium" aria-expanded="false">
+                        <span class="faq-icon"><i class="fas fa-rupee-sign"></i></span>
+                        <span class="faq-text">What are your pricing options?</span>
+                        <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer-premium">
+                        <p>We offer flexible pricing to fit different needs:</p>
+                        <ul>
+                            <li><strong>Group Classes:</strong> ₹2,000 - ₹4,000/month</li>
+                            <li><strong>Private Coaching:</strong> ₹6,000 - ₹15,000/month</li>
+                            <li><strong>Online Classes:</strong> 20% discount on all plans</li>
+                        </ul>
+                        <p>Contact us for detailed pricing and current promotions. <strong>First trial class is always free!</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <p>Still have questions?</p>
+                <a href="#contact-form" class="btn-faq-contact">
+                    <i class="fas fa-comments"></i>
+                    Ask Us Anything
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 11: FINAL CTA (URGENCY)
+         ============================================ -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="cta-content-premium">
+                <div class="cta-badge">
+                    <i class="fas fa-fire"></i>
+                    <span>Limited Spots Available</span>
+                </div>
+                <h2 class="cta-title-premium">
+                    Don't Let Your Chess Potential Go <span class="highlight-text">Unrealized</span>
+                </h2>
+                <p class="cta-description-premium">
+                    1,250 students have transformed their game with us. Your journey to chess mastery starts with a single move. 
+                    <strong>Book your free trial class today—no credit card required.</strong>
+                </p>
+
+                <div class="cta-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Free trial class</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No commitment required</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Meet your coach first</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>100% satisfaction guarantee</span>
+                    </div>
+                </div>
+
+                <div class="cta-actions-final">
+                    <a href="#contact-form" class="btn-cta-final primary">
+                        <i class="fas fa-rocket"></i>
+                        Start My Free Trial
+                    </a>
+                    <a href="https://wa.me/919252358993" class="btn-cta-final secondary" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges-final">
+                    <div class="badge-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Secure</span>
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-medal"></i>
+                        <span>FIDE Certified</span>
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-users"></i>
+                        <span>1,250+ Students</span>
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your existing footer -->
+    <footer>
+        <!-- Keep your existing footer -->
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919252358993" class="floating-whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us!</span>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top-premium" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Video Modal (for testimonial video) -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <button class="video-close" onclick="closeVideoModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-wrapper">
+                <iframe id="testimonialVideo" width="100%" height="100%" 
+                        src="" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="cp.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Chess Coaching - Find Your Perfect Coach | Perfect Chess Academy
+    </title>
+    <meta
+      name="description"
+      content="Expert chess coaching for all levels. Book 1-on-1 sessions with FIDE certified coaches. Flexible scheduling, personalized training plans."
+    />
+
+    <!-- Existing Stylesheets -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+
+    <!-- NEW: Coaching Redesign CSS -->
+    <link rel="stylesheet" href="assets/css/coaching.css" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Perfect Chess Academy",
+        "description": "Expert chess coaching for all skill levels",
+        "url": "https://perfectchessacademy.com/coaching",
+        "offers": {
+          "@type": "Offer",
+          "category": "Chess Coaching"
+        }
+      }
+    </script>
+  </head>
+  <body>
+
+    <main class="coaching-page-redesign">
+      <!-- HERO SECTION with Smart Filtering -->
+      <section class="coaching-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-badge">
+              <i class="fas fa-award"></i>
+              FIDE Certified Coaches
+            </span>
+            <h1 class="hero-title">
+              Find Your Perfect
+              <span class="gradient-text">Chess Coach</span>
+            </h1>
+            <p class="hero-subtitle">
+              1-on-1 personalized training from expert coaches.<br />
+              Flexible scheduling. Proven results. Start your journey today.
+            </p>
+
+            <!-- Quick Filter Widget -->
+            <div class="hero-filter-widget">
+              <div class="filter-card">
+                <div class="filter-group">
+                  <label class="filter-label">
+                    <i class="fas fa-user"></i>
+                    I'm looking for
+                  </label>
+                  <div class="filter-buttons">
+                    <button class="filter-btn active" data-for="child">
+                      <i class="fas fa-child"></i>
+                      For My Child
+                    </button>
+                    <button class="filter-btn" data-for="myself">
+                      <i class="fas fa-user-graduate"></i>
+                      For Myself
+                    </button>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <label class="filter-label">
+                    <i class="fas fa-signal"></i>
+                    Experience Level
+                  </label>
+                  <select class="filter-select" id="levelFilter">
+                    <option value="">Select Level</option>
+                    <option value="beginner">Beginner (Learning basics)</option>
+                    <option value="intermediate">
+                      Intermediate (Rating 1000-1600)
+                    </option>
+                    <option value="advanced">Advanced (Rating 1600+)</option>
+                    <option value="tournament">Tournament Preparation</option>
+                  </select>
+                </div>
+
+                <div class="filter-group">
+                  <label class="filter-label">
+                    <i class="fas fa-rupee-sign"></i>
+                    Budget (per month)
+                  </label>
+                  <select class="filter-select" id="budgetFilter">
+                    <option value="">Any Budget</option>
+                    <option value="2000-4000">₹2,000 - ₹4,000</option>
+                    <option value="4000-6000">₹4,000 - ₹6,000</option>
+                    <option value="6000-10000">₹6,000 - ₹10,000</option>
+                    <option value="10000+">₹10,000+</option>
+                  </select>
+                </div>
+
+                <button class="btn-find-coach" onclick="findMatchingCoaches()">
+                  <i class="fas fa-search"></i>
+                  Find Matching Coaches
+                </button>
+              </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="trust-indicators">
+              <div class="trust-item">
+                <div class="trust-number">1,250+</div>
+                <div class="trust-label">Students Trained</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-number">4.9/5</div>
+                <div class="trust-label">Average Rating</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-number">12</div>
+                <div class="trust-label">Expert Coaches</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-number">500+</div>
+                <div class="trust-label">Tournament Winners</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="how-it-works-section">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-badge">Simple Process</span>
+            <h2 class="section-title">Get Started in 3 Easy Steps</h2>
+            <p class="section-subtitle">
+              From booking to your first lesson in minutes
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3>Find Your Coach</h3>
+              <p>
+                Browse profiles, watch intro videos, and read reviews from real
+                students
+              </p>
+            </div>
+
+            <div class="step-connector"></div>
+
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-icon">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <h3>Book a Session</h3>
+              <p>
+                Choose a time slot that fits your schedule and make secure
+                payment
+              </p>
+            </div>
+
+            <div class="step-connector"></div>
+
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-icon">
+                <i class="fas fa-video"></i>
+              </div>
+              <h3>Start Learning</h3>
+              <p>
+                Join live video sessions and get personalized feedback on your
+                games
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED COACHES -->
+      <section class="coaches-section">
+        <div class="container">
+          <div class="section-header-with-filter">
+            <div class="section-header-left">
+              <span class="section-badge">Expert Team</span>
+              <h2 class="section-title">Meet Our Coaches</h2>
+              <p class="section-subtitle">
+                All coaches are FIDE certified with proven track records
+              </p>
+            </div>
+            <div class="section-header-right">
+              <div class="view-toggle">
+                <button class="toggle-btn active" data-view="grid">
+                  <i class="fas fa-th"></i>
+                </button>
+                <button class="toggle-btn" data-view="list">
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+              <select class="sort-select" id="coachSort">
+                <option value="rating">Highest Rated</option>
+                <option value="experience">Most Experienced</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="students">Most Students</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="coaches-grid" id="coachesGrid">
+            <!-- COACH CARD 1 - Perfect for User 1 (Priya) -->
+            <div
+              class="coach-card"
+              data-level="beginner,intermediate"
+              data-price="3500"
+              data-rating="4.9"
+            >
+              <div class="coach-card-header">
+                <div class="coach-badge-group">
+                  <span class="coach-badge verified">
+                    <i class="fas fa-check-circle"></i>
+                    Verified
+                  </span>
+                  <span class="coach-badge popular">
+                    <i class="fas fa-fire"></i>
+                    Popular Choice
+                  </span>
+                </div>
+                <button class="btn-wishlist" onclick="toggleCoachWishlist(1)">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="coach-profile">
+                <div class="coach-avatar">
+                  <img
+                    src="https://i.pravatar.cc/200?img=33"
+                    alt="Coach Priya Nair"
+                  />
+                  <div class="online-indicator"></div>
+                </div>
+                <div class="coach-info">
+                  <h3 class="coach-name">Priya Nair</h3>
+                  <p class="coach-title">Chess Master & Kids Specialist</p>
+                  <div class="coach-rating">
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <span class="rating-text">4.9 (156 reviews)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="coach-specialties">
+                <span class="specialty-tag">Kids Training</span>
+                <span class="specialty-tag">Beginners</span>
+                <span class="specialty-tag">Opening Theory</span>
+              </div>
+
+              <div class="coach-stats">
+                <div class="stat-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>FIDE Rating: 2150</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-users"></i>
+                  <span>180+ Students</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-clock"></i>
+                  <span>8 Years Experience</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-trophy"></i>
+                  <span>State Champion 2019</span>
+                </div>
+              </div>
+
+              <div class="coach-description">
+                <p>
+                  Expert in teaching chess to children ages 6-14. Patient,
+                  engaging teaching style with focus on building strong
+                  fundamentals. Specializes in making chess fun and exciting for
+                  young learners.
+                </p>
+              </div>
+
+              <div class="coach-pricing">
+                <div class="price-info">
+                  <span class="price-label">Starting from</span>
+                  <div class="price-main">
+                    <span class="price-amount">₹3,500</span>
+                    <span class="price-period">/month</span>
+                  </div>
+                  <span class="price-note">4 sessions • 1 hour each</span>
+                </div>
+              </div>
+
+              <div class="coach-actions">
+                <button
+                  class="btn btn-secondary btn-block"
+                  onclick="viewCoachProfile(1)"
+                >
+                  <i class="fas fa-user"></i>
+                  View Full Profile
+                </button>
+                <button
+                  class="btn btn-primary btn-block"
+                  onclick="bookTrialSession(1)"
+                >
+                  <i class="fas fa-calendar-plus"></i>
+                  Book Free Trial
+                </button>
+              </div>
+
+              <div class="quick-availability">
+                <span class="availability-label">
+                  <i class="fas fa-calendar-check"></i>
+                  Next Available:
+                </span>
+                <span class="availability-time">Today at 5:00 PM</span>
+              </div>
+            </div>
+
+            <!-- COACH CARD 2 - Perfect for User 2 (Arjun) -->
+            <div
+              class="coach-card"
+              data-level="intermediate,advanced,tournament"
+              data-price="7500"
+              data-rating="5.0"
+            >
+              <div class="coach-card-header">
+                <div class="coach-badge-group">
+                  <span class="coach-badge verified">
+                    <i class="fas fa-check-circle"></i>
+                    Verified
+                  </span>
+                  <span class="coach-badge premium">
+                    <i class="fas fa-crown"></i>
+                    Premium Coach
+                  </span>
+                </div>
+                <button class="btn-wishlist" onclick="toggleCoachWishlist(2)">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="coach-profile">
+                <div class="coach-avatar">
+                  <img
+                    src="https://i.pravatar.cc/200?img=12"
+                    alt="Coach Grandmaster Vikram Singh"
+                  />
+                  <div class="online-indicator"></div>
+                </div>
+                <div class="coach-info">
+                  <h3 class="coach-name">GM Vikram Singh</h3>
+                  <p class="coach-title">International Grandmaster</p>
+                  <div class="coach-rating">
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <span class="rating-text">5.0 (89 reviews)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="coach-specialties">
+                <span class="specialty-tag premium">Advanced Tactics</span>
+                <span class="specialty-tag premium">Tournament Prep</span>
+                <span class="specialty-tag premium">Endgame Mastery</span>
+              </div>
+
+              <div class="coach-stats">
+                <div class="stat-item">
+                  <i class="fas fa-chess-king"></i>
+                  <span>FIDE Rating: 2550</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-users"></i>
+                  <span>95+ Students</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-clock"></i>
+                  <span>15 Years Experience</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-trophy"></i>
+                  <span>National Champion</span>
+                </div>
+              </div>
+
+              <div class="coach-description">
+                <p>
+                  Specialize in taking intermediate players to advanced level.
+                  Proven track record of helping 50+ students achieve 1800+
+                  ratings. Focus on tactical patterns, strategic planning, and
+                  tournament psychology.
+                </p>
+              </div>
+
+              <div class="coach-pricing">
+                <div class="price-info">
+                  <span class="price-label">Starting from</span>
+                  <div class="price-main">
+                    <span class="price-amount">₹7,500</span>
+                    <span class="price-period">/month</span>
+                  </div>
+                  <span class="price-note">8 sessions • 1.5 hours each</span>
+                </div>
+              </div>
+
+              <div class="coach-actions">
+                <button
+                  class="btn btn-secondary btn-block"
+                  onclick="viewCoachProfile(2)"
+                >
+                  <i class="fas fa-user"></i>
+                  View Full Profile
+                </button>
+                <button
+                  class="btn btn-primary btn-block"
+                  onclick="bookTrialSession(2)"
+                >
+                  <i class="fas fa-calendar-plus"></i>
+                  Book Free Trial
+                </button>
+              </div>
+
+              <div class="quick-availability">
+                <span class="availability-label">
+                  <i class="fas fa-calendar-check"></i>
+                  Next Available:
+                </span>
+                <span class="availability-time">Tomorrow at 6:00 PM</span>
+              </div>
+            </div>
+
+            <!-- COACH CARD 3 -->
+            <div
+              class="coach-card"
+              data-level="beginner,intermediate"
+              data-price="4500"
+              data-rating="4.8"
+            >
+              <div class="coach-card-header">
+                <div class="coach-badge-group">
+                  <span class="coach-badge verified">
+                    <i class="fas fa-check-circle"></i>
+                    Verified
+                  </span>
+                </div>
+                <button class="btn-wishlist" onclick="toggleCoachWishlist(3)">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="coach-profile">
+                <div class="coach-avatar">
+                  <img
+                    src="https://i.pravatar.cc/200?img=68"
+                    alt="Coach Rajesh Kumar"
+                  />
+                  <div class="online-indicator offline"></div>
+                </div>
+                <div class="coach-info">
+                  <h3 class="coach-name">Rajesh Kumar</h3>
+                  <p class="coach-title">FIDE Master & Strategy Expert</p>
+                  <div class="coach-rating">
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="rating-text">4.8 (124 reviews)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="coach-specialties">
+                <span class="specialty-tag">Strategic Play</span>
+                <span class="specialty-tag">Positional Chess</span>
+                <span class="specialty-tag">Middlegame</span>
+              </div>
+
+              <div class="coach-stats">
+                <div class="stat-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>FIDE Rating: 2300</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-users"></i>
+                  <span>200+ Students</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-clock"></i>
+                  <span>10 Years Experience</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-medal"></i>
+                  <span>Multiple Titles</span>
+                </div>
+              </div>
+
+              <div class="coach-description">
+                <p>
+                  Focus on developing strategic understanding and positional
+                  play. Excellent at explaining complex concepts in simple
+                  terms. Great for students looking to build a solid chess
+                  foundation.
+                </p>
+              </div>
+
+              <div class="coach-pricing">
+                <div class="price-info">
+                  <span class="price-label">Starting from</span>
+                  <div class="price-main">
+                    <span class="price-amount">₹4,500</span>
+                    <span class="price-period">/month</span>
+                  </div>
+                  <span class="price-note">4 sessions • 1.5 hours each</span>
+                </div>
+              </div>
+
+              <div class="coach-actions">
+                <button
+                  class="btn btn-secondary btn-block"
+                  onclick="viewCoachProfile(3)"
+                >
+                  <i class="fas fa-user"></i>
+                  View Full Profile
+                </button>
+                <button
+                  class="btn btn-primary btn-block"
+                  onclick="bookTrialSession(3)"
+                >
+                  <i class="fas fa-calendar-plus"></i>
+                  Book Free Trial
+                </button>
+              </div>
+
+              <div class="quick-availability">
+                <span class="availability-label">
+                  <i class="fas fa-calendar-check"></i>
+                  Next Available:
+                </span>
+                <span class="availability-time">Monday at 4:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="load-more-container">
+            <button
+              class="btn btn-secondary-outline btn-large"
+              onclick="loadMoreCoaches()"
+            >
+              <i class="fas fa-plus-circle"></i>
+              Load More Coaches
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING COMPARISON -->
+      <section class="pricing-section">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-badge">Flexible Plans</span>
+            <h2 class="section-title">Choose Your Package</h2>
+            <p class="section-subtitle">
+              All packages include personalized training, game analysis, and
+              progress tracking
+            </p>
+          </div>
+
+          <div class="pricing-toggle">
+            <button class="pricing-toggle-btn active" data-period="monthly">
+              Monthly
+            </button>
+            <button class="pricing-toggle-btn" data-period="quarterly">
+              Quarterly
+              <span class="save-badge">Save 15%</span>
+            </button>
+          </div>
+
+          <div class="pricing-grid">
+            <!-- Starter Package -->
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3 class="pricing-title">Starter</h3>
+                <p class="pricing-subtitle">Perfect for beginners</p>
+              </div>
+              <div class="pricing-price">
+                <span class="price-currency">₹</span>
+                <span class="price-amount">3,500</span>
+                <span class="price-period">/month</span>
+              </div>
+              <ul class="pricing-features">
+                <li>
+                  <i class="fas fa-check"></i>
+                  4 live sessions per month
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  1 hour per session
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Basic game analysis
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Study materials included
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Email support
+                </li>
+                <li class="feature-disabled">
+                  <i class="fas fa-times"></i>
+                  Tournament preparation
+                </li>
+              </ul>
+              <button
+                class="btn btn-secondary btn-block btn-large"
+                onclick="selectPackage('starter')"
+              >
+                Choose Starter
+              </button>
+            </div>
+
+            <!-- Professional Package - POPULAR -->
+            <div class="pricing-card popular">
+              <div class="popular-badge">
+                <i class="fas fa-star"></i>
+                Most Popular
+              </div>
+              <div class="pricing-header">
+                <h3 class="pricing-title">Professional</h3>
+                <p class="pricing-subtitle">Best for serious players</p>
+              </div>
+              <div class="pricing-price">
+                <span class="price-currency">₹</span>
+                <span class="price-amount">6,500</span>
+                <span class="price-period">/month</span>
+              </div>
+              <ul class="pricing-features">
+                <li>
+                  <i class="fas fa-check"></i>
+                  8 live sessions per month
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  1.5 hours per session
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Advanced game analysis
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Personalized training plan
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  24/7 WhatsApp support
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Tournament preparation
+                </li>
+              </ul>
+              <button
+                class="btn btn-primary btn-block btn-large"
+                onclick="selectPackage('professional')"
+              >
+                Choose Professional
+              </button>
+            </div>
+
+            <!-- Elite Package -->
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3 class="pricing-title">Elite</h3>
+                <p class="pricing-subtitle">For tournament players</p>
+              </div>
+              <div class="pricing-price">
+                <span class="price-currency">₹</span>
+                <span class="price-amount">12,000</span>
+                <span class="price-period">/month</span>
+              </div>
+              <ul class="pricing-features">
+                <li>
+                  <i class="fas fa-check"></i>
+                  12 live sessions per month
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  2 hours per session
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Grandmaster coaching
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Opening repertoire building
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  24/7 priority support
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Tournament strategy & psychology
+                </li>
+              </ul>
+              <button
+                class="btn btn-secondary btn-block btn-large"
+                onclick="selectPackage('elite')"
+              >
+                Choose Elite
+              </button>
+            </div>
+          </div>
+
+          <div class="pricing-note">
+            <i class="fas fa-info-circle"></i>
+            All packages come with a <strong>FREE trial session</strong> and
+            <strong>30-day money-back guarantee</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="testimonials-section">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-badge">Success Stories</span>
+            <h2 class="section-title">What Our Students Say</h2>
+            <p class="section-subtitle">
+              Real reviews from real students and parents
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="https://i.pravatar.cc/100?img=47"
+                    alt="Parent Review"
+                  />
+                </div>
+                <div class="testimonial-info">
+                  <h4>Meera Patel</h4>
+                  <p>Parent of 9-year-old student</p>
+                </div>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Coach Priya has been amazing with my son! He went from not
+                  knowing how pieces move to winning his first school tournament
+                  in just 6 months. Her patient and engaging teaching style
+                  makes every lesson fun."
+                </p>
+              </div>
+              <div class="testimonial-footer">
+                <span class="testimonial-date">
+                  <i class="fas fa-calendar"></i>
+                  2 months ago
+                </span>
+                <span class="testimonial-verified">
+                  <i class="fas fa-check-circle"></i>
+                  Verified Student
+                </span>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="https://i.pravatar.cc/100?img=15"
+                    alt="Student Review"
+                  />
+                </div>
+                <div class="testimonial-info">
+                  <h4>Aditya Sharma</h4>
+                  <p>Intermediate Player (Rating: 1620)</p>
+                </div>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "GM Vikram Singh helped me break through my 1450 rating
+                  plateau. His tactical training and tournament psychology
+                  sessions transformed my game. Now consistently winning at club
+                  level!"
+                </p>
+              </div>
+              <div class="testimonial-footer">
+                <span class="testimonial-date">
+                  <i class="fas fa-calendar"></i>
+                  1 month ago
+                </span>
+                <span class="testimonial-verified">
+                  <i class="fas fa-check-circle"></i>
+                  Verified Student
+                </span>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="https://i.pravatar.cc/100?img=32"
+                    alt="Parent Review"
+                  />
+                </div>
+                <div class="testimonial-info">
+                  <h4>Kavita Reddy</h4>
+                  <p>Parent of 12-year-old student</p>
+                </div>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "The flexible scheduling is a lifesaver for our busy family.
+                  My daughter loves her sessions with Coach Rajesh. His
+                  strategic teaching approach has really improved her
+                  understanding of the game."
+                </p>
+              </div>
+              <div class="testimonial-footer">
+                <span class="testimonial-date">
+                  <i class="fas fa-calendar"></i>
+                  3 weeks ago
+                </span>
+                <span class="testimonial-verified">
+                  <i class="fas fa-check-circle"></i>
+                  Verified Student
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-badge">Got Questions?</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+          </div>
+
+          <div class="faq-container">
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">
+                <span>How do I book a trial session?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Simply click on "Book Free Trial" button on any coach's card,
+                  select your preferred time slot, and complete the booking. No
+                  payment required for trial sessions.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">
+                <span>Can I change my coach if I'm not satisfied?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes! We offer flexible coach switching. If you're not
+                  satisfied with your coach, you can switch to another coach at
+                  no extra cost within your first 2 sessions.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">
+                <span>What equipment do I need for online sessions?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  You'll need a computer or tablet with a stable internet
+                  connection, a webcam, and a microphone. We use Zoom for video
+                  sessions and Lichess/Chess.com for online board practice.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">
+                <span>What if I need to cancel or reschedule a session?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  You can cancel or reschedule any session up to 24 hours before
+                  the scheduled time without any penalty. Sessions cancelled
+                  with less than 24 hours notice will be counted as completed.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">
+                <span>Do you offer group coaching sessions?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes! We offer group sessions for 2-4 students at discounted
+                  rates. Contact us for group coaching packages and pricing
+                  details.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA SECTION -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-card">
+            <div class="cta-content">
+              <h2 class="cta-title">Ready to Start Your Chess Journey?</h2>
+              <p class="cta-subtitle">
+                Book a free trial session today and see why 1,250+ students
+                trust us
+              </p>
+              <div class="cta-actions">
+                <button
+                  class="btn btn-primary btn-large"
+                  onclick="scrollToCoaches()"
+                >
+                  <i class="fas fa-rocket"></i>
+                  Find Your Coach
+                </button>
+                <button
+                  class="btn btn-secondary-outline btn-large"
+                  onclick="openWhatsAppChat()"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  Chat on WhatsApp
+                </button>
+              </div>
+              <p class="cta-guarantee">
+                <i class="fas fa-shield-alt"></i>
+                100% Money-back guarantee • No credit card required for trial
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Your Existing Footer -->
+    <footer>
+      <!-- Your existing footer code -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="assets/js/coaching.js"></script>
+  </body>
+</html>
